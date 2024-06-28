@@ -14,6 +14,26 @@ Demonstrate how to do Test-Driven Development ('TDD') with Bevy.
 
 ## Chapters
 
+```mermaid
+flowchart TD
+    hello_world[hello_world\nGet started]
+    add_player[add_player\nAdd a player]
+    add_enemy[add_enemy\nAdd an enemy]
+    move_enemy[move_enemy\nMove an enemy]
+    move_player[move_player_keyboard\nMove a player]
+    move_player_keyboard[move_player_keyboard\nMove a player\nusing keyboard]
+    move_player_mouse[move_player_mouse\nMove a player\nusing mouse]
+
+    hello_world --> add_player
+    add_player --> add_enemy
+
+    add_enemy --> move_enemy
+
+    add_player --> move_player
+    add_player --> move_player_keyboard
+    add_player --> move_player_mouse
+```
+
 Chapter [2]                     |Description
 --------------------------------|-----------
 [hello_world.md](hello_world.md)|Hello world
