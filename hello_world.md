@@ -52,9 +52,8 @@ pub fn create_app() -> App {
 }
 ```
 
-The full code of [app.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/app.rs)
-can be found at [app.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/app.rs).
+## Conclusion
 
-## Links
+We can now create an `App`.
 
-* [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)
+Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)
