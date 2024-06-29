@@ -52,7 +52,7 @@ for example `add_player::Player`.
 This implementation is a simple, but imperfect definition to count the
 amount of `Player` components: it will give incorrect results when another
 component is added that contains the word `Player`, such as `PlayerHealth`.
-However, we should not worry about this: YAGNI ('You Aint Gonna Need It')
+However, we should not worry about this: YAGNI ('You Ain't Gonna Need It')
 reminds us that we may never need it, and TDD lets us write new tests when
 we do need this in the future.
 
