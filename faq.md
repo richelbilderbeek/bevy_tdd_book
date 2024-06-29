@@ -17,8 +17,11 @@ Instead, it shows Test-Driven Development in Rust with Bevy.
 
 ## What is the goal of this book?
 
-The goal is to demonstrate how to do Test-Driven Development ('TDD')
+The goal is to demonstrate how to do Test-Driven Development
 in Rust with Bevy.
+
+Each chapter introduces as few new concepts as possible.
+Due to this, the first chapters do not result in a playable game yet.
 
 ## What are the subgoals of this book?
 
@@ -27,11 +30,15 @@ in Rust with Bevy.
 
 ## What are the non-goals of this book?
 
+* Have a running game in each chapter
 * Always have the fastest solution
+* Explain Rust
+* Explain Bevy
 
 ## Why ignore the `main` function in `src/main.rs` for code coverage?
 
 Because one cannot test the `main` function.
+
 The `main` is where a game is started.
 When the game is started, one needs user input to close the game.
 TDD needs tests that do not require user input.
