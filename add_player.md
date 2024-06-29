@@ -128,5 +128,7 @@ pub fn create_app() -> App {
 ## Conclusion
 
 We can now create an `App` with one player.
+When running the `App`, nothing is displayed yet. 
+However, we do have tested everything that the App does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player](https://github.com/richelbilderbeek/bevy_tdd_book_add_player).
