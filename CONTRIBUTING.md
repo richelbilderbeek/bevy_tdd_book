@@ -36,7 +36,9 @@ Here are things that are likely to be accepted:
 
 Here are things that are unlikely to be accepted:
 
+- Anything that breaks a continuous integration test
 - In-depth technical explanations at a too early chapter
+
 
 ## Code
 
@@ -56,5 +58,6 @@ Here are things that are likely to be accepted:
 
 Here are things that are unlikely to be accepted:
 
-- Reducing code coverage below 100%
+- Anything that breaks a continuous integration test
+- Anything that reduces code coverage below 100%
 - Using a faster, yet less readable alternative 
