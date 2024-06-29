@@ -128,6 +128,8 @@ pub fn create_app() -> App {
 ## Conclusion
 
 We can now create an `App` with one player.
+This one player has no member variables (for example,
+a position) yet.
 When running the `App`, nothing is displayed yet. 
 However, we do have tested everything that the App does!
 

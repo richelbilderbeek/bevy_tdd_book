@@ -7,10 +7,19 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ## Chapters
 
+Chapter [2]                                   |Description
+----------------------------------------------|----------------------
+[hello_world.md](hello_world.md)              |Hello world
+[add_player.md](add_player.md)                |Adding a player
+[add_player_sprite.md](add_player_sprite.md)  |Adding a player sprite
+
+## Chapter overview
+
 ```mermaid
 flowchart TD
     hello_world[hello_world\nGet started]
     add_player[add_player\nAdd a player]
+    add_player_sprite[add_player_sprite\nAdd a player sprite]
     add_enemy[add_enemy\nAdd an enemy]
     move_enemy[move_enemy\nMove an enemy]
     move_player[move_player_keyboard\nMove a player]
@@ -22,15 +31,11 @@ flowchart TD
 
     add_enemy --> move_enemy
 
-    add_player --> move_player
-    add_player --> move_player_keyboard
-    add_player --> move_player_mouse
+    add_player --> add_player_sprite
+    add_player_sprite --> move_player
+    add_player_sprite --> move_player_keyboard
+    add_player_sprite --> move_player_mouse
 ```
-
-Chapter [2]                     |Description
---------------------------------|-----------
-[hello_world.md](hello_world.md)|Hello world
-[add_player.md](add_player.md)  |Adding a player
 
 ## Files used by continuous integration scripts
 
