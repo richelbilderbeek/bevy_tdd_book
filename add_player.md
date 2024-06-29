@@ -43,10 +43,10 @@ fn count_n_players(app: &App) -> usize {
 
 The first line, `#[cfg(test)]`, labels the function to be used in debugging only.
 
-In the function it is counted how often the world components' names 
+In the function it is counted how often the world components' names
 contain (but not match) `Player`.
-An exact match for `Player` would fail, 
-as the world components' names include the crate name too, 
+An exact match for `Player` would fail,
+as the world components' names include the crate name too,
 for example `add_player::Player`.
 
 This implementation is a simple, but imperfect definition to count the
@@ -83,7 +83,6 @@ After this, `app.update()` is needed to actually add it.
 
 Here is a possible implementation:
 
-
 ```rust
 fn setup_player(mut commands: Commands) {
     commands.spawn(Player);
@@ -92,13 +91,13 @@ fn setup_player(mut commands: Commands) {
 
 This implementation is a simple, but imperfect way to add a player
 to an `App`. In the future, we probably want to show the Player
-on the screen. 
+on the screen.
 However, we should not worry about this now: TDD lets us write new tests when
 we do need this in the future.
 
 ## Third test
 
-Now that we can count and create players, 
+Now that we can count and create players,
 we can test that our `App` starts with one player:
 
 ```rust
