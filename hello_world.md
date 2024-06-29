@@ -3,7 +3,7 @@
 This chapter is a minimal Bevy program.
 
 The minimal program will create a Bevy `App`
-and then run it ([main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/main.rs)): 
+and then run it ([main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/main.rs)):
 
 ```rust
 use crate::app::create_app;
@@ -16,7 +16,7 @@ fn main() {
 ```
 
 The `main` function will not be used in automated testing,
-as it starts our game: starting the game 
+as it starts our game: starting the game
 will require that a user needs to do something to close it.
 Hence, the `main` function 'just' runs the `App`.
 
@@ -27,7 +27,7 @@ function in the file [app.rs](https://github.com/richelbilderbeek/bevy_tdd_book_
 Our first trivial test will be if `create_app` does something,
 i.e. it does not crash:
 
-```
+```rust
 #[cfg(test)]
 mod tests {
     use super::*;
