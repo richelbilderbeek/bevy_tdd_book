@@ -44,9 +44,9 @@ Filename                              |Descriptions
 
 ## Footnotes
 
- * [1] 'book' is an overstatement for now: it is just a collection of notes
- * [2] There is no chapter numbering yet
-   
+* [1] 'book' is an overstatement for now: it is just a collection of notes
+* [2] There is no chapter numbering yet
+
 ## Links
 
- * [Blog post 'Test-Driven Development in Rust Game Development with Bevy' by Edgardo Carreras](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)
+* [Blog post 'Test-Driven Development in Rust Game Development with Bevy' by Edgardo Carreras](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)

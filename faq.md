@@ -10,19 +10,19 @@ This book tries to start from scratch and build up gradually.
 ## What is the intended audience of this book?
 
 Intermediate Rust developers: people that have read parts of
-'The Rust programming language' [Klabnik & Nichols, 2018][Klabnik & Nichols, 2023].
+'The Rust programming language' `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`.
 
-This book does not teach Rust, nor Bevy. 
+This book does not teach Rust, nor Bevy.
 Instead, it shows Test-Driven Development in Rust with Bevy.
 
 ## What is the goal of this book?
 
-The goal is to demonstrate how to do Test-Driven Development ('TDD') 
+The goal is to demonstrate how to do Test-Driven Development ('TDD')
 in Rust with Bevy.
 
 ## What are the subgoals of this book?
 
-* Always achieve 100% code coverage when ignoring 
+* Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`.
 
 ## What are the non-goals of this book?
@@ -38,7 +38,7 @@ TDD needs tests that do not require user input.
 
 ## References
 
-* [Klabnik & Nichols, 2018] Klabnik, Steve, and Carol Nichols. 
+* `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.
-* [Klabnik & Nichols, 2023] Klabnik, Steve, and Carol Nichols. 
+* `[Klabnik & Nichols, 2023]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.

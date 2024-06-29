@@ -12,7 +12,7 @@ Here we discuss how to contribute:
 
 Spoken text suggestions are ideas, feedback, etc. and are written in English.
 
-For ideas or feedback, 
+For ideas or feedback,
 create an [Issue](https://github.com/richelbilderbeek/bevy_tdd_book/issues).
 These Issues will be discussed publicly in that Issue
 and will help shape the development of the book.
@@ -21,13 +21,13 @@ and will help shape the development of the book.
 
 Book text suggestions are suggested textual changes to the book.
 
-To suggest these, either 
+To suggest these, either
 create an [Issue](https://github.com/richelbilderbeek/bevy_tdd_book/issues)
 or submit a Pull Request.
 
 These Issues and Pull Requests will be discussed publicly
 and accepted if they are judged to improve the book.
-Of course, 'to improve the book' is subjective. 
+Of course, 'to improve the book' is subjective.
 
 Here are things that are likely to be accepted:
 
@@ -44,13 +44,13 @@ Here are things that are unlikely to be accepted:
 
 Code suggestions are suggested changes to the Rust code.
 
-To suggest these, either 
+To suggest these, either
 create an [Issue](https://github.com/richelbilderbeek/bevy_tdd_book/issues)
 or submit a Pull Request.
 
 These Issues and Pull Requests will be discussed publicly
 and accepted if they are judged to improve the code.
-Of course, 'to improve the code' is subjective. 
+Of course, 'to improve the code' is subjective.
 
 Here are things that are likely to be accepted:
 
@@ -60,4 +60,4 @@ Here are things that are unlikely to be accepted:
 
 - Anything that breaks a continuous integration test
 - Anything that reduces code coverage below 100%
-- Using a faster, yet less readable alternative 
+- Using a faster, yet less readable alternative
