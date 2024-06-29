@@ -39,7 +39,6 @@ Here are things that are unlikely to be accepted:
 - Anything that breaks a continuous integration test
 - In-depth technical explanations at a too early chapter
 
-
 ## Code
 
 Code suggestions are suggested changes to the Rust code.
