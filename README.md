@@ -7,11 +7,12 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ## Chapters
 
-Chapter [2]                                   |Description
-----------------------------------------------|----------------------
-[hello_world.md](hello_world.md)              |Hello world
-[add_player.md](add_player.md)                |Adding a player
-[add_player_sprite.md](add_player_sprite.md)  |Adding a player sprite
+Code coverage                                                                                                                                                                                  |Chapter [2]                                 |Description
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------
+[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world)              |[hello_world.md](hello_world.md)            |Hello world
+[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player)                |[add_player.md](add_player.md)              |Adding a player
+[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite)  |[add_player_sprite.md](add_player_sprite.md)|Adding a player sprite
+[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)              |[move_player.md](move_player.md)            |Move a player
 
 ## Chapter overview
 
