@@ -2,10 +2,20 @@
 
 ## Why this book?
 
-There is only one [blog post on Test-Driven Development with Bevy](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)
-and that is it.
+This book started from the question: 'Is Bevy suitable for Test-Driven Development?',
+as the author was looking for a Rust gaming library
+suitable for Test-Driven Development. 
 
-This book tries to start from scratch and build up gradually.
+At the time of writing, there is only one [blog post on Test-Driven Development with Bevy](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/),
+which only has two tests. And that test suite has not been
+built up from scratch. 
+
+This book tries to start from scratch and build up gradually,
+always aiming for 100% code coverage.
+
+When all facets of a game can be tested with 100% code coverage,
+the question 'Is Bevy suitable for Test-Driven Development?' 
+can be answered with a 'yes'.
 
 ## What is the intended audience of this book?
 
@@ -26,11 +36,14 @@ Due to this, the first chapters do not result in a playable game yet.
 ## What are the subgoals of this book?
 
 * Always achieve 100% code coverage when ignoring
-  the `main` function in `src/main.rs`.
+  the `main` function in `src/main.rs`
+* Prefer to use idiomatic solution
+* Use the correct terminology
 
 ## What are the non-goals of this book?
 
 * Have a running game in each chapter
+* Having an interesting game in the end
 * Always have the fastest solution
 * Explain Rust
 * Explain Bevy
