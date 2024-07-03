@@ -37,6 +37,8 @@ Here are things that are likely to be accepted:
 Here are things that are unlikely to be accepted:
 
 - Anything that breaks a continuous integration test
+- Anything that makes the continuous integration test suite less strict
+- Anything that makes existing tests less strict
 - In-depth technical explanations at a too early chapter
 
 ## Code
@@ -59,4 +61,6 @@ Here are things that are unlikely to be accepted:
 
 - Anything that breaks a continuous integration test
 - Anything that reduces code coverage below 100%
+- Anything that makes the continuous integration test suite less strict
+- Anything that makes existing tests less strict
 - Using a faster, yet less readable alternative
