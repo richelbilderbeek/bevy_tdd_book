@@ -37,8 +37,7 @@ Due to this, the first chapters do not result in a playable game yet.
 
 * Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`
-* Prefer to use idiomatic solution
-* Use the correct terminology
+* Follow the Rust idiom as suggested by the `clippy` Rust package
 
 ## What are the non-goals of this book?
 
