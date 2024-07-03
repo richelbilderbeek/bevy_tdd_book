@@ -14,6 +14,7 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite)                |[add_player_sprite.md](add_player_sprite.md)                |Adding a player sprite|Using closures and `SpriteBundles`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)              |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                            |[move_player.md](move_player.md)                            |Move a player         |Extending a structure, using a `Query`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard)|[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard)|[move_player_with_keyboard.md](move_player_with_keyboard.md)|Respond to keyboard   |.
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keyboard)      |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keyboard/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keyboard)|[move_player_with_keyboard.md](move_player_with_keyboard.md)|Respond to keyboard   |.
 
 ## Chapter overview
 
@@ -26,7 +27,12 @@ flowchart TD
     move_player_keyboard[move_player_keyboard\nMove a player\nusing keyboard]
     move_player_mouse[move_player_mouse\nMove a player\nusing mouse]
 
+    respond_to_keyboard[respond_to_keyboard\nMove something\nusing keyboard]
+
     hello_world --> add_player
+    hello_world --> respond_to_keyboard
+
+    respond_to_keyboard --> move_player_keyboard
 
     add_player --> add_player_sprite
     add_player_sprite --> move_player
