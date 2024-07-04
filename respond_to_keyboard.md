@@ -71,7 +71,7 @@ fn test_player_responds_to_key_press() {
 
 ## Conclusion
 
-We can now create an `App` with something that reponds
+We can now create an `App` with something that responds
 to key presses.
 We have tested everything that the `App` does!
 

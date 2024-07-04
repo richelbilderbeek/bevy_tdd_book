@@ -6,7 +6,7 @@ The idea is to give a player a velocity upon a key press.
 
 ## Conclusion
 
-We can now create an `App` with one player sprite that reponds
+We can now create an `App` with one player sprite that responds
 to key presses.
 We have tested everything that the `App` does!
 
