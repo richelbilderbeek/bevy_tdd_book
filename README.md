@@ -50,6 +50,13 @@ Filename                              |Descriptions
 [.markdownlint.jsonc](.markdownlint.jsonc)|Configuration of the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [.markdownlintignore](.markdownlintignore)|Files ignored by the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 
+## Contributors
+
+These are people that helped me:
+
+* Periwinkle
+* Shane Celis
+
 ## Footnotes
 
 * [1] 'book' is an overstatement for now: it is just a collection of notes
