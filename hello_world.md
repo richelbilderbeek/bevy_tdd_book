@@ -54,7 +54,7 @@ pub fn create_app() -> App {
 
 ## Conclusion
 
-We can now create an `App`. It does nothing and displays nothing. 
+We can now create an `App`. It does nothing and displays nothing.
 However, we do have tested everything (i.e. nothing) it does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)

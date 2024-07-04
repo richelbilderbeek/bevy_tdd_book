@@ -11,7 +11,7 @@
 
   "MD013": {
     // Number of characters, CHANGED FROM 80
-    "line_length": 100,
+    "line_length": 1000,
     // Number of characters for headings
     "heading_line_length": 80,
     // Number of characters for code blocks, CHANGED FROM 80

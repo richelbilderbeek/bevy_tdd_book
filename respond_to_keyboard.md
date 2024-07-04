@@ -6,7 +6,7 @@ The idea is to do something upon a key press.
 
 ## First test: create an `App` does something
 
-```
+```rust
 #[test]
 fn test_can_create_app() {
     create_app();
@@ -15,7 +15,7 @@ fn test_can_create_app() {
 
 ## Second test: an empty `App` has no players
 
-```
+```rust
 #[test]
 fn test_empty_app_has_no_players() {
     let app = App::new();
@@ -47,7 +47,7 @@ fn test_player_is_at_origin() {
 
 ## Fifth test: pressing spacebar moves the player
 
-```
+```rust
 #[test]
 fn test_player_responds_to_key_press() {
     let mut app = create_app();

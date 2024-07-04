@@ -66,7 +66,7 @@ fn test_player_is_at_custom_place() {
 }
 ```
 
-The `create_app` now has a new input argument: the initial coordinate 
+The `create_app` now has a new input argument: the initial coordinate
 of the player. Because Rust has no default function arguments,
 earlier tests need to be updated too.
 
@@ -95,7 +95,7 @@ fn main() {
 }
 ```
 
-To fix our newest test, most changes end up in 
+To fix our newest test, most changes end up in
 how a player is added and how an `App` is created.
 
 The way Bevy works with sprites, is to use a `SpriteBundle`.
@@ -117,7 +117,6 @@ fn add_player_with_sprite_at_pos(mut commands: Commands, initial_player_position
 ```
 
 Then we use that function in `create_app`:
-
 
 ```rust
 pub fn create_app(initial_player_position: Vec3) -> App {
@@ -142,18 +141,18 @@ app.add_systems(Startup, add_player_fn);
 ```
 
 `app.add_systems` expects to receive function that works on `Commands`,
-without any extra parameters. This means that 
+without any extra parameters. This means that
 `app.add_systems(Startup, add_player_with_sprite_at_pos)` would not fit,
 as `add_player_with_sprite_at_pos` expect an initial position as well.
 The technique to make a partially evaluated function we use here is called
 a 'closure': we create a function that only works on `Commands` (i.e.
-the part between vertical bars). 
+the part between vertical bars).
 The closure then uses the `initial_player_position` when needed.
 
 ## `main.rs` after second fix
 
 We want to see the graphics of our game and now is the time!
-To do so, one needs to add a `Camera2dBundle` 
+To do so, one needs to add a `Camera2dBundle`
 and the `DefaultPlugins` like this:
 
 ```rust
@@ -171,14 +170,14 @@ fn main() {
 Running the `main` function allows us to see that our game now
 displays a white dot at the center of the screen:
 
-![](add_player_sprite_2.png)
+![The player is a dot](add_player_sprite_2.png)
 
 Yay!
 
 ## Third test
 
-The player should be more than just a dot. 
-To make a player bigger, one needs to modify 
+The player should be more than just a dot.
+To make a player bigger, one needs to modify
 the scale of its, so-called, transformation.
 The transformation of a sprite, as per Bevy `Transform` class,
 contains the position ('translation'), size ('scale') and more thing.
@@ -198,7 +197,7 @@ fn test_player_has_unity_scale() {
 
 ## Third fix
 
-After `get_player_position`, 
+After `get_player_position`,
 getting the scale of a player is a simple adaptation:
 
 ```rust
@@ -223,7 +222,7 @@ fn test_player_has_a_custom_scale() {
 }
 ```
 
-It is cumbersome to add an extra argument to `create_app` 
+It is cumbersome to add an extra argument to `create_app`
 and we will need to fix this everywhere. Luckily, in the next step,
 we'll refactor this to allow our game to grow more easily.
 
@@ -293,7 +292,7 @@ fn main() {
 
 Running the game now shows a proper player:
 
-![](add_player_sprite_4.png)
+![The player is a big rectangle](add_player_sprite_4.png)
 
 ## Fifth test: prepare refactoring
 
@@ -312,7 +311,7 @@ fn test_create_default_game_parameters() {
 ```
 
 Because it is trivial, I will also show the other tests,
-so one can see that code will be moved to this structure: 
+so one can see that code will be moved to this structure:
 
 ```rust
 #[test]
@@ -428,7 +427,7 @@ fn test_player_has_unity_scale() {
 
 We can now create an `App` with one player sprite,
 where the player has, among others, a position, scale  and a texture.
-When running the `App`, we can see the player. 
+When running the `App`, we can see the player.
 However, we do have tested everything that the App does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite).

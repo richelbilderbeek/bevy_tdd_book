@@ -9,7 +9,7 @@ making the player move on screen.
 
 In `game_parameter.rs`:
 
-```
+```rust
 #[test]
 fn test_initial_player_velocity() {
     assert_eq!(
@@ -65,7 +65,7 @@ fn test_create_default_game_parameters_with_player_velocity() {
 Here we create a default `GameParameters`, then change the specific
 part we want to change:
 
-```
+```rust
 pub fn create_default_game_parameters_with_player_velocity(
     initial_player_velocity: Vec2,
 ) -> GameParameters {
@@ -77,12 +77,12 @@ pub fn create_default_game_parameters_with_player_velocity(
 
 ## Third test
 
-Up until now, a `Player` was an empty structure. 
+Up until now, a `Player` was an empty structure.
 A `Player` was paired with a `SpriteBundle` and things that
 could be put in the `SpriteBundle` were put there:
 the position (called 'translation') and the size (called 'scale').
 
-However, a `SpriteBundle` does not have a velocity. 
+However, a `SpriteBundle` does not have a velocity.
 Hence, we do need to put this into the `Player` class.
 
 In `player.rs` we have put these two tests:
@@ -117,7 +117,7 @@ pub fn create_default_player() -> Player {
 
 ## Fourth test
 
-Now that a `Player` has a velocity, in `app.rs`, 
+Now that a `Player` has a velocity, in `app.rs`,
 we have all that is needed in place to dare to test the player to move:
 
 ```rust
@@ -154,6 +154,7 @@ pub fn create_app(game_parameters: GameParameters) -> App {
     return app;
 }
 ```
+
 Here is how that function looks like:
 
 ```rust
@@ -167,17 +168,17 @@ fn move_player(mut query: Query<(&mut Transform, &Player)>) {
 The argument, a `Query` is generic type taking 0, 1, 2 or more types.
 
 In our case, the `Query` looks for all spawned Components with
-a `Transform` and a `Player`. 
+a `Transform` and a `Player`.
 
 The `add_player_from_parameters` did exactly that:
-it spawned a `SpriteBundle` and a `Player`. However, 
+it spawned a `SpriteBundle` and a `Player`. However,
 a `SpriteBundle` is not a `Component`, but a `Bundle` of `Components`
 instead. A `SpriteBundle` bundles multiple `Components`, among other
 a `Transform`. Hence, we spawned a `Player`, a `Transform` and other
 `SpriteBundle` components. Due to this, a `Query` using
 a `Player` and `Transform` `Component` will give is the info we need here.
 
-```
+```rust
 fn add_player_from_parameters(mut commands: Commands, parameters: &GameParameters) {
     commands.spawn((
         SpriteBundle {
@@ -200,7 +201,7 @@ fn add_player_from_parameters(mut commands: Commands, parameters: &GameParameter
 This is a [function](functions.md) that can be used to print
 all `Components` of an `App`:
 
-```
+```rust
 fn print_all_components_names(app: &App) {
     for c in app.world.components().iter() {
         println!("{}", c.name())
@@ -210,7 +211,7 @@ fn print_all_components_names(app: &App) {
 
 Using it in a test:
 
-```
+```rust
 #[test]
 fn test_print_all_components_names() {
     let mut app = create_app(create_default_game_parameters());
@@ -221,7 +222,7 @@ fn test_print_all_components_names() {
 
 Results in:
 
-```
+```text
 bevy_ecs::schedule::schedule::Schedules
 bevy_ecs::reflect::AppTypeRegistry
 bevy_app::main_schedule::MainScheduleOrder
@@ -240,7 +241,7 @@ bevy_ecs::event::EventUpdateSignal
 ```
 
 Within these, we can find the `Components` of the `SpriteBundle`,
-which are `Sprite`, `Transform`, `GlobalTransform`, `Handle<Image>`, 
+which are `Sprite`, `Transform`, `GlobalTransform`, `Handle<Image>`,
 `Visibility`, `InheritedVisibility` and `ViewVisibility`.
 
 Also, we can found our own `Player` `Component`.
@@ -249,7 +250,7 @@ Also, we can found our own `Player` `Component`.
 
 To see that it works, this is the code we can use:
 
-```
+```rust
 fn main() {
     let mut app = create_app(create_default_game_parameters_with_player_velocity(
         Vec2::new(1.1, 2.2),
@@ -265,7 +266,7 @@ fn main() {
 
 We can indeed see our player move:
 
-![](move_player.png)
+![The player moves](move_player.png)
 
 ## Fifth test: precise movement
 
@@ -296,7 +297,7 @@ this tests becomes obsolete and can/should be deleted.
 ## Conclusion
 
 We can now create an `App` with one player sprite that moves.
-When running the `App`, we can see the player moves. 
+When running the `App`, we can see the player moves.
 We have tested everything that the App does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_move_player](https://github.com/richelbilderbeek/bevy_tdd_book_move_player).

@@ -27,12 +27,12 @@ fn test_get_all_components_names_for_empty_app() {
     let mut app = App::new();
     let v = get_all_components_names(&app);
     assert_eq!(v.len(), 5);
-	/*
-	bevy_ecs::schedule::schedule::Schedules
-	bevy_ecs::reflect::AppTypeRegistry
-	bevy_app::main_schedule::MainScheduleOrder
-	bevy_app::main_schedule::FixedMainScheduleOrder
-	bevy_ecs::event::Events<bevy_app::app::AppExit>
+    /*
+    bevy_ecs::schedule::schedule::Schedules
+    bevy_ecs::reflect::AppTypeRegistry
+    bevy_app::main_schedule::MainScheduleOrder
+    bevy_app::main_schedule::FixedMainScheduleOrder
+    bevy_ecs::event::Events<bevy_app::app::AppExit>
     */
 }
 #[test]
@@ -41,20 +41,19 @@ fn test_get_all_components_names_for_empty_app() {
     app.update();
     let v = get_all_components_names(&app);
     assert_eq!(v.len(), 7);
-	/*
-	bevy_ecs::schedule::schedule::Schedules
-	bevy_ecs::reflect::AppTypeRegistry
-	bevy_app::main_schedule::MainScheduleOrder
-	bevy_app::main_schedule::FixedMainScheduleOrder
-	bevy_ecs::event::Events<bevy_app::app::AppExit>
-	bevy_ecs::schedule::stepping::Stepping
-	bevy_ecs::event::EventUpdateSignal
-	*/
+    /*
+    bevy_ecs::schedule::schedule::Schedules
+    bevy_ecs::reflect::AppTypeRegistry
+    bevy_app::main_schedule::MainScheduleOrder
+    bevy_app::main_schedule::FixedMainScheduleOrder
+    bevy_ecs::event::Events<bevy_app::app::AppExit>
+    bevy_ecs::schedule::stepping::Stepping
+    bevy_ecs::event::EventUpdateSignal
+    */
 }
 ```
 
 ## print_all_components_names
-
 
 ```rust
 fn print_all_components_names(app: &App) {

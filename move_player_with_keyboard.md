@@ -4,7 +4,6 @@ This chapter shows how to move a player with a keyboard.
 
 The idea is to give a player a velocity upon a key press.
 
-
 ## Conclusion
 
 We can now create an `App` with one player sprite that reponds
