@@ -57,8 +57,10 @@ Filename                              |Descriptions
 
 These are people that helped me:
 
-* Periwinkle
-* Shane Celis
+* `kristoff3r`: answered a question on the Bevy Discord channel
+* `Periwinkle`: answered a question on the Bevy Discord channel
+* Shane Celis: helped answer a question on the Bevy Discord channel
+* `Ziven`: helped answer a question on the Bevy Discord channel
 
 ## Footnotes
 
