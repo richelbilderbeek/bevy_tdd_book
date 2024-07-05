@@ -1,6 +1,6 @@
-# Respond a keyboard
+# Respond to a key press
 
-This chapter shows how to respond to a keyboard.
+This chapter shows how to respond to a key press as done on a keyboard.
 
 The idea is to do something upon a key press.
 
@@ -72,7 +72,7 @@ fn test_player_responds_to_key_press() {
 ## Conclusion
 
 We can now create an `App` with something that responds
-to key presses.
+to a key press.
 We have tested everything that the `App` does!
 
-Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keyboard](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keyboard).
+Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress).
