@@ -12,6 +12,7 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)               |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world)                              |[hello_world.md](hello_world.md)                              |Hello world                          |A minimal `App`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_player)                |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player)                                |[add_player.md](add_player.md)                                |Adding a player                      |Using `Components`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite)         |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_player_sprite)                  |[add_player_sprite.md](add_player_sprite.md)                  |Adding a player sprite               |Using closures and `SpriteBundles`
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_add_camera)                |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera)                                |[add_camera.md](add_camera.md)                                |Adding a camera                      |Minimal example, using the `Camera` `Component`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)               |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                              |[move_player.md](move_player.md)                              |Move a player                        |Extending a structure, using a `Query`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard) |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard)  |[move_player_with_keyboard.md](move_player_with_keyboard.md)  |Respond to keyboard                  |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress)       |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keypress/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keypress)              |[respond_to_keypress.md](respond_to_keypress.md)              |Respond to keyboard, minimal example |Minimal example, key press
@@ -24,6 +25,7 @@ flowchart TD
     hello_world[hello_world\nGet started]
     add_player[add_player\nAdd a player]
     add_player_sprite[add_player_sprite\nAdd a player sprite]
+    add_camera[add_camera\nAdd a camara]
     move_player[move_player\nMove a player]
     move_player_keyboard[move_player_keyboard\nMove a player\nusing keyboard]
     move_player_mouse[move_player_mouse\nMove a player\nusing mouse]
@@ -40,6 +42,8 @@ flowchart TD
 
     add_player --> add_player_sprite
     add_player_sprite --> move_player
+    add_player_sprite --> add_camera
+
     move_player --> move_player_keyboard
     move_player --> move_player_mouse
 ```
