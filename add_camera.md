@@ -57,6 +57,20 @@ fn test_game_parameters_use_camera_scale() {
 }
 ```
 
+## Running `main`
+
+```rust
+fn main() {
+    let mut params = create_default_game_parameters();
+    params.initial_camera_scale = 0.2;
+    let mut app = create_app(params);
+    app.add_plugins(DefaultPlugins);
+    app.run();
+}
+```
+
+![The camera has zoomed in](add_camera.png)
+
 ## Conclusion
 
 We can now create an `App` with a camera.
