@@ -17,8 +17,10 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                                      |[move_player.md](move_player.md)                                      |Move the player                      |Extending a structure, using a `Query`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera)                                      |[move_camera.md](move_camera.md)                                      |Move the camera                      |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard)     |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_keyboard)          |[move_player_with_keyboard.md](move_player_with_keyboard.md)          |Respond to keyboard                  |.
-[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress)           |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keypress/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_keypress)                      |[respond_to_keypress.md](respond_to_keypress.md)                      |Respond to keyboard, minimal example |Minimal example, key press
-[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_just_keypressed)    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_just_keypressed/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_just_keypressed)        |[respond_to_just_keypressed.md](respond_to_just_keypressed.md)        |Respond to keyboard, minimal example |Minimal example, key just being pressed
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press)          |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_key_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_key_press)                      |[respond_to_key_press.md](respond_to_key_press.md)                      |Respond to keyboard, minimal example |Minimal example, key press
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_just_key_pressed)   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_just_key_pressed/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_just_key_pressed)        |[respond_to_just_key_pressed.md](respond_to_just_key_pressed.md)        |Respond to keyboard, minimal example |Minimal example, key just being pressed
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move)         |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move)                  |[respond_to_mouse_move.md](respond_to_mouse_move.md)                  |Respond to mouse, minimal example    |Minimal example, mouse move
+
 
 ## Chapter overview
 
@@ -33,15 +35,17 @@ flowchart TD
     move_player_keyboard[move_player_keyboard\nMove the player\nusing keyboard]
     move_player_mouse[move_player_mouse\nMove the player\nusing mouse]
 
-    respond_to_keypress[respond_to_keypress\nRespond to a\nkey press]
-    respond_to_just_keypressed[respond_to_just_keypressed\nRespond to a key\nthat has just been pressed]
+    respond_to_key_press[respond_to_key_press\nRespond to a\nkey press]
+    respond_to_mouse_move[respond_to_mouse_move\nRespond to a\nmouse move]
+    respond_to_just_key_pressed[respond_to_just_key_pressed\nRespond to a key\nthat has just been pressed]
 
     hello_world --> add_player
-    hello_world --> respond_to_keypress
-    hello_world --> respond_to_just_keypressed
+    add_player_sprite --> respond_to_key_press
+    add_player_sprite --> respond_to_just_key_pressed
+    add_player_sprite --> respond_to_mouse_move
 
-    respond_to_keypress --> move_player_keyboard
-    respond_to_just_keypressed --> move_player_keyboard
+    respond_to_key_press --> move_player_keyboard
+    respond_to_just_key_pressed --> move_player_keyboard
 
     add_player --> add_player_sprite
     add_player_sprite --> move_player
@@ -52,6 +56,8 @@ flowchart TD
 
     move_player --> move_player_keyboard
     move_player --> move_player_mouse
+
+    respond_to_mouse_move --> move_player_mouse
 ```
 
 ## Files used by continuous integration scripts

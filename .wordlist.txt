@@ -28,6 +28,4 @@ Celis
 codecov
 Yay
 spacebar
-keypress
-keypressed
 
