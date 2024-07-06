@@ -70,7 +70,8 @@ These are people that helped me:
 
 * `kristoff3r`: answered a question on the Bevy Discord channel
 * `Periwinkle`: answered a question on the Bevy Discord channel
-* Shane Celis: helped answer a question on the Bevy Discord channel
+* `Shane Celis`: helped answer a question on the Bevy Discord channel
+* `Trent (SleepyTea)`: helped answer a question on the Bevy Discord channel
 * `Ziven`: helped answer a question on the Bevy Discord channel
 
 ## Footnotes
