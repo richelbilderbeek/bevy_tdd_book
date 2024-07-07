@@ -48,7 +48,6 @@ fn test_player_is_at_origin() {
 
 ## Fifth test: player position changes upon mouse button press
 
-
 ## Conclusion
 
 We can now create an `App` with something that responds
