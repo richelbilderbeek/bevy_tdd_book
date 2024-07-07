@@ -46,6 +46,7 @@ Due to this, the first chapters do not result in a playable game yet.
 * Always have the fastest solution
 * Explain Rust
 * Explain Bevy
+* Support code of older Bevy version
 
 ## Why ignore the `main` function in `src/main.rs` for code coverage?
 
