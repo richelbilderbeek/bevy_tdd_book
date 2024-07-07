@@ -75,4 +75,4 @@ We can now create an `App` with something that responds
 to a key press.
 We have tested everything that the `App` does!
 
-Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_keypress).
+Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press).
