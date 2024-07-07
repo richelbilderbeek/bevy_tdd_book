@@ -2,7 +2,6 @@
 
 This chapter shows how to add a player sprite with a texture to a game.
 
-
 ## First test
 
 ```rust

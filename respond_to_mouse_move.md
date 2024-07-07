@@ -8,7 +8,7 @@ The idea is to do something upon a mouse move.
 
 A trivial test, to get us to write `create_app`:
 
-```
+```rust
 #[test]
 fn test_can_create_app() {
     create_app();
@@ -28,7 +28,7 @@ fn test_empty_app_has_no_players() {
 
 ## Third test: add a player
 
-```
+```rust
 fn test_create_app_has_a_player() {
     let mut app = create_app();
     app.update();
@@ -38,7 +38,7 @@ fn test_create_app_has_a_player() {
 
 ## Fourth test: player is at the origin
 
-```
+```rust
 fn test_player_is_at_origin() {
     let mut app = create_app();
     app.update();

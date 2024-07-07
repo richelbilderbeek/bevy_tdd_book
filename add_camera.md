@@ -44,7 +44,6 @@ fn test_initial_camera_scale() {
 
 ## Fifth test
 
-
 ```rust
 #[test]
 fn test_game_parameters_use_camera_scale() {
