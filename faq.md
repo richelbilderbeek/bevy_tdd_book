@@ -35,6 +35,7 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ## What are the subgoals of this book?
 
+* Code is tested to work; it can be detected when the code is not working anymore
 * Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`
 * Follow the Rust idiom as suggested by the `clippy` Rust package
