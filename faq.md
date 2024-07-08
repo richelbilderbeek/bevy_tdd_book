@@ -48,6 +48,10 @@ Due to this, the first chapters do not result in a playable game yet.
 * Explain Rust
 * Explain Bevy
 * Support code of older Bevy version
+* Give tips that are of personal preference, 
+  unless described as such
+* Use fancy idioms that are of personal preference,
+  unless described as such
 
 ## Why ignore the `main` function in `src/main.rs` for code coverage?
 
