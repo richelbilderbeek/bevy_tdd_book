@@ -69,6 +69,7 @@ fn test_player_responds_to_mouse_button_press() {
     assert_ne!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
 }
 ```
+
 ## Conclusion
 
 We can now create an `App` with something that responds
