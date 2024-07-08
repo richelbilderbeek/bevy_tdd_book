@@ -48,6 +48,27 @@ fn test_player_is_at_origin() {
 
 ## Fifth test: player position changes upon mouse button press
 
+```rust
+#[test]
+fn test_player_responds_to_mouse_button_press() {
+    let mut app = create_app();
+    assert!(app.is_plugin_added::<InputPlugin>());
+    app.update();
+
+    // Not moved yet
+    assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
+
+    // Press the left mouse button
+    app.world_mut()
+        .resource_mut::<ButtonInput<MouseButton>>()
+        .press(MouseButton::Left);
+
+    app.update();
+
+    // Position must have changed now
+    assert_ne!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
+}
+```
 ## Conclusion
 
 We can now create an `App` with something that responds
