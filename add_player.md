@@ -2,20 +2,11 @@
 
 This chapter shows how to add a player to a game.
 
-The [main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_add_player/blob/master/src/main.rs))
-is identical to the [main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/main.rs))
-used in a 'Hello world' program.
-See [the 'Hello world' chapter](hello_world.md)
-for a more in-depth explanation of 'main.rs'.
-
-The action takes place in [app.rs](https://github.com/richelbilderbeek/bevy_tdd_book_add_player/blob/master/src/app.rs).
-
-## First test
+## First test: an empty `App` has no players
 
 First, we test that there is no player in an empty `App`:
 
 ```rust
-#[test]
 fn test_empty_app_has_no_players() {
     let app = App::new();
     assert_eq!(count_n_players(&app), 0);
@@ -29,75 +20,51 @@ The error will be that `count_n_players` is absent.
 Here is a possible implementation:
 
 ```rust
-#[cfg(test)]
-fn count_n_players(app: &App) -> usize {
-    let mut n = 0;
-    for c in app.world.components().iter() {
-        if c.name().contains("Player") {
-            n += 1;
-        }
-    }
-    return n;
+fn count_n_players(app: &mut App) -> usize {
+    let mut query = app.world_mut().query::<&Player>();
+    return query.iter(app.world_mut()).len();
 }
 ```
 
-The first line, `#[cfg(test)]`, labels the function to be used in debugging only.
+This implementation is a simple definition way to count the
+amount of `Player` components.
 
-In the function it is counted how often the world components' names
-contain (but not match) `Player`.
-An exact match for `Player` would fail,
-as the world components' names include the crate name too,
-for example `add_player::Player`.
-
-This implementation is a simple, but imperfect definition to count the
-amount of `Player` components: it will give incorrect results when another
-component is added that contains the word `Player`, such as `PlayerHealth`.
-However, we should not worry about this: YAGNI ('You Ain't Gonna Need It')
-reminds us that we may never need it, and TDD lets us write new tests when
-we do need this in the future.
-
-## Second test
-
-Now that we can count the number of players,
-there should be a way to add a player.
-After adding a player, there should be one player counted:
+A new problem is that the `App` in the tests needs to be mutable:
 
 ```rust
-#[test]
-fn test_setup_player_adds_a_player() {
+fn test_empty_app_has_no_players() {
     let mut app = App::new();
     assert_eq!(count_n_players(&app), 0);
-    app.add_systems(Startup, setup_player);
-    app.update();
-    assert_eq!(count_n_players(&app), 1);
 }
 ```
 
-The error will be that `setup_player` is absent.
+This is because querying a `World` cannot be done in a read-only way.
+If you know how to do so, please [contribute](CONTRIBUTING.md)!
 
-The line `app.add_systems(Startup, setup_player)` can be converted to English
-as: at the startup phase of the `App`, run the `setup_player` function.
-After this, `app.update()` is needed to actually add it.
+## Second test: create an `App`
+
+This test will force us to write the `create_app` function:
+
+```rust
+fn test_can_create_app() {
+    create_app();
+}
+```
 
 ## Second fix
 
-Here is a possible implementation:
+A simple implementation of `create_app`:
 
 ```rust
-fn setup_player(mut commands: Commands) {
-    commands.spawn(Player);
+pub fn create_app() -> App {
+    let mut app = App::new();
+    app
 }
 ```
 
-This implementation is a simple, but imperfect way to add a player
-to an `App`. In the future, we probably want to show the Player
-on the screen.
-However, we should not worry about this now: TDD lets us write new tests when
-we do need this in the future.
-
 ## Third test
 
-Now that we can count and create players,
+Now that we can count the number of players,
 we can test that our `App` starts with one player:
 
 ```rust
@@ -113,15 +80,21 @@ a player.
 
 ## Third fix
 
-The modifications needed in `create_app` are similar to those in the
-second test:
+Here we add a `Player` `Component`:
 
 ```rust
+#[derive(Component)]
+pub struct Player;
+
 pub fn create_app() -> App {
     let mut app = App::new();
-    app.add_systems(Startup, setup_player);
+    app.add_systems(Startup, add_player);
     app.update();
-    return app;
+    app
+}
+
+fn add_player(mut commands: Commands) {
+    commands.spawn(Player);
 }
 ```
 
