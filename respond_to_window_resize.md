@@ -108,13 +108,15 @@ pub fn create_app() -> App {
 
 Running our `App`:
 
-```
+```rust
 fn main() {
     let mut app = create_app();
     app.add_plugins(DefaultPlugins);
     app.run();
 }
 ```
+
+![The App responds to a window resize](respond_to_window_resize.png)
 
 ## Conclusion
 

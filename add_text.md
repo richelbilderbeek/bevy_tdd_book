@@ -40,6 +40,10 @@ fn test_app_uses_text() {
 }
 ```
 
+## `main.rs`
+
+![The App shows a text](add_text.png)
+
 ## Conclusion
 
 We can now create an `App` with a text.
