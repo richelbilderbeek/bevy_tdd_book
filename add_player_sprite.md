@@ -1,46 +1,183 @@
 # Add player sprite
 
 This chapter shows how to add a player sprite to a game.
-We will also modify `main.rs` to be actually able to see
-our game.
 
-## `main.rs` at start
-
-The initial [main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite/blob/master/src/main.rs))
-is identical to the [main.rs](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world/blob/master/src/main.rs))
-used in a 'Hello world' program.
-See [the 'Hello world' chapter](hello_world.md)
-for a more in-depth explanation of 'main.rs'.
-
-The action takes place in [app.rs](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite/blob/master/src/app.rs).
-
-## First test
-
-For our first test, we assume that a player is created at the origin:
+## First test: an empty `App` has no players
 
 ```rust
-#[test]
-fn test_player_is_at_origin() {
-    let mut app = create_app();
-    app.update();
-    assert_eq!(get_player_coordinat(&mut app), Vec3::new(0.0, 0.0, 0.0));
+fn test_empty_app_has_no_players() {
+    let mut app = App::new();
+    assert_eq!(count_n_players(&mut app), 0);
 }
 ```
-
-Most of the challenge will be to define `get_player_coordinat`.
 
 ## First fix
 
-Here is an implementation of `get_player_coordinat`:
-
 ```rust
-#[cfg(test)]
-fn get_player_coordinat(app: &mut App) -> Vec3 {
-    let mut query = app.world.query::<(&Transform, &Player)>();
-    let (transform, _) = query.single(&app.world);
-    return transform.translation;
+fn count_n_players(app: &mut App) -> usize {
+    let mut query = app.world_mut().query::<(&Transform, &Player)>();
+    return query.iter(app.world_mut()).len();
 }
 ```
+
+## Second test: our `App` has a player
+
+```rust
+fn test_create_app_has_a_player() {
+    let mut app = create_app();
+    app.update();
+    assert_eq!(count_n_players(&mut app), 1);
+}
+```
+
+## Second fix
+
+To store a player, here a `Player` marker component is created:
+
+```rust
+#[derive(Component)]
+pub struct Player;
+```
+
+In `create_app`, an empty `App` is created, after which a player is added:
+
+```rust
+pub fn create_app(initial_player_position: Vec2, initial_player_scale: Vec2) -> App {
+    let mut app = App::new();
+    app.add_systems(Startup, add_player);
+    app
+}
+```
+
+Adding a player in practice is combining a `SpriteBundle` with the
+`Player` marker component:
+
+```rust
+fn add_player(mut commands: Commands) {
+    commands.spawn((
+        SpriteBundle {
+            ..default()
+        },
+        Player,
+    ));
+}
+```
+
+## Third test: a player has a coordinate
+
+```rust
+fn test_get_player_position() {
+    let initial_player_position = Vec2::new(1.2, 3.4);
+    let mut app = create_app(initial_player_position);
+    app.update();
+    assert_eq!(get_player_position(&mut app), initial_player_position);
+}
+```
+
+## Third fix
+
+We use a two-dimensional vector, as we only use the x and y axis:
+
+```rust
+fn get_player_position(app: &mut App) -> Vec2 {
+    let mut query = app.world_mut().query::<(&Transform, &Player)>();
+    let (transform, _) = query.single(app.world());
+    transform.translation.xy()
+}
+```
+
+We need to adept `create_app` to store a player's position:
+
+```rust
+pub fn create_app(initial_player_position: Vec2) -> App {
+    let mut app = App::new();
+    let add_player_fn = move |/* no mut? */ commands: Commands| {
+        add_player(commands, initial_player_position);
+    };
+    app.add_systems(Startup, add_player_fn);
+    app
+}
+```
+
+In `add_player`, the initial player position is stored in the `Transform`.
+The two-dimensional position is extended to have a z-coordinat of zero,
+as Bevy does always use three-dimensional coordinates.
+
+```rust
+fn add_player(mut commands: Commands, initial_player_position: Vec2) {
+    commands.spawn((
+        SpriteBundle {
+            transform: Transform {
+                translation: Vec2::extend(initial_player_position, 0.0),
+                ..default()
+            },
+            ..default()
+        },
+        Player,
+    ));
+}
+```
+
+## Fourth test: a player has a scale
+
+```rust
+fn test_player_has_a_custom_scale() {
+    let initial_player_position = Vec2::new(1.2, 3.4);
+    let initial_player_scale = Vec2::new(64.0, 32.0);
+    let mut app = create_app(initial_player_position, initial_player_scale);
+    app.update();
+    assert_eq!(get_player_scale(&mut app), initial_player_scale);
+}
+```
+
+## Fourth fix
+
+We use a two-dimensional vector, as we only use the x and y axis:
+
+```rust
+fn get_player_scale(app: &mut App) -> Vec2 {
+    let mut query = app.world_mut().query::<(&Transform, &Player)>();
+    let (transform, _) = query.single(app.world());
+    transform.scale.xy()
+}
+```
+
+Rewrite part of `create_app` to allow for a two-dimensional scale:
+
+```rust
+pub fn create_app(initial_player_position: Vec2, initial_player_scale: Vec2) -> App {
+    let mut app = App::new();
+    let add_player_fn = move |/* no mut? */ commands: Commands| {
+        add_player(commands, initial_player_position, initial_player_scale);
+    };
+    app.add_systems(Startup, add_player_fn);
+    app
+}
+```
+
+Store the player scale in the `Transform`.
+The two-dimensional scale is extended to have a z-coordinat of 1.0,
+which is assumed for two-dimensional games.
+
+```rust
+fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_scale: Vec2) {
+    commands.spawn((
+        SpriteBundle {
+            transform: Transform {
+                translation: Vec2::extend(initial_player_position, 0.0),
+                scale: Vec2::extend(initial_player_scale, 1.0),
+                ..default()
+            },
+            ..default()
+        },
+        Player,
+    ));
+}
+```
+
+## OLD STUFF BELOW
+
+
 
 To have a player have a coordinate, texture and all that is needed
 for display, a Bevy `SpriteBundle` is used:
@@ -62,7 +199,7 @@ fn test_player_is_at_custom_place() {
     let initial_coordinat = Vec3::new(1.2, 3.4, 5.6);
     let mut app = create_app(initial_coordinat);
     app.update();
-    assert_eq!(get_player_coordinat(&mut app), initial_coordinat);
+    assert_eq!(get_player_position(&mut app), initial_coordinat);
 }
 ```
 
@@ -80,7 +217,7 @@ as the input argument:
 fn test_player_is_at_origin() {
     let mut app = create_app(Vec3::new(0.0, 0.0, 0.0));
     app.update();
-    assert_eq!(get_player_coordinat(&mut app), Vec3::new(0.0, 0.0, 0.0));
+    assert_eq!(get_player_position(&mut app), Vec3::new(0.0, 0.0, 0.0));
 }
 ```
 
@@ -408,7 +545,7 @@ fn test_player_is_at_custom_place() {
     game_parameters.initial_player_position = initial_coordinat;
     let mut app = create_app(game_parameters);
     app.update();
-    assert_eq!(get_player_coordinat(&mut app), initial_coordinat);
+    assert_eq!(get_player_position(&mut app), initial_coordinat);
 }
 ```
 
