@@ -66,6 +66,16 @@ The `main` is where a game is started.
 When the game is started, one needs user input to close the game.
 TDD needs tests that do not require user input.
 
+## My open questions
+
+* The Bevy example often start functions that
+  add `Components` at the `App` at startup with `setup`, e.g. `setup_camera`. 
+  As the functions **add** things, I use the verb `add` instead, 
+  e.g. `add_camera`. Should I follow the -IMHO- better English description
+  of what the function does (i.e. use `add`), 
+  or should I follow the Bevy social convention
+  to use `setup`?
+
 ## References
 
 * `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
