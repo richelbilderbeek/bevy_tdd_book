@@ -27,7 +27,6 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_window_resize)      |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_window_resize/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_window_resize)            |[respond_to_window_resize.md](respond_to_window_resize.md)    |Respond to mouse, minimal example    |Minimal example, mouse wheel press
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)     |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)          |[show_2d_coordinate_systems.md](show_2d_coordinate_systems.md)    |Respond to mouse, minimal example    |Minimal example, mouse wheel press
 
-
 ## Chapter overview
 
 ```mermaid
