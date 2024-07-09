@@ -24,6 +24,9 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press) |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press)  |[respond_to_mouse_button_press.md](respond_to_mouse_button_press.md)  |Respond to mouse, minimal example    |Minimal example, mouse button press
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn)   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn)      |[respond_to_mouse_wheel_turn.md](respond_to_mouse_wheel_turn.md)      |Respond to mouse, minimal example    |Minimal example, mouse wheel turn
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press)  |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press)    |[respond_to_mouse_wheel_press.md](respond_to_mouse_wheel_press.md)    |Respond to mouse, minimal example    |Minimal example, mouse wheel press
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_window_resize)      |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_window_resize/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_window_resize)            |[respond_to_window_resize.md](respond_to_window_resize.md)    |Respond to mouse, minimal example    |Minimal example, mouse wheel press
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_show_2d_coordinat_systems)     |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinat_systems/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinat_systems)          |[show_2d_coordinat_systems.md](show_2d_coordinat_systems.md)    |Respond to mouse, minimal example    |Minimal example, mouse wheel press
+
 
 ## Chapter overview
 
@@ -44,6 +47,9 @@ flowchart TD
   respond_to_mouse_wheel_press[respond_to_mouse_wheel_press\nRespond to a\nmouse wheel press]
   respond_to_mouse_wheel_turn[respond_to_mouse_wheel_turn\nRespond to a\nmouse wheel turn]
   respond_to_just_key_pressed[respond_to_just_key_pressed\nRespond to a key\nthat has just been pressed]
+  respond_to_window_resize[respond_to_window_resize\nRespond to a window\nthat resizes]
+
+  show_2d_coordinat_systems[show_2d_coordinat_systems\nShow 2D coordinat\nsystems]
 
   hello_world --> add_player
   add_player_sprite --> respond_to_key_press
@@ -52,6 +58,7 @@ flowchart TD
   add_player_sprite --> respond_to_mouse_button_press
   add_player_sprite --> respond_to_mouse_wheel_press
   add_player_sprite --> respond_to_mouse_wheel_turn
+  add_player_sprite --> respond_to_window_resize
 
 
   respond_to_key_press --> move_player_keyboard
@@ -68,6 +75,7 @@ flowchart TD
   move_player --> move_player_mouse
 
   respond_to_mouse_move --> move_player_mouse
+
 ```
 
 ## Files used by continuous integration scripts
