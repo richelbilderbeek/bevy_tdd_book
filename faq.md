@@ -97,7 +97,7 @@ bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 
 ## My open questions
 
-### Use `setup_' or `add_` for functions that add components in the Setup phase?
+### Use `setup_` or `add_` for functions that add components in the Setup phase?
 
 The Bevy example often start functions that
 add `Components` at the `App` at startup with `setup`, e.g. `setup_camera`.
