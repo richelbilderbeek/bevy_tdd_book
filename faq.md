@@ -101,15 +101,15 @@ bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 
 These are the IDEs I tried:
 
-- RustRover
-- Visual Studio Code
+* RustRover
+* Visual Studio Code
 
 My favorite is RustRover.
 RustRover is specialized in Rust development, where Visual Studio Code is a general-purpose IDE, and this is noticeable to me:
 
-- RustRover works better out-of-of-the-box under my operating system (Linux, with Ubuntu 22.04 LTS and Ubuntu 24.04 LTS)
-- RustRover does not take all CPUs when building, so I can work on lightweight other things too
-- RustRover has the keyboard shortcuts setup for the things I need, with combinations that feel natural to me
+* RustRover works better out-of-of-the-box under my operating system (Linux, with Ubuntu 22.04 LTS and Ubuntu 24.04 LTS)
+* RustRover does not take all CPUs when building, so I can work on lightweight other things too
+* RustRover has the keyboard shortcuts setup for the things I need, with combinations that feel natural to me
 
 ## My open questions
 

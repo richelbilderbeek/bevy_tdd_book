@@ -4,7 +4,6 @@ This chapter shows how to move a camera with a keyboard.
 
 The idea is to change the camera's position, rotation and zoom upon a key press.
 
-
 ## First test: an empty `App` has no cameras
 
 ```rust
@@ -25,7 +24,6 @@ fn test_create_app_has_a_moving_camera() {
 ```
 
 ## Third test: our player is at the origin
-
 
 ```rust
 fn test_player_is_at_origin() {
@@ -57,7 +55,6 @@ fn test_camera_is_at_origin() {
 
 ## Sixth test: our camera moves when pressing the arrow up key
 
-
 ```rust
 fn test_camera_moves_when_pressed_up() {
     let mut app = create_app();
@@ -74,7 +71,6 @@ fn test_camera_moves_when_pressed_up() {
 }
 ```
 
-
 ## Seventh test: our camera is not rotated at the start
 
 ```rust
@@ -86,7 +82,6 @@ fn test_camera_is_not_rotated_at_start() {
 ```
 
 ## Eighth test: our camera rotates when pressing the Q key
-
 
 ```rust
 fn test_camera_rotates_when_pressed_q() {
