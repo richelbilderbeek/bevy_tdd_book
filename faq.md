@@ -1,6 +1,8 @@
 # FAQ
 
-## Why this book?
+## Book
+
+### Why this book?
 
 This book started from the question: 'Is Bevy suitable for Test-Driven Development?',
 as the author was looking for a Rust gaming library
@@ -17,7 +19,7 @@ When all facets of a game can be tested with 100% code coverage,
 the question 'Is Bevy suitable for Test-Driven Development?'
 can be answered with a 'yes'.
 
-## What is the intended audience of this book?
+### What is the intended audience of this book?
 
 Intermediate Rust developers: people that have read parts of
 'The Rust programming language' `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`.
@@ -25,7 +27,7 @@ Intermediate Rust developers: people that have read parts of
 This book does not teach Rust, nor Bevy.
 Instead, it shows Test-Driven Development in Rust with Bevy.
 
-## What is the goal of this book?
+### What is the goal of this book?
 
 The goal is to demonstrate how to do Test-Driven Development
 in Rust with Bevy.
@@ -45,7 +47,7 @@ Due to this, the first chapters do not result in a playable game yet.
 * Only call Bevy with `use bevy::prelude::*;`, use full names beyond that (e.g.
   `bevy::input::InputPlugin`) over adding more `use`s
 
-## What are the non-goals of this book?
+### What are the non-goals of this book?
 
 * Have a running game in each chapter
 * Having an interesting game in the end
@@ -58,7 +60,9 @@ Due to this, the first chapters do not result in a playable game yet.
 * Use fancy idioms that are of personal preference,
   unless described as such
 
-## Why ignore the `main` function in `src/main.rs` for code coverage?
+## Technical
+
+### Why ignore the `main` function in `src/main.rs` for code coverage?
 
 Because one cannot test the `main` function.
 
@@ -66,7 +70,7 @@ The `main` is where a game is started.
 When the game is started, one needs user input to close the game.
 TDD needs tests that do not require user input.
 
-## Why don't you use dynamic linking?
+### Why don't you use dynamic linking?
 
 The [Bevy setup](https://bevyengine.org/learn/quick-start/getting-started/setup/)
 recommends to use dynamic linking, as this results in faster build times.
