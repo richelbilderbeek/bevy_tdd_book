@@ -111,7 +111,7 @@ the part between vertical bars).
 The closure then uses the `initial_player_position` when needed.
 
 In `add_player`, the initial player position is stored in the `Transform`.
-The two-dimensional position is extended to have a z-coordinat of zero,
+The two-dimensional position is extended to have a z-coordinate of zero,
 as Bevy does always use three-dimensional coordinates.
 
 ```rust
@@ -167,7 +167,7 @@ pub fn create_app(initial_player_position: Vec2, initial_player_scale: Vec2) -> 
 ```
 
 Store the player scale in the `Transform`.
-The two-dimensional scale is extended to have a z-coordinat of 1.0,
+The two-dimensional scale is extended to have a z-coordinate of 1.0,
 which is assumed for two-dimensional games.
 
 ```rust
