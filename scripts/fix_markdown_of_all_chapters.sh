@@ -24,7 +24,11 @@ for folder in $(ls -d bevy_tdd_book_*)
 do
   cd $folder
   echo "Fixing the markdown in folder ${folder}:"
+  git add .
+  git commit -m "Before fixing markdown style"
   markdownlint "**/*.md" --fix 
+  git add .
+  git commit -m "Fixed markdown style"
   cd ..
 done
 

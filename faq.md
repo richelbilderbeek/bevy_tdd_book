@@ -97,7 +97,7 @@ bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 
 ## My open questions
 
-### Use `setup_' or `add_` for functions that add components in the Setup phase?
+### Use `setup_' or`add_` for functions that add components in the Setup phase?
 
 The Bevy example often start functions that
 add `Components` at the `App` at startup with `setup`, e.g. `setup_camera`.
@@ -118,7 +118,7 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-The idea of `count_n_players` is to count the number of times a (marker) component is present. 
+The idea of `count_n_players` is to count the number of times a (marker) component is present.
 Because we only read (i.e. do not modify the `App`), we can write `let app` (instead of `let mut app`).
 
 Writing this test, however, fails when implementing `count_n_players`.
