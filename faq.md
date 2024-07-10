@@ -68,13 +68,67 @@ TDD needs tests that do not require user input.
 
 ## My open questions
 
-* The Bevy example often start functions that
-  add `Components` at the `App` at startup with `setup`, e.g. `setup_camera`.
-  As the functions **add** things, I use the verb `add` instead,
-  e.g. `add_camera`. Should I follow the -IMHO- better English description
-  of what the function does (i.e. use `add`),
-  or should I follow the Bevy social convention
-  to use `setup`?
+### Use `setup_' or `add_` for functions that add components in the Setup phase?
+
+The Bevy example often start functions that
+add `Components` at the `App` at startup with `setup`, e.g. `setup_camera`.
+As the functions **add** things, I use the verb `add` instead,
+e.g. `add_camera`. Should I follow the -IMHO- better English description
+of what the function does (i.e. use `add`),
+or should I follow the Bevy social convention
+to use `setup`?
+
+### Is there a way to do a Query on a immutable World?
+
+This is a test I would like to be able to write:
+
+```rust
+fn test_empty_app_has_no_players() {
+    let app = App::new();
+    assert_eq!(count_n_players(&app), 0);
+}
+```
+
+The idea of `count_n_players` is to count the number of times a (marker) component is present. 
+Because we only read (i.e. do not modify the `App`), we can write `let app` (instead of `let mut app`).
+
+Writing this test, however, fails when implementing `count_n_players`.
+
+Below is an implementation that I wish I could write, that uses a query on an immutable `World`:
+
+```rust
+// Does not compile, as `query` expects a mutable World
+fn count_n_players(app: &App) -> usize {
+    let query = app.world().query::<&Player>();
+    return query.iter(app.world()).len();
+}
+```
+
+However, a query always needs a mutable World, hence an implementation that works is:
+
+```rust
+// Does not modify the App, I promise!
+fn count_n_players(app: &mut App) -> usize {
+    let mut query = app.world_mut().query::<&Player>();
+    return query.iter(app.world_mut()).len();
+}
+```
+
+I added a comment to illustrate that one needs to promise not to change an object, instead of enforcing it (i.e. not using `mut`).
+
+With an implementation that uses `&mut App`, the test needs to be changed to:
+
+```rust
+fn test_empty_app_has_no_players() {
+    let mut app = App::new();
+    // Does not modify the App, I promise!
+    assert_eq!(count_n_players(&mut app), 0);
+}
+```
+
+Also here I added a comment to illustrate that one needs to promise not to change an object, instead of enforcing it (i.e. not using `mut`).
+
+I assume that also in Bevy I express my promises in Rust, so how do I query something on an immutable `App`?
 
 ## References
 
