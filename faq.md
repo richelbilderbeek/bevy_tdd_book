@@ -66,6 +66,31 @@ The `main` is where a game is started.
 When the game is started, one needs user input to close the game.
 TDD needs tests that do not require user input.
 
+## Why don't you use dynamic linking?
+
+The [Bevy setup](https://bevyengine.org/learn/quick-start/getting-started/setup/)
+recommends to use dynamic linking, as this results in faster build times.
+
+However, when using dynamic linking, I was unable to use the debugger
+in neither Visual Studio Code, nor RustRover.
+
+As I prefer using a debugger over fast build times, I choose to not
+use dynamic linking and -indeed- wait a bit longer for a build to finish.
+
+If you want to use dynamic linking, to a `Cargo.toml` file, change:
+
+```text
+[dependencies]
+bevy = { version = "0.14.0" }
+```
+
+to
+
+```text
+[dependencies]
+bevy = { version = "0.14.0", features = ["dynamic_linking"] }
+```
+
 ## My open questions
 
 * The Bevy example often start functions that
