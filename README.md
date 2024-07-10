@@ -102,7 +102,7 @@ These are people that helped me, in alphabetical order:
 * `kristoff3r`: answered a question on the Bevy Discord channel
 * `Periwinkle`: answered a question on the Bevy Discord channel
 * `Shane Celis`: helped answer multiple questions on the Bevy Discord channel
-* `Trent (SleepyTea)`: helped answer a question on the Bevy Discord channel
+* `Trent (SleepyTea)`: helped answer some questions on the Bevy Discord channel
 * `Ziven`: helped answer a question on the Bevy Discord channel
 
 ## Footnotes
