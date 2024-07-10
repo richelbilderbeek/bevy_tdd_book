@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Check the markdown style of all book chapters
+# Fix the markdown style of all book chapters
 #
 # Usage:
 #
-#   ./scripts/check_markdown_of_all_chapters.sh
+#   ./scripts/fix_markdown_of_all_chapters.sh
 
 if [[ "$PWD" =~ scripts$ ]]; then
     echo "FATAL ERROR."
@@ -13,7 +13,7 @@ if [[ "$PWD" =~ scripts$ ]]; then
     echo " "
     echo "Tip: like this"
     echo " "
-    echo "  ./scripts/check_markdown_of_all_chapters.sh"
+    echo "  ./scripts/fix_markdown_of_all_chapters.sh"
     echo " "
     exit 42
 fi
@@ -23,8 +23,8 @@ cd ..
 for folder in $(ls -d bevy_tdd_book_*)
 do
   cd $folder
-  echo "Checking markdown in folder ${folder}:"
-  markdownlint "**/*.md"
+  echo "Fixing the markdown in folder ${folder}:"
+  markdownlint "**/*.md" --fix 
   cd ..
 done
 
