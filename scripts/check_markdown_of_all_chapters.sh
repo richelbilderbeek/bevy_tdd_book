@@ -20,9 +20,10 @@ fi
 
 cd ..
 
-for folder in ls -d bevy_tdd_book_*
+for folder in $(ls -d bevy_tdd_book_*)
 do
   cd $folder
+  echo "Checking markdown in folder ${folder}:"
   markdownlint "**/*.md"
   cd ..
 done
