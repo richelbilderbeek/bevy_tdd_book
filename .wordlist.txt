@@ -28,4 +28,5 @@ Celis
 codecov
 Yay
 spacebar
+RustRover
 
