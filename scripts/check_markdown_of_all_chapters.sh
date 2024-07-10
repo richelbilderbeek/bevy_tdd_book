@@ -18,4 +18,12 @@ if [[ "$PWD" =~ scripts$ ]]; then
     exit 42
 fi
 
-markdownlint "**/*.md"
+cd ..
+
+for folder in ls -d bevy_tdd_book_*
+do
+  cd $folder
+  markdownlint "**/*.md"
+  cd ..
+done
+
