@@ -105,7 +105,7 @@ These are the IDEs I tried:
 - Visual Studio Code
 
 My favorite is RustRover.
-RustRover is specialized in Rust development, where Visual Studio Code is a general-purpose IDE, and this is noticable to me:
+RustRover is specialized in Rust development, where Visual Studio Code is a general-purpose IDE, and this is noticeable to me:
 
 - RustRover works better out-of-of-the-box under my operating system (Linux, with Ubuntu 22.04 LTS and Ubuntu 24.04 LTS)
 - RustRover does not take all CPUs when building, so I can work on lightweight other things too

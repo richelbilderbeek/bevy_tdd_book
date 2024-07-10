@@ -29,4 +29,8 @@ codecov
 Yay
 spacebar
 RustRover
+LTS
+IDEs
+CPUs
+
 
