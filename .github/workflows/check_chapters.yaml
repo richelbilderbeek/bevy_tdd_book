@@ -26,6 +26,7 @@ jobs:
             install.packages("remotes")
             remotes::install_cran("testthat")
             remotes::install_cran("readr")
+            remotes::install_cran("stringr")
         shell: Rscript {0}
 
       - name: Clone the code of all chapters
