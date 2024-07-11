@@ -83,7 +83,6 @@ for (chapter_filename in chapter_filenames) {
   trimmed_code <- stringr::str_trim(code)
   
   if (all(trimmed_chapter_code %in% trimmed_code)) {
-    message("OK")
     next
   }
   
