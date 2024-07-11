@@ -53,7 +53,7 @@ for (chapter_filename in chapter_filenames) {
   testthat::expect_true(file.exists(chapter_filename))
   
   chapter_name <- stringr::str_sub(chapter_filename, end = -4)
-  print(paste0("chapter: ", chapter_name))
+  cat(paste0("chapter: ", chapter_name))
 
   code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
   testthat::expect_true(file.exists(code_filename))
@@ -62,7 +62,7 @@ for (chapter_filename in chapter_filenames) {
   code <- readr::read_lines(code_filename)
 
   if (length(chapter_code) == 0) {
-    print("No code in chapter yet")
+    cat("No code in chapter yet")
     next
   }
   
@@ -70,11 +70,11 @@ for (chapter_filename in chapter_filenames) {
   trimmed_code <- stringr::str_trim(code)
   
   if (all(trimmed_chapter_code %in% trimmed_code)) {
-    print("OK")
+    cat("OK")
     next
   }
   
-  print(
+  cat(
     paste0(
       "ERROR: ",
       sum(!trimmed_chapter_code %in% trimmed_code), 
@@ -83,6 +83,6 @@ for (chapter_filename in chapter_filenames) {
   )
   missing_lines <- trimmed_chapter_code[!trimmed_chapter_code %in% trimmed_code]
   for (i in seq_along(missing_lines)) {
-    print(paste0(i, ": ", missing_lines[i]))
+    cat(paste0(i, ": ", missing_lines[i]))
   }
 }
