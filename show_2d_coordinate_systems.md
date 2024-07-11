@@ -2,7 +2,7 @@
 
 This application is more of a demonstration.
 
-To make the text nicely formatted, there are many `[something]_to_str` 
+To make the text nicely formatted, there are many `[something]_to_str`
 helper functions, such as:
 
 ```rust
