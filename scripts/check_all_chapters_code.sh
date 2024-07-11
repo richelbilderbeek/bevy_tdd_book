@@ -25,7 +25,6 @@ if [[ "$PWD" =~ scripts$ ]]; then
     exit 42
 fi
 
-# ls *.md | grep -v [A-Z] | grep -v "faq\\.md" 
-Rscript scripts/clone_all_chapters_impl.R
+Rscript scripts/check_all_chapters_code_impl.R
 
 
