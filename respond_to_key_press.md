@@ -46,7 +46,6 @@ fn test_player_is_at_origin() {
 ## Fifth test: pressing spacebar moves the player
 
 ```rust
-#[test]
 fn test_player_responds_to_key_press() {
     let mut app = create_app();
     assert!(app.is_plugin_added::<InputPlugin>());
@@ -56,7 +55,7 @@ fn test_player_responds_to_key_press() {
     assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
 
     // Press the right arrow button, thanks Periwinkle
-    app.world
+    app.world_mut()
         .resource_mut::<ButtonInput<KeyCode>>()
         .press(KeyCode::Space);
 
