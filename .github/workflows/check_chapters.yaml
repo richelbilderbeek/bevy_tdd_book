@@ -1,0 +1,25 @@
+
+# Check links on the 21st day of the month.
+# 21st as the first letter of this repo is the 21st letter in the alphabet.
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 0 21 * *"
+
+name: check chapters
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Clone the code of all chapters
+        run: ./scripts/clone_all_chapters.sh
+
+      - name: Check if all chapters have copy-pasted code from tested repos 
+        run: ./scripts/check_all_chapters_code.sh
+
