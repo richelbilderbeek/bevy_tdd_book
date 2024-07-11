@@ -25,6 +25,6 @@ if [[ "$PWD" =~ scripts$ ]]; then
 fi
 
 # ls *.md | grep -v [A-Z] | grep -v "faq\\.md" 
-rscript scripts/clone_all_chapters_impl.R
+Rscript scripts/clone_all_chapters_impl.R
 
 
