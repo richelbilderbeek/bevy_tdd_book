@@ -37,7 +37,8 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ## What are the subgoals of this book?
 
-* Code is tested to work; it can be detected when the code is not working anymore
+* Code is tested to work; it can be detected when the code is not working 
+  anymore.
 * Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`
 * Follow the Rust idiom as suggested by the `clippy` Rust package
@@ -61,6 +62,13 @@ Due to this, the first chapters do not result in a playable game yet.
   unless described as such
 
 ## Technical
+
+### How is code tested to work?
+
+The CI script 'Check chapters' checks if each line in the chapters can
+be found in the complete projects there were copy-pasted from.
+In that way, if code changes in the projects, the chapters must be updated 
+for the CI scripts to pass.
 
 ### Why ignore the `main` function in `src/main.rs` for code coverage?
 
@@ -94,6 +102,7 @@ to
 [dependencies]
 bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 ```
+
 
 ## About the author
 
