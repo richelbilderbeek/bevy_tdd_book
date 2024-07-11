@@ -80,7 +80,7 @@ a player.
 
 ## Third fix
 
-Here we add a `Player` `Component`:
+Here we add a `Player` component:
 
 ```rust
 #[derive(Component)]
@@ -98,12 +98,17 @@ fn add_player(mut commands: Commands) {
 }
 ```
 
+The `Player` component is called a 'marker component',
+as it has no state (i.e. member variables).
+In the next chapter, you'll see that a marker component
+is used to find other components associated/'marked' with a `Player`.
+In that way, one can distinguish, for example, the position of a player
+versus the position of a camera.
+
 ## Conclusion
 
 We can now create an `App` with one player.
-This one player has no member variables (for example,
-a position) yet.
-When running the `App`, nothing is displayed yet.
-However, we do have tested everything that the App does!
+This one player is a marker component.
+We have tested everything that the App does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player](https://github.com/richelbilderbeek/bevy_tdd_book_add_player).
