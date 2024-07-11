@@ -29,6 +29,14 @@ jobs:
             remotes::install_cran("stringr")
         shell: Rscript {0}
 
+      # We need to work in a folder, so the code of the chapters can become sister folders
+      - name: Create and work in subfolder
+        run: |
+            mkdir working_folder
+            cd working_folder
+            git clone https://github.com/richelbilderbeek/bevy_tdd_book
+            cd bevy_tdd_book
+
       - name: Clone the code of all chapters
         run: ./scripts/clone_all_chapters.sh
 
