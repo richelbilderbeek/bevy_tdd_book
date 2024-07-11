@@ -23,6 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+            install.packages("remotes")
             remotes::install_cran("testthat")
             remotes::install_cran("readr")
         shell: Rscript {0}
