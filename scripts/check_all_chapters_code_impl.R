@@ -55,7 +55,6 @@ for (chapter_filename in chapter_filenames) {
   testthat::expect_true(file.exists(chapter_filename))
   
   chapter_name <- stringr::str_sub(chapter_filename, end = -4)
-  message(paste0("chapter: ", chapter_name))
 
   app_code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
   main_code_filename <- paste0(getwd(), "_", chapter_name, "/src/main.rs")
@@ -69,6 +68,7 @@ for (chapter_filename in chapter_filenames) {
   
   if (length(chapter_code) == 0) {
     all_ok <- FALSE
+    message(paste0("chapter: ", chapter_name))
     message("No code in chapter yet")
     message("  Tip: run the following line:")
     message(" ")
@@ -89,6 +89,7 @@ for (chapter_filename in chapter_filenames) {
   
   all_ok <- FALSE
 
+  message(paste0("chapter: ", chapter_name))
   message(
     paste0(
       "ERROR: ",
