@@ -58,6 +58,13 @@ for (chapter_filename in chapter_filenames) {
 
   app_code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
   main_code_filename <- paste0(getwd(), "_", chapter_name, "/src/main.rs")
+
+  if (!file.exists(app_code_filename)) {
+    stop(paste0("ERROR: cannot find 'app_code_filename': ", app_code_filename))
+  }
+  if (!file.exists(main_code_filename)) {
+    stop(paste0("ERROR: cannot find 'main_code_filename': ", main_code_filename))
+  }
   testthat::expect_true(file.exists(app_code_filename))
   testthat::expect_true(file.exists(main_code_filename))
   
