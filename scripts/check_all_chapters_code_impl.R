@@ -65,7 +65,7 @@ for (chapter_filename in chapter_filenames) {
   chapter_code <- extract_all_code_from_chapter(chapter_filename)
   app_code <- readr::read_lines(app_code_filename)
   main_code <- readr::read_lines(main_code_filename)
-  code <- c(app_code, main_code)
+  code <- c(app_code, main_code, "// ...")
   
   if (length(chapter_code) == 0) {
     all_ok <- FALSE
