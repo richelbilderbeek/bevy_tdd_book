@@ -30,7 +30,7 @@ jobs:
         shell: Rscript {0}
 
       # We need to work in a folder, so the code of the chapters can become sister folders
-      - name: Create and work in subfolder
+      - name: Allow to work in subfolder
         run: |
             mkdir working_folder
             cd working_folder
@@ -38,8 +38,12 @@ jobs:
             cd bevy_tdd_book
 
       - name: Clone the code of all chapters
-        run: ./scripts/clone_all_chapters.sh
+        run: |
+            cd working_folder/bevy_tdd_book
+            ./scripts/clone_all_chapters.sh
 
       - name: Check if all chapters have copy-pasted code from tested repos 
-        run: ./scripts/check_all_chapters_code.sh
+        run: |
+            cd working_folder/bevy_tdd_book
+            ./scripts/check_all_chapters_code.sh
 
