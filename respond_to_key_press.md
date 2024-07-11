@@ -7,7 +7,6 @@ The idea is to do something upon a key press.
 ## First test: create an `App` does something
 
 ```rust
-#[test]
 fn test_can_create_app() {
     create_app();
 }
@@ -16,7 +15,6 @@ fn test_can_create_app() {
 ## Second test: an empty `App` has no players
 
 ```rust
-#[test]
 fn test_empty_app_has_no_players() {
     let app = App::new();
     assert_eq!(count_n_players(&app), 0);
