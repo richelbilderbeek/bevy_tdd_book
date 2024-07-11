@@ -58,6 +58,6 @@ Due to this, our `App` that does nothing can be displayed:
 ## Conclusion
 
 We can now create an `App`. It does nothing.
-However, we do have tested everything (i.e. nothing) it does!
+We do have tested everything (i.e. nothing) it does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)
