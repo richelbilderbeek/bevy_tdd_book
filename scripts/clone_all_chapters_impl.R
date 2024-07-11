@@ -24,7 +24,7 @@ setwd("..")
 pwd <- getwd()
 message(paste0("Current working directory: ", pwd))
 
-if (stringr::str_detect(pwd, "bevy_tdd_book")) {
+if (stringr::str_detect(pwd, "bevy_tdd_book$")) {
   stop(
     "ERROR: present working directory is still 'bevy_tdd_book'.\n", 
     "pwd: ", pwd
