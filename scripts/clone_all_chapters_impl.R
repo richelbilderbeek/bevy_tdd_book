@@ -31,7 +31,7 @@ if (stringr::str_detect(pwd, "bevy_tdd_book$")) {
   )
 }
 
-testthat::expect_false(stringr::str_detect(pwd, "bevy_tdd_book"))
+testthat::expect_false(stringr::str_detect(pwd, "bevy_tdd_book$"))
 
 args <- paste0("clone https://github.com/richelbilderbeek/bevy_tdd_book_", chapter_names)
 
