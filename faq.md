@@ -46,10 +46,10 @@ Due to this, the first chapters do not result in a playable game yet.
 * The first chapters must be simple enough to reasonably be put in one single file
 * Only call Bevy with `use bevy::prelude::*;`, use full names beyond that (e.g.
   `bevy::input::InputPlugin`) over adding more `use`s
+* Have a running program in each chapter
 
 ### What are the non-goals of this book?
 
-* Have a running game in each chapter
 * Having an interesting game in the end
 * Always have the fastest solution
 * Explain Rust
