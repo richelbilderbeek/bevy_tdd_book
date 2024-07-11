@@ -74,6 +74,8 @@ flowchart TD
   add_camera --> move_camera
 
   move_camera -.- |similar\nchapters| move_player
+  move_camera_keyboard -.- |similar\nchapters| move_player_keyboard
+  move_camera_mouse -.- |similar\nchapters| move_player_mouse
   move_camera --> move_camera_keyboard
   move_camera --> move_camera_mouse
 
@@ -81,7 +83,17 @@ flowchart TD
   move_player --> move_player_mouse
 
   respond_to_mouse_move --> move_player_mouse
+  respond_to_mouse_button_press --> move_player_mouse
+  respond_to_mouse_wheel_press --> move_player_mouse
+  respond_to_mouse_wheel_turn --> move_player_mouse
 
+  respond_to_mouse_move --> move_camera_mouse
+  respond_to_mouse_button_press --> move_camera_mouse
+  respond_to_mouse_wheel_press --> move_camera_mouse
+  respond_to_mouse_wheel_turn --> move_camera_mouse
+
+  respond_to_mouse_move --> show_2d_coordinate_systems
+  respond_to_window_resize --> show_2d_coordinate_systems
 ```
 
 ## Files used by continuous integration scripts
