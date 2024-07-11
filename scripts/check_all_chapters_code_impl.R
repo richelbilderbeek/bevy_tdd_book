@@ -57,19 +57,23 @@ for (chapter_filename in chapter_filenames) {
   chapter_name <- stringr::str_sub(chapter_filename, end = -4)
   message(paste0("chapter: ", chapter_name))
 
-  code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
-  testthat::expect_true(file.exists(code_filename))
+  app_code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
+  main_code_filename <- paste0(getwd(), "_", chapter_name, "/src/main.rs")
+  testthat::expect_true(file.exists(app_code_filename))
+  testthat::expect_true(file.exists(main_code_filename))
   
   chapter_code <- extract_all_code_from_chapter(chapter_filename)
-  code <- readr::read_lines(code_filename)
-
+  app_code <- readr::read_lines(app_code_filename)
+  main_code <- readr::read_lines(main_code_filename)
+  code <- c(app_code, main_code)
+  
   if (length(chapter_code) == 0) {
     all_ok <- FALSE
     message("No code in chapter yet")
     message("  Tip: run the following line:")
     message(" ")
     message(
-      paste0("  mousepad ", chapter_filename, " ", code_filename)
+      paste0("  mousepad ", chapter_filename, " ", app_code_filename, " ", main_code_filename)
     )
     message(" ")
     next
@@ -100,7 +104,7 @@ for (chapter_filename in chapter_filenames) {
   message("  Tip: run the following line:")
   message(" ")
   message(
-    paste0("  mousepad ", chapter_filename, " ", code_filename)
+    paste0("  mousepad ", chapter_filename, " ", app_code_filename, " ", main_code_filename)
   )
   message(" ")
 }
