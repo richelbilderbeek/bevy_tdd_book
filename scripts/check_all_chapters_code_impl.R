@@ -63,6 +63,12 @@ for (chapter_filename in chapter_filenames) {
 
   if (length(chapter_code) == 0) {
     message("No code in chapter yet")
+    message("  Tip: run the following line:")
+    message(" ")
+    message(
+      paste0("  mousepad ", chapter_filename, " ", code_filename)
+    )
+    message(" ")
     next
   }
   
@@ -85,4 +91,11 @@ for (chapter_filename in chapter_filenames) {
   for (i in seq_along(missing_lines)) {
     message(paste0(i, ": ", missing_lines[i]))
   }
+  message(" ")
+  message("  Tip: run the following line:")
+  message(" ")
+  message(
+    paste0("  mousepad ", chapter_filename, " ", code_filename)
+  )
+  message(" ")
 }
