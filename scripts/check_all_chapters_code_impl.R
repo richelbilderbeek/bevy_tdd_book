@@ -48,6 +48,8 @@ extract_all_code_from_chapter <- function(chapter_filename) {
   code
 }
 
+all_ok <- TRUE
+
 for (chapter_filename in chapter_filenames) {
   # chapter_filename <- "add_camera.md"
   testthat::expect_true(file.exists(chapter_filename))
@@ -62,6 +64,7 @@ for (chapter_filename in chapter_filenames) {
   code <- readr::read_lines(code_filename)
 
   if (length(chapter_code) == 0) {
+    all_ok <- FALSE
     message("No code in chapter yet")
     message("  Tip: run the following line:")
     message(" ")
@@ -80,6 +83,8 @@ for (chapter_filename in chapter_filenames) {
     next
   }
   
+  all_ok <- FALSE
+
   message(
     paste0(
       "ERROR: ",
@@ -98,4 +103,8 @@ for (chapter_filename in chapter_filenames) {
     paste0("  mousepad ", chapter_filename, " ", code_filename)
   )
   message(" ")
+}
+
+if (!all_ok) {
+  stop("Not all chapters had copy-pasted tested code") 
 }
