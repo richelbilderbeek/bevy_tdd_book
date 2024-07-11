@@ -41,18 +41,23 @@ will require that a user needs to do something to close it.
 Hence, the `main` function 'just' runs the `App`.
 
 ```rust
-use crate::app::create_app;
-mod app;
-
 fn main() {
     let mut app = create_app();
+    app.add_plugins(DefaultPlugins);
     app.run();
 }
 ```
 
+The `main` function does add the Bevy default plugins. 
+These plugins will add functionality to an `App`, such
+as creating a window.
+Due to this, our `App` that does nothing can be displayed:
+
+[An empty Bevy App](hello_world.md)
+
 ## Conclusion
 
-We can now create an `App`. It does nothing and displays nothing.
+We can now create an `App`. It does nothing.
 However, we do have tested everything (i.e. nothing) it does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)
