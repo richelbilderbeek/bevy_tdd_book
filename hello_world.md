@@ -8,7 +8,7 @@ Our first test is about creating a Bevy program.
 The Bevy class for this, is called [`App`](https://docs.rs/bevy/latest/bevy/app/struct.App.html).
 Hence, we call the function to create a Bevy program `create_app`.
 
-Our first trivial test will be if `create_app` does something, 
+Our first trivial test will be if `create_app` does something,
 i.e. it does not crash:
 
 ```rust
@@ -48,7 +48,7 @@ fn main() {
 }
 ```
 
-The `main` function does add the Bevy default plugins. 
+The `main` function does add the Bevy default plugins.
 These plugins will add functionality to an `App`, such
 as creating a window.
 Due to this, our `App` that does nothing can be displayed:
