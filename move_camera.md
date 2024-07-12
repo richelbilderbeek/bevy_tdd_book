@@ -55,7 +55,7 @@ fn test_moving_camera_moves() {
     app.update();
     assert_ne!(get_camera_position(&mut app), Vec2::new(0.0, 0.0));
 }
-
+```
 
 ## `main.rs`
 
