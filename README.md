@@ -12,7 +12,26 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ## Chapters
 
-### Section 1: basics
+### Section 1: introduction
+
+### Section 2: basics
+
+```mermaid
+flowchart TD
+  hello_world[hello_world\nGet started]
+  add_player[add_player\nAdd a player]
+  add_player_sprite[add_player_sprite\nAdd a player sprite]
+  add_camera[add_camera\nAdd a camara]
+  move_camera[move_camera\nMove the camera]
+  move_player[move_player\nMove the player]
+
+  hello_world --> add_player
+  add_player --> add_player_sprite
+  add_player_sprite --> move_player
+  add_player_sprite --> add_camera
+  add_camera --> move_camera
+  move_camera -.- |similar\nchapters| move_player
+```
 
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter [2]                                                           |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-----------------------------------------|------------------
@@ -25,7 +44,7 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                                      |[move_player.md](move_player.md)                                      |Move the player                          |Extending a Component
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera)                                      |[move_camera.md](move_camera.md)                                      |Move the camera                          |Extending a Component
 
-### Section 2: user input
+### Section 3: user input
 
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter [2]                                                           |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-----------------------------------------|------------------
