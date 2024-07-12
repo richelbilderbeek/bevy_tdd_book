@@ -4,6 +4,23 @@ This chapter shows how to move a player with a keyboard.
 
 The idea is to give a player a velocity upon a key press.
 
+## `main.rs`
+
+```rust
+fn main() {
+    let mut app = create_app();
+    let add_camera_fun = |mut commands: Commands| {
+        commands.spawn(Camera2dBundle::default());
+    };
+    app.add_systems(Startup, add_camera_fun);
+
+    assert!(!app.is_plugin_added::<InputPlugin>());
+    app.add_plugins(DefaultPlugins);
+
+    app.run();
+}
+```
+
 ## Conclusion
 
 We can now create an `App` with one player sprite that responds
