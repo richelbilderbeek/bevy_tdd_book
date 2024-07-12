@@ -6,9 +6,9 @@ This chapter shows how to add a player to a game.
 
 First, we test that there is no player in an empty `App`:
 
-```rust
+```
 fn test_empty_app_has_no_players() {
-    let app = App::new();
+    let app = App::new(); // Need mut later
     app.update();
     assert_eq!(count_n_players(&app), 0);
 }
@@ -35,6 +35,7 @@ A new problem is that the `App` in the tests needs to be mutable:
 ```rust
 fn test_empty_app_has_no_players() {
     let mut app = App::new();
+    app.update();
     assert_eq!(count_n_players(&app), 0);
 }
 ```
@@ -105,6 +106,16 @@ In the next chapter, you'll see that a marker component
 is used to find other components associated/'marked' with a `Player`.
 In that way, one can distinguish, for example, the position of a player
 versus the position of a camera.
+
+## `main.rs`
+
+```rust
+fn main() {
+    let mut app = create_app();
+    app.add_plugins(DefaultPlugins);
+    app.run();
+}
+```
 
 ## Conclusion
 
