@@ -22,7 +22,6 @@ fn test_create_app_uses_camera_scale() {
 }
 ```
 
-
 ## Running `main`
 
 ```rust

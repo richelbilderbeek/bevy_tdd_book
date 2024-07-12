@@ -37,7 +37,7 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ## What are the subgoals of this book?
 
-* Code is tested to work; it can be detected when the code is not working 
+* Code is tested to work; it can be detected when the code is not working
   anymore.
 * Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`
@@ -67,7 +67,7 @@ Due to this, the first chapters do not result in a playable game yet.
 
 The CI script 'Check chapters' checks if each line in the chapters can
 be found in the complete projects there were copy-pasted from.
-In that way, if code changes in the projects, the chapters must be updated 
+In that way, if code changes in the projects, the chapters must be updated
 for the CI scripts to pass.
 
 ### Why ignore the `main` function in `src/main.rs` for code coverage?
@@ -102,7 +102,6 @@ to
 [dependencies]
 bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 ```
-
 
 ## About the author
 

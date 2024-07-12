@@ -5,7 +5,6 @@ pressed on a keyboard.
 
 The idea is to do something upon a key just being pressed.
 
-
 ## First test: an empty `App` has no players
 
 ```rust
@@ -15,7 +14,6 @@ fn test_empty_app_has_no_players() {
 }
 
 ```
-
 
 ## Second test: an `App` has a player
 

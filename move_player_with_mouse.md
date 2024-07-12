@@ -88,7 +88,6 @@ fn test_player_responds_to_left_mouse_button_press() {
 
 ## Seventh test: the player has an initial size
 
-
 ```rust
 fn test_player_has_a_custom_scale() {
     let mut app = create_app();

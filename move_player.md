@@ -28,9 +28,7 @@ fn test_can_set_and_get_velocity() {
 }
 ```
 
-
 ## Third test: our `App` has a player
-
 
 ```rust
 fn test_create_app_has_a_player() {
@@ -40,7 +38,6 @@ fn test_create_app_has_a_player() {
     assert_eq!(count_n_players(&mut app), 1);
 }
 ```
-
 
 ## Fourth test: the player starts at the origin
 
@@ -63,7 +60,6 @@ fn test_player_moves() {
     assert_ne!(get_player_position(&mut app), Vec2::new(0.0, 0.0));
 }
 ```
-
 
 ## `main.rs`
 

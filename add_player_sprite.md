@@ -13,7 +13,6 @@ fn test_can_create_app() {
 
 ```
 
-
 ## Second test: an empty `App` has no players
 
 ```rust
@@ -178,7 +177,6 @@ fn get_player_scale(app: &mut App) -> Vec2 {
     transform.scale.xy()
 }
 ```
-
 
 ## `main.rs`
 

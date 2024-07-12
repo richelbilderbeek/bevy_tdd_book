@@ -6,7 +6,7 @@ This chapter shows how to add a player to a game.
 
 First, we test that there is no player in an empty `App`:
 
-```
+```text
 fn test_empty_app_has_no_players() {
     let app = App::new(); // Need mut later
     app.update();
