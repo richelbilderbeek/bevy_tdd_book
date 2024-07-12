@@ -9,6 +9,7 @@ First, we test that there is no player in an empty `App`:
 ```rust
 fn test_empty_app_has_no_players() {
     let app = App::new();
+    app.update();
     assert_eq!(count_n_players(&app), 0);
 }
 ```
@@ -68,10 +69,10 @@ Now that we can count the number of players,
 we can test that our `App` starts with one player:
 
 ```rust
-#[test]
 fn test_create_app_has_a_player() {
-    let app = create_app();
-    assert_eq!(count_n_players(&app), 1);
+    let mut app = create_app();
+    app.update();
+    assert_eq!(count_n_players(&mut app), 1);
 }
 ```
 
