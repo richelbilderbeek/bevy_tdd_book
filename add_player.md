@@ -36,7 +36,7 @@ A new problem is that the `App` in the tests needs to be mutable:
 fn test_empty_app_has_no_players() {
     let mut app = App::new();
     app.update();
-    assert_eq!(count_n_players(&app), 0);
+    assert_eq!(count_n_players(&mut app), 0);
 }
 ```
 
