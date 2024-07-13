@@ -117,7 +117,7 @@ that has been used at least once by tests.
 Code coverage correlates with code quality `[Horgan et al., 1994]`
 `[Del Frate et al., 1995]` and due to this,
 having a code coverage of (around) 100%
-is mandatory to pass a code peer-review by commities such as, for example,
+is mandatory to pass a code peer-review by committies such as, for example,
 rOpenSci `[Ram, 2013]`.
 
 However, one needs to decide upon **what** to test for code coverage.
