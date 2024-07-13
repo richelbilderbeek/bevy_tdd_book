@@ -69,25 +69,25 @@ TDD is known to improve code quality `[Alkaoud & Walcott, 2018][Janzen & Saiedia
 
 Code coverage correlates with code quality `[Horgan et al., 1994]`
 `[Del Frate et al., 1995]`.
-Due to this, having a code coverage of (around) 100% 
-is mandatory to pass a code peer-review by commities such as, for example, 
+Due to this, having a code coverage of (around) 100%
+is mandatory to pass a code peer-review by commities such as, for example,
 rOpenSci `[Ram, 2013]`.
 
 ### Why is Continuous Integration testing important?
 
 Software inherently degrades (for example, due to changes
 in the Bevy library) and we should take that as a given [Beck, 2000].
-Continuous Integration is known to significantly 
+Continuous Integration is known to significantly
 increase the number of bugs exposed and increases
 the speed at which new features are added `[Vasilescu et al., 2015]`.
 
 In the context of this book, a bug can be:
 
-- the code shown in the chapters does not match the tested code 
+* the code shown in the chapters does not match the tested code
   of the repository these are copy-pasted from anymore
-- spelling errors
-- markdown style errors
-- broken links
+* spelling errors
+* markdown style errors
+* broken links
 
 ### Why is using a Rust linter important?
 
@@ -217,16 +217,15 @@ I assume that also in Bevy I express my promises in Rust, so how do I query some
 
 ## References
 
-- `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
-- `[Beck, 2000]` Beck, Kent. Extreme programming explained: embrace change. addison-wesley professional, 2000.
-- `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
-- `[Fang, 2001]` Fang, Xuefen. "Using a coding standard to improve program quality." Proceedings Second Asia-Pacific Conference on Quality Software. IEEE, 2001.
-- `[Horgan et al., 1994]` Horgan, Joseph R., Saul London, and Michael R. Lyu. "Achieving software quality with testing coverage measures." Computer 27.9 (1994): 60-69.
-- `[Janzen & Saiedian, 2006]` Janzen, David S., and Hossein Saiedian. "Test-driven learning: intrinsic integration of testing into the CS/SE curriculum." Acm Sigcse Bulletin 38.1 (2006): 254-258.
-- `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
+* `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
+* `[Beck, 2000]` Beck, Kent. Extreme programming explained: embrace change. addison-wesley professional, 2000.
+* `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
+* `[Fang, 2001]` Fang, Xuefen. "Using a coding standard to improve program quality." Proceedings Second Asia-Pacific Conference on Quality Software. IEEE, 2001.
+* `[Horgan et al., 1994]` Horgan, Joseph R., Saul London, and Michael R. Lyu. "Achieving software quality with testing coverage measures." Computer 27.9 (1994): 60-69.
+* `[Janzen & Saiedian, 2006]` Janzen, David S., and Hossein Saiedian. "Test-driven learning: intrinsic integration of testing into the CS/SE curriculum." Acm Sigcse Bulletin 38.1 (2006): 254-258.
+* `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.
-- `[Klabnik & Nichols, 2023]` Klabnik, Steve, and Carol Nichols.
+* `[Klabnik & Nichols, 2023]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.
-- `[Ram, 2013]` Ram, K. "rOpenSci-open tools for open science." AGU Fall Meeting Abstracts. Vol. 2013. 2013.
-- `[Vasilescu et al., 2015]` Vasilescu, Bogdan, et al. "Quality and productivity outcomes relating to continuous integration in GitHub." Proceedings of the 2015 10th joint meeting on foundations of software engineering. 2015.
-
+* `[Ram, 2013]` Ram, K. "rOpenSci-open tools for open science." AGU Fall Meeting Abstracts. Vol. 2013. 2013.
+* `[Vasilescu et al., 2015]` Vasilescu, Bogdan, et al. "Quality and productivity outcomes relating to continuous integration in GitHub." Proceedings of the 2015 10th joint meeting on foundations of software engineering. 2015.
