@@ -64,6 +64,10 @@ fn test_player_responds_to_just_key_press() {
 }
 ```
 
+## `main.rs`
+
+![The App in action](respond_to_just_key_pressed.png)
+
 ## Conclusion
 
 We can now create an `App` with something that responds
