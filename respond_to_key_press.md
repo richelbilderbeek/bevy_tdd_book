@@ -66,6 +66,22 @@ fn test_player_responds_to_key_press() {
 }
 ```
 
+## `main.rs`
+
+```rust
+fn main() {
+    let mut app = create_app();
+    let add_camera_fun = |mut commands: Commands| {
+        commands.spawn(Camera2dBundle::default());
+    };
+    app.add_systems(Startup, add_camera_fun);
+    app.add_plugins(DefaultPlugins);
+    app.run();
+}
+```
+
+![The App in action](respond_to_key_press.png)
+
 ## Conclusion
 
 We can now create an `App` with something that responds
