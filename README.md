@@ -8,7 +8,7 @@
 Start of a book [1] called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
-* [FAQ](faq.md)
+- [FAQ](faq.md)
 
 ## Chapters
 
@@ -169,20 +169,21 @@ Filename                              |Descriptions
 
 ## Contributors
 
-These are people that helped me, in alphabetical order:
+These are people and websites that helped me, in alphabetical order:
 
-* [`inodentry`](https://github.com/inodentry) for starting [the Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook), as well as its contributors
-* `kristoff3r`: answered a question on the Bevy Discord channel
-* `Periwinkle`: answered a question on the Bevy Discord channel
-* `Shane Celis`: helped answer multiple questions on the Bevy Discord channel
-* `Trent (SleepyTea)`: helped answer some questions on the Bevy Discord channel
-* `Ziven`: helped answer a question on the Bevy Discord channel
+- [https://www.rustacean.net/](https://www.rustacean.net/) for providing [ferris.png](ferris.png)
+- [`inodentry`](https://github.com/inodentry) for starting [the Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook), as well as its contributors
+- `kristoff3r`: answered a question on the Bevy Discord channel
+- `Periwinkle`: answered a question on the Bevy Discord channel
+- `Shane Celis`: helped answer multiple questions on the Bevy Discord channel
+- `Trent (SleepyTea)`: helped answer some questions on the Bevy Discord channel
+- `Ziven`: helped answer a question on the Bevy Discord channel
 
 ## Footnotes
 
-* [1] 'book' is an overstatement for now: it is just a collection of notes
-* [2] There is no chapter numbering yet
+- [1] 'book' is an overstatement for now: it is just a collection of notes
+- [2] There is no chapter numbering yet
 
 ## Links
 
-* [Blog post 'Test-Driven Development in Rust Game Development with Bevy' by Edgardo Carreras](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)
+- [Blog post 'Test-Driven Development in Rust Game Development with Bevy' by Edgardo Carreras](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)
