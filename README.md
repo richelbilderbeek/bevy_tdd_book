@@ -14,6 +14,8 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ### Section 1: introduction
 
+- [introduction.md](introduction.md)
+
 ### Section 2: basics
 
 ```mermaid
