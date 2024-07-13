@@ -70,7 +70,7 @@ TDD is known to improve code quality `[Alkaoud & Walcott, 2018][Janzen & Saiedia
 Code coverage correlates with code quality `[Horgan et al., 1994]`
 `[Del Frate et al., 1995]`.
 Due to this, having a code coverage of (around) 100%
-is mandatory to pass a code peer-review by committies such as, for example,
+is mandatory to pass a code peer-review by committees such as, for example,
 rOpenSci `[Ram, 2013]`.
 
 ### Why is Continuous Integration testing important?
