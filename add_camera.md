@@ -13,12 +13,12 @@ fn test_empty_app_has_no_cameras() {
 ## Second test
 
 ```rust
-fn test_create_app_uses_camera_size() {
-    let initial_camera_size = 1.2;
-    let mut app = create_app(initial_camera_size);
+fn test_create_app_uses_camera_scale() {
+    let initial_camera_scale = 1.2;
+    let mut app = create_app(initial_camera_scale);
     app.update();
     assert_eq!(count_n_cameras(&mut app), 1);
-    assert_eq!(get_camera_size(&mut app), initial_camera_size);
+    assert_eq!(get_camera_scale(&mut app), initial_camera_scale);
 }
 ```
 
@@ -26,8 +26,8 @@ fn test_create_app_uses_camera_size() {
 
 ```rust
 fn main() {
-    let initial_camera_size = 0.2;
-    let mut app = create_app(initial_camera_size);
+    let initial_camera_scale = 0.2;
+    let mut app = create_app(initial_camera_scale);
     app.add_plugins(DefaultPlugins);
     app.run();
 }
