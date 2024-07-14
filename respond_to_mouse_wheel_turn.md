@@ -21,8 +21,8 @@ Forces us to write `count_n_players`.
 
 ```rust
 fn test_empty_app_has_no_players() {
-    let app = App::new();
-    assert_eq!(count_n_players(&app), 0);
+    let mut app = App::new();
+    assert_eq!(count_n_players(&mut app), 0);
 }
 ```
 
@@ -32,7 +32,7 @@ fn test_empty_app_has_no_players() {
 fn test_create_app_has_a_player() {
     let mut app = create_app();
     app.update();
-    assert_eq!(count_n_players(&app), 1);
+    assert_eq!(count_n_players(&mut app), 1);
 }
 ```
 
