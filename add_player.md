@@ -8,6 +8,8 @@ This chapter introduces:
 - `mut`-correctness
 - A Bevy `Query`
 - A Bevy `Component`
+- A marker component
+- A Bevy `System`
 
 ## First test: an empty `App` has no players
 
@@ -94,7 +96,7 @@ fn test_empty_app_has_no_players() {
 ## Second test: our `App` has one player
 
 Now that we can count the number of players,
-we can test that our `App` starts with one player:
+we can test that an `App` we create has one player:
 
 ```rust
 fn test_create_app_has_a_player() {
@@ -109,30 +111,79 @@ a player.
 
 ## Third fix
 
-Here we add a `Player` component:
+To add a `Player` object to our `App` we need to:
+
+- Define a `Player` component
+- Add it to our `App`
+
+Here define a `Player` component:
 
 ```rust
 #[derive(Component)]
 pub struct Player;
+```
 
+In English this would read: 'a player is a component'.
+To be more precise is that the `Player` structure is an extension
+of the Bevy `Component` structure.
+
+A Bevy `Component` is a structure that is stored in a Bevy `World`.
+Components are the workhorse unit in Bevy: you'll create components,
+query components and -later- you'll bundle components.
+
+There are two types of Bevy `Components`:
+
+- marker components
+- regular components
+
+Marker components are Bevy `Component`s that are extended with only a name,
+where a regular components extends a Bevy `Component` with a name and
+member variables. The `Player` structure above is a marker component.
+
+Adding our `Player` `Component` to our `App` takes two steps:
+
+- Write an `add_player` function
+- Let the `create_app` function call the `add_player` function
+
+Here is the `create_app` function:
+
+```rust
 pub fn create_app() -> App {
     let mut app = App::new();
     app.add_systems(Startup, add_player);
-    app.update();
     app
 }
+```
 
+The new line introduces us to the Bevy `System`
+and reads as 'in the startup phase, run the `add_player` function.
+
+In Bevy, a 'system' is -loosely phrased- 'something that works on the world'.
+This 'something' is typically a function. When creating a Bevy `App`,
+one puts in:
+
+- components: things to work on, typically structures
+- systems: things that work on the components, typically functions
+- plugins: a set of components and systems with a shared purpose. 
+  More on these later
+
+Our `create_app` functions adds a system, called `add_player`,
+that is run at the startup phase of the application,
+then returns our `App`.
+
+Here is the `add_player` function:
+
+
+```rust
 fn add_player(mut commands: Commands) {
     commands.spawn(Player);
 }
 ```
 
-The `Player` component is called a 'marker component',
-as it has no state (i.e. member variables).
-In the next chapter, you'll see that a marker component
-is used to find other components associated/'marked' with a `Player`.
-In that way, one can distinguish, for example, the position of a player
-versus the position of a camera.
+This function has some magic to it: it seems to works on a Bevy `Commands`
+structure and calls a member function called `spawn` on it.
+The function argument `Commands` is something one has access to
+when adding a Bevy system.
 
 ## `main.rs`
 
