@@ -2,8 +2,12 @@
 
 This chapter is about creating a minimal Bevy program that is completely tested.
 
-The goal of this chapter is to introduce Test-Driven Development ('TDD')
-and code coverage.
+This chapter introduces:
+
+- The Bevy `App`
+- Test-Driven Development ('TDD')
+- Code coverage.
+- The `create_app` function
 
 ## Test-Driven Development
 

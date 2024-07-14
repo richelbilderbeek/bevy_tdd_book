@@ -38,7 +38,7 @@ Instead, it shows Test-Driven Development in Rust with Bevy.
 The goal is to demonstrate how to do Test-Driven Development
 in Rust with Bevy.
 
-Each chapter introduces as much new concepts as needs,
+Each chapter introduces as much new concepts as needed,
 which is as few as possible.
 Due to this, the first chapters do not result in a playable game yet.
 
