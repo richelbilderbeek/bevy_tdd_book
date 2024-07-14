@@ -164,7 +164,7 @@ one puts in:
 
 - components: things to work on, typically structures
 - systems: things that work on the components, typically functions
-- plugins: a set of components and systems with a shared purpose. 
+- plugins: a set of components and systems with a shared purpose.
   More on these later
 
 Our `create_app` functions adds a system, called `add_player`,
@@ -172,7 +172,6 @@ that is run at the startup phase of the application,
 then returns our `App`.
 
 Here is the `add_player` function:
-
 
 ```rust
 fn add_player(mut commands: Commands) {
