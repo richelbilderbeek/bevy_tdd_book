@@ -4,7 +4,6 @@ This chapter shows how to respond to a mouse wheel press.
 
 The idea is to do something upon a mouse wheel press.
 
-
 ## First test: an empty `App` has no players
 
 Forces us to write `count_n_players`.
