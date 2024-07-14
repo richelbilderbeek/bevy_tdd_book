@@ -89,10 +89,10 @@ fn test_player_responds_to_left_mouse_button_press() {
 ## Seventh test: the player has an initial size
 
 ```rust
-fn test_player_has_a_custom_scale() {
+fn test_player_has_a_custom_size() {
     let mut app = create_app();
     app.update();
-    assert_eq!(get_player_scale(&mut app), Vec2::new(64.0, 32.0));
+    assert_eq!(get_player_size(&mut app), Vec2::new(64.0, 32.0));
 }
 ```
 
@@ -105,7 +105,7 @@ fn test_player_responds_to_mouse_wheel_turn() {
     app.update();
 
     // Not moved yet
-    assert_eq!(get_player_scale(&mut app), Vec2::new(64.0, 32.0));
+    assert_eq!(get_player_size(&mut app), Vec2::new(64.0, 32.0));
 
     // Scroll the mouse
     app.world_mut().send_event(bevy::input::mouse::MouseWheel {
@@ -117,7 +117,7 @@ fn test_player_responds_to_mouse_wheel_turn() {
     app.update();
 
     // Moved now
-    assert_ne!(get_player_scale(&mut app), Vec2::new(64.0, 32.0));
+    assert_ne!(get_player_size(&mut app), Vec2::new(64.0, 32.0));
 }
 ```
 

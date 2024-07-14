@@ -36,10 +36,10 @@ fn test_player_is_at_origin() {
 ## Fourth test: our player has a proper size
 
 ```rust
-fn test_player_has_a_custom_scale() {
+fn test_player_has_a_custom_size() {
     let mut app = create_app();
     app.update();
-    assert_eq!(get_player_scale(&mut app), Vec2::new(64.0, 32.0));
+    assert_eq!(get_player_size(&mut app), Vec2::new(64.0, 32.0));
 }
 ```
 

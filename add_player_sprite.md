@@ -7,8 +7,8 @@ This chapter shows how to add a player sprite to a game.
 ```rust
 fn test_can_create_app() {
     let initial_player_position = Vec2::new(0.0, 0.0);
-    let initial_player_scale = Vec2::new(64.0, 32.0);
-    create_app(initial_player_position, initial_player_scale);
+    let initial_player_size = Vec2::new(64.0, 32.0);
+    create_app(initial_player_position, initial_player_size);
 }
 
 ```
@@ -38,8 +38,8 @@ fn count_n_players(app: &mut App) -> usize {
 ```rust
 fn test_create_app_has_a_player() {
     let initial_player_position = Vec2::new(0.0, 0.0);
-    let initial_player_scale = Vec2::new(64.0, 32.0);
-    let mut app = create_app(initial_player_position, initial_player_scale);
+    let initial_player_size = Vec2::new(64.0, 32.0);
+    let mut app = create_app(initial_player_position, initial_player_size);
     app.update();
     assert_eq!(count_n_players(&mut app), 1);
 }
@@ -58,10 +58,10 @@ pub struct Player;
 In `create_app`, an empty `App` is created, after which a player is added:
 
 ```rust
-pub fn create_app(initial_player_position: Vec2, initial_player_scale: Vec2) -> App {
+pub fn create_app(initial_player_position: Vec2, initial_player_size: Vec2) -> App {
     let mut app = App::new();
     let add_player_fn = move |commands: Commands| {
-        add_player(commands, initial_player_position, initial_player_scale);
+        add_player(commands, initial_player_position, initial_player_size);
     };
     app.add_systems(Startup, add_player_fn);
     app
@@ -72,12 +72,12 @@ Adding a player in practice is combining a `SpriteBundle` with the
 `Player` marker component:
 
 ```rust
-fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_scale: Vec2) {
+fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_size: Vec2) {
     commands.spawn((
         SpriteBundle {
             transform: Transform {
                 translation: Vec2::extend(initial_player_position, 0.0),
-                scale: Vec2::extend(initial_player_scale, 1.0),
+                size: Vec2::extend(initial_player_size, 1.0),
                 ..default()
             },
             ..default()
@@ -92,8 +92,8 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 ```rust
 fn test_get_player_position() {
     let initial_player_position = Vec2::new(1.2, 3.4);
-    let initial_player_scale = Vec2::new(64.0, 32.0);
-    let mut app = create_app(initial_player_position, initial_player_scale);
+    let initial_player_size = Vec2::new(64.0, 32.0);
+    let mut app = create_app(initial_player_position, initial_player_size);
     app.update();
     assert_eq!(get_player_position(&mut app), initial_player_position);
 }
@@ -114,10 +114,10 @@ fn get_player_position(app: &mut App) -> Vec2 {
 We need to adept `create_app` to store a player's position:
 
 ```rust
-pub fn create_app(initial_player_position: Vec2, initial_player_scale: Vec2) -> App {
+pub fn create_app(initial_player_position: Vec2, initial_player_size: Vec2) -> App {
     // ...
     let add_player_fn = move |commands: Commands| {
-        add_player(commands, initial_player_position, initial_player_scale);
+        add_player(commands, initial_player_position, initial_player_size);
     };
     // ...
 }
@@ -139,12 +139,12 @@ The two-dimensional position is extended to have a z-coordinate of zero,
 as Bevy does always use three-dimensional coordinates.
 
 ```rust
-fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_scale: Vec2) {
+fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_size: Vec2) {
     commands.spawn((
         SpriteBundle {
             transform: Transform {
                 translation: Vec2::extend(initial_player_position, 0.0),
-                scale: Vec2::extend(initial_player_scale, 1.0),
+                size: Vec2::extend(initial_player_size, 1.0),
                 ..default()
             },
             ..default()
@@ -154,15 +154,15 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 }
 ```
 
-## Fifth test: a player has a scale
+## Fifth test: a player has a size
 
 ```rust
-fn test_player_has_a_custom_scale() {
+fn test_player_has_a_custom_size() {
     let initial_player_position = Vec2::new(1.2, 3.4);
-    let initial_player_scale = Vec2::new(64.0, 32.0);
-    let mut app = create_app(initial_player_position, initial_player_scale);
+    let initial_player_size = Vec2::new(64.0, 32.0);
+    let mut app = create_app(initial_player_position, initial_player_size);
     app.update();
-    assert_eq!(get_player_scale(&mut app), initial_player_scale);
+    assert_eq!(get_player_size(&mut app), initial_player_size);
 }
 ```
 
@@ -171,10 +171,10 @@ fn test_player_has_a_custom_scale() {
 We use a two-dimensional vector, as we only use the x and y axis:
 
 ```rust
-fn get_player_scale(app: &mut App) -> Vec2 {
+fn get_player_size(app: &mut App) -> Vec2 {
     let mut query = app.world_mut().query::<(&Transform, &Player)>();
     let (transform, _) = query.single(app.world());
-    transform.scale.xy()
+    transform.size.xy()
 }
 ```
 
@@ -183,8 +183,8 @@ fn get_player_scale(app: &mut App) -> Vec2 {
 ```rust
 fn main() {
     let initial_player_position = Vec2::new(0.0, 0.0);
-    let initial_player_scale = Vec2::new(64.0, 32.0);
-    let mut app = create_app(initial_player_position, initial_player_scale);
+    let initial_player_size = Vec2::new(64.0, 32.0);
+    let mut app = create_app(initial_player_position, initial_player_size);
     let add_camera_fun = |mut commands: Commands| {
         commands.spawn(Camera2dBundle::default());
     };
@@ -196,7 +196,7 @@ fn main() {
 
 ![The player is a big rectangle](add_player_sprite_4.png)
 
-Setting `initial_player_scale` to the default `(1.0, 1.0)` will result in the player
+Setting `initial_player_size` to the default `(1.0, 1.0)` will result in the player
 being 1x1 pixels big:
 
 ![The player is a dot](add_player_sprite_2.png)
@@ -204,7 +204,7 @@ being 1x1 pixels big:
 ## Conclusion
 
 We can now create an `App` with one player sprite,
-where the player has, among others, a position and scale.
+where the player has, among others, a position and size.
 When running the `App`, we can see the player.
 We have tested everything that the App does!
 
