@@ -42,7 +42,7 @@ fn test_create_app_has_a_player() {
 fn test_player_is_at_origin() {
     let mut app = create_app();
     app.update();
-    assert_eq!(get_player_position(&mut app), Vec3::new(0.0, 0.0, 0.0));
+    assert_eq!(get_player_position(&mut app), Vec2::new(0.0, 0.0));
 }
 ```
 
@@ -55,11 +55,11 @@ fn test_player_responds_to_mouse_wheel_turn() {
     app.update();
 
     // Not moved yet
-    assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
+    assert_eq!(Vec2::new(0.0, 0.0), get_player_position(&mut app));
 
     // Scroll the mouse
     app.world_mut().send_event(bevy::input::mouse::MouseWheel {
-        unit: MouseScrollUnit::Line,
+        unit: bevy::input::mouse::MouseScrollUnit::Line,
         x: 10.0,
         y: 10.0,
         window: Entity::PLACEHOLDER,
@@ -67,7 +67,7 @@ fn test_player_responds_to_mouse_wheel_turn() {
     app.update();
 
     // Moved now
-    assert_ne!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
+    assert_ne!(Vec2::new(0.0, 0.0), get_player_position(&mut app));
 }
 ```
 

@@ -10,7 +10,6 @@ fn test_can_create_app() {
     let initial_player_size = Vec2::new(64.0, 32.0);
     create_app(initial_player_position, initial_player_size);
 }
-
 ```
 
 ## Second test: an empty `App` has no players
@@ -18,10 +17,8 @@ fn test_can_create_app() {
 ```rust
 fn test_empty_app_has_no_players() {
     let mut app = App::new();
-    app.update();
     assert_eq!(count_n_players(&mut app), 0);
 }
-
 ```
 
 ## Second fix
@@ -77,7 +74,7 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
         SpriteBundle {
             transform: Transform {
                 translation: Vec2::extend(initial_player_position, 0.0),
-                size: Vec2::extend(initial_player_size, 1.0),
+                scale: Vec2::extend(initial_player_size, 1.0),
                 ..default()
             },
             ..default()
@@ -144,7 +141,7 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
         SpriteBundle {
             transform: Transform {
                 translation: Vec2::extend(initial_player_position, 0.0),
-                size: Vec2::extend(initial_player_size, 1.0),
+                scale: Vec2::extend(initial_player_size, 1.0),
                 ..default()
             },
             ..default()
@@ -174,7 +171,7 @@ We use a two-dimensional vector, as we only use the x and y axis:
 fn get_player_size(app: &mut App) -> Vec2 {
     let mut query = app.world_mut().query::<(&Transform, &Player)>();
     let (transform, _) = query.single(app.world());
-    transform.size.xy()
+    transform.scale.xy()
 }
 ```
 
