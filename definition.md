@@ -1,6 +1,9 @@
 # Definitions
 
-Please help me improve these definitions!
+These definitions assume you know Rust.
+
+Please help me improve these definitions, especially with
+references to the literature.
 
 Term     |Definition
 ---------|-------------------------------------------------
