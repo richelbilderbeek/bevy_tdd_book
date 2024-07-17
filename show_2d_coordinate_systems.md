@@ -7,7 +7,10 @@ helper functions, such as:
 
 ```rust
 fn test_coordinate_to_str() {
-    assert_eq!(coordinate_to_str(Vec2::new(1.2, 3.4)), String::from("(1.2, 3.4)"))
+    assert_eq!(
+        coordinate_to_str(Vec2::new(1.2, 3.4)),
+        String::from("(1.2, 3.4)")
+    )
 }
 ```
 

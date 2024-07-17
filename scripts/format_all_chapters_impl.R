@@ -42,6 +42,7 @@ for (chapter_name in chapter_names) {
   system2(command = "cargo", args = "fmt")  
   system2(command = "git", args = "add .")  
   system2(command = "git", args = "commit -m 'Use cargo fmt'")  
+  system2(command = "git", args = "push")  
   setwd(superfolder_path)
 }
 
