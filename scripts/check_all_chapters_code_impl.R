@@ -9,6 +9,9 @@ if (!stringr::str_detect(pwd, "bevy_tdd_book$")) {
   }
 }
 
+source("scripts/helper_functions.R")
+
+/*
 get_all_chapter_filenames <- function() {
   all_md_files <- list.files(pattern = "md")
   md_files <- stringr::str_subset(all_md_files, "[A-Z]", negate = TRUE) 
@@ -18,6 +21,7 @@ get_all_chapter_filenames <- function() {
   md_files <- stringr::str_subset(md_files, "functions.md", negate = TRUE) 
   md_files
 }
+*/
 
 chapter_filenames <- get_all_chapter_filenames()
 
