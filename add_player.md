@@ -202,11 +202,9 @@ We can now create an `App` with one player.
 
 We encountered all elements of the ECS paradigm that Bevy follows:
 
-- Entity: a Component in action. 
-  Other languages would use the terms 'object' or 'instance'
-- Component: the blueprint of something that can be used a in Bevy world.
-  Other languages would use the term 'structure definition' or 'class definition'
-- System: typically a function that works on the Entities in the Bevy world.
+- Entity: an instance of a Component
+- Component: a structure definition of something that can be used a in Bevy world
+- System: a function that works on a Bevy world
 
 We have tested everything that the App does!
 
