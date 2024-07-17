@@ -10,6 +10,7 @@ This chapter introduces:
 - A Bevy `Component`
 - A marker component
 - A Bevy `System`
+- A Bevy entity
 
 ## First test: an empty `App` has no players
 
@@ -69,9 +70,9 @@ amount of `Player` components. Here I break down the implementation:
   the `World` structure holds all things that are part of the world
   in your game.
 - `.query::<&Player>()` reads as '(from a world, ) get all the players'.
-  To be precise: we queried the Bevy world for all objects of the `Player`
-  `Component`. We will explain components
-  later, for now, the code `Player` is related to a
+  To be precise: we queried the Bevy world for all entities of the `Player`
+  `Component`. We will explain entities and components
+  later; for now, the code `Player` is related to a
   component (whatever that is) for a player.
 - `query.iter(app.world_mut())` reads as 'iterate over the
   answers of our question (applied to our world)'
@@ -109,7 +110,7 @@ fn test_create_app_has_a_player() {
 This will fail, as `create_app` does not create an `App` with
 a player.
 
-## Third fix
+## Second fix
 
 To add a `Player` object to our `App` we need to:
 
@@ -127,9 +128,10 @@ In English this would read: 'a player is a component'.
 To be more precise is that the `Player` structure is an extension
 of the Bevy `Component` structure.
 
-A Bevy `Component` is a structure that is stored in a Bevy `World`.
+A Bevy `Component` is a blueprint for thing that 
+can be stored in a Bevy `World`.
 Components are the workhorse unit in Bevy: you'll create components,
-query components and -later- you'll bundle components.
+query for components and -later- you'll bundle components.
 
 There are two types of Bevy `Components`:
 
@@ -159,13 +161,7 @@ The new line introduces us to the Bevy `System`
 and reads as 'in the startup phase, run the `add_player` function.
 
 In Bevy, a 'system' is -loosely phrased- 'something that works on the world'.
-This 'something' is typically a function. When creating a Bevy `App`,
-one puts in:
-
-- components: things to work on, typically structures
-- systems: things that work on the components, typically functions
-- plugins: a set of components and systems with a shared purpose.
-  More on these later
+This 'something' is typically a function. 
 
 Our `create_app` functions adds a system, called `add_player`,
 that is run at the startup phase of the application,
@@ -179,12 +175,18 @@ fn add_player(mut commands: Commands) {
 }
 ```
 
-This function has some magic to it: it seems to works on a Bevy `Commands`
-structure and calls a member function called `spawn` on it.
-The function argument `Commands` is something one has access to
-when adding a Bevy system.
+This function has some magic to it: 
+- `mut commands: Commands`: this function argument is provided by Bevy.
+  The `Commands` structure allows on the modify the Bevy world.
+- `commands.spawn(Player add the entity of type Player to the world
+
+After having modified `create_app`, added the `Player` `Component`
+and the `add_player` function, the test passes. Well done!
 
 ## `main.rs`
+
+To run our application, we need not change our `main` function,
+it still looks like this:
 
 ```rust
 fn main() {
@@ -197,10 +199,18 @@ fn main() {
 ## Conclusion
 
 We can now create an `App` with one player.
-This one player is a marker component.
+
+We encountered all elements of the ECS paradigm that Bevy follows:
+
+- Entity: a Component in action. 
+  Other languages would use the terms 'object' or 'instance'
+- Component: the blueprint of something that can be used a in Bevy world.
+  Other languages would use the term 'structure definition' or 'class definition'
+- System: typically a function that works on the Entities in the Bevy world.
+
 We have tested everything that the App does!
 
-Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player](https://github.com/richelbilderbeek/bevy_tdd_book_add_player).
+The full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player](https://github.com/richelbilderbeek/bevy_tdd_book_add_player).
 
 ## References
 
