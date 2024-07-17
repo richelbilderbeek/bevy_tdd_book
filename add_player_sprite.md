@@ -1,8 +1,23 @@
 # Add player sprite
 
-This chapter shows how to add a player sprite to a game.
+This chapter shows how to add a player sprite to a game,
+at a certain position and of a certain size.
+
+Bevy supports 2D, isometric ('2.5D') and 3D. 
+For simplicity, the game we develop is 2D.
+
+In this chapter, there are many good ways to the code.
+I picked the route that has no rewrites of old code in it,
+as this would best fit a book.
 
 ## First test: our `App` needs a position and size
+
+If we want to add a player sprite to the game
+at a certain position and of a certain size, 
+our `App` needs to know. 
+
+Our first test forces us to supply this information in the `create_app`
+function:
 
 ```rust
 fn test_can_create_app() {
@@ -11,6 +26,25 @@ fn test_can_create_app() {
     create_app(initial_player_position, initial_player_size);
 }
 ```
+
+As the game we create is 2D, both a position and a size are two dimensional.
+
+The test is generous: calling `create_app` must be possible with two arguments,
+after which it should not crash.
+
+## First fix
+
+A valid stub would be:
+
+```text
+fn create_app(_position: Vec2, _size: Vec2) -> App {
+  App::new()
+}
+```
+
+The variable names starting with an underscore (`_`) denote that
+their values are allowed to be unused. This is perfect for a stub!
+
 
 ## Second test: an empty `App` has no players
 
