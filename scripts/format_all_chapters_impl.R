@@ -29,13 +29,19 @@ if (stringr::str_detect(pwd, "bevy_tdd_book$")) {
 
 testthat::expect_false(stringr::str_detect(pwd, "bevy_tdd_book$"))
 
-for folder_name in chapter_names {
-  setwd(paste0("./folder_name"))
+superfolder_path <- pwd
+
+testthat::expect_false(stringr::str_detect(superfolder_path, "bevy_tdd_book$"))
+
+for (chapter_name in chapter_names) {
+  chapter_path <- paste0(superfolder_path, "/bevy_tdd_book_", chapter_name)
+  message(paste0("Set working directory to ", chapter_path))
+  setwd(chapter_path)
   system2(command = "git", args = "add .")  
   system2(command = "git", args = "commit -m 'Before using cargo fmt'")  
   system2(command = "cargo", args = "fmt")  
   system2(command = "git", args = "add .")  
   system2(command = "git", args = "commit -m 'Use cargo fmt'")  
-  setwd("..")
+  setwd(superfolder_path)
 }
 
