@@ -13,16 +13,6 @@ source("scripts/helper_functions.R")
 
 md_files <- get_all_chapter_filenames()
 
-/*
-all_md_files <- list.files(pattern = "md")
-md_files <- stringr::str_subset(all_md_files, "[A-Z]", negate = TRUE) 
-md_files <- stringr::str_subset(md_files, "faq.md", negate = TRUE) 
-md_files <- stringr::str_subset(md_files, "definitions.md", negate = TRUE) 
-md_files <- stringr::str_subset(md_files, "introduction.md", negate = TRUE) 
-md_files <- stringr::str_subset(md_files, "functions.md", negate = TRUE) 
-md_files
-*/
-
 chapter_names <- stringr::str_sub(md_files, end = -4)
 
 message(paste0("Going up one folder"))

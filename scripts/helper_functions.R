@@ -1,6 +1,6 @@
 
 get_all_chapter_filenames <- function() {
-  if (!stringr::str_detect(pwd, "bevy_tdd_book$")) {
+  if (!stringr::str_detect(getwd(), "bevy_tdd_book$")) {
     stop("Run this script in the 'bevy_tdd_book' folder")
   }
 
