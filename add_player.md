@@ -128,7 +128,7 @@ In English this would read: 'a player is a component'.
 To be more precise is that the `Player` structure is an extension
 of the Bevy `Component` structure.
 
-A Bevy `Component` is a blueprint for thing that 
+A Bevy `Component` is a blueprint for thing that
 can be stored in a Bevy `World`.
 Components are the workhorse unit in Bevy: you'll create components,
 query for components and -later- you'll bundle components.
@@ -161,7 +161,7 @@ The new line introduces us to the Bevy `System`
 and reads as 'in the startup phase, run the `add_player` function.
 
 In Bevy, a 'system' is -loosely phrased- 'something that works on the world'.
-This 'something' is typically a function. 
+This 'something' is typically a function.
 
 Our `create_app` functions adds a system, called `add_player`,
 that is run at the startup phase of the application,
@@ -175,7 +175,8 @@ fn add_player(mut commands: Commands) {
 }
 ```
 
-This function has some magic to it: 
+This function has some magic to it:
+
 - `mut commands: Commands`: this function argument is provided by Bevy.
   The `Commands` structure allows on the modify the Bevy world.
 - `commands.spawn(Player add the entity of type Player to the world
