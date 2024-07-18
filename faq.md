@@ -36,7 +36,7 @@ Each chapter introduces as much new concepts as needs,
 which is as few as possible.
 Due to this, the first chapters do not result in a playable game yet.
 
-## What are the subgoals of this book?
+### What are the subgoals of this book?
 
 * Code is tested to work; it can be detected when the code is not working
   anymore.
@@ -55,12 +55,18 @@ Due to this, the first chapters do not result in a playable game yet.
 * Having an interesting game in the end
 * Always have the fastest solution
 * Explain Rust
-* Explain Bevy
+* Explain Bevy deeper than the examples require. For example,
+  in chapter `add_player` a simple definition of an `Entity` is given:
+  'an instance of `Component`'. This definition purposefully ignores that
+  an `Entity` also has a unique identifier, as it is not help to better
+  understand the code of that chapter
 * Support code of older Bevy version
 * Give tips that are of personal preference,
   unless described as such
 * Use fancy idioms that are of personal preference,
   unless described as such
+
+## General
 
 ### Why use Test-Driven Development?
 
