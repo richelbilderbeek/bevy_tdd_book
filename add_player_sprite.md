@@ -3,7 +3,7 @@
 This chapter shows how to add a player sprite to a game,
 at a certain position and of a certain size.
 
-Bevy supports 2D, isometric ('2.5D') and 3D. 
+Bevy supports 2D, isometric ('2.5D') and 3D.
 For simplicity, the game we develop is 2D.
 
 In this chapter, there are many good ways to the code.
@@ -20,8 +20,8 @@ This chapter introduces:
 ## First test: our `App` needs a position and size
 
 If we want to add a player sprite to the game
-at a certain position and of a certain size, 
-our `App` needs to know. 
+at a certain position and of a certain size,
+our `App` needs to know.
 
 Our first test forces us to supply this information in the `create_app`
 function:
@@ -54,7 +54,7 @@ their values are allowed to be unused. This is perfect for a stub!
 
 ## Second test: an empty `App` has no players
 
-Next step is to count the number of players of an empty `App`, 
+Next step is to count the number of players of an empty `App`,
 so we have a reason to add a player.
 We did the same last chapter too.
 
@@ -119,9 +119,9 @@ pub fn create_app(initial_player_position: Vec2, initial_player_size: Vec2) -> A
 }
 ```
 
-New to `create_app` is the use of a closure, 
-the `move |commands: Commands| { ...}`. 
-The closure allows us add a system to the `App` 
+New to `create_app` is the use of a closure,
+the `move |commands: Commands| { ...}`.
+The closure allows us add a system to the `App`
 with only one function argument (i.e. the `Commands`).
 It does so by calling `add_player` with the captured function arguments.
 
@@ -147,10 +147,10 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 Here I unpack `add_player`:
 
 - `commands.spawn((...,...))`: adds a new entity that is a tuple of two things
-- `SpriteBundle { ... }: adds a Bevy `SpriteBundle`, which is -unsurprisingly-
-  a bundle of Components for a sprite. A Bevy bundle is a collection of 
+- `SpriteBundle { ... }: adds a Bevy`SpriteBundle`, which is -unsurprisingly-
+  a bundle of Components for a sprite. A Bevy bundle is a collection of
   Bevy Components, put into a structure. That structure has, among other,
-  the elements `sprite`, `transform` and `texture`. 
+  the elements`sprite`,`transform` and `texture`.
 - `transform: Transform { ... }, ..default()`: initialize the `transform` field
   of the `SpriteBundle`, leave the rest at default values
 - `translation: ..., scale: ..., ..default()`:
@@ -164,13 +164,12 @@ Here I unpack `add_player`:
   the sprite will have its regular scale
 
 Note that the player's size is stored in the `translate` field. One could argue that
-we do not set the player's size, but the player's translation instead, 
+we do not set the player's size, but the player's translation instead,
 hence the variable `initial_player_size` should be called `initial_player_translation`.
-However, in this context, we (and our other users) do want to set the player's 
+However, in this context, we (and our other users) do want to set the player's
 translation and we should ignore that in the implementation details we need to
 modify a translation. This is a good feature of TDD: it prevents us from using
 needlessy technical names.
-
 
 ## Fourth test: a player has a position
 
@@ -189,7 +188,7 @@ fn test_get_player_position() {
 
 ## Fourth fix
 
-Here is an implementation to get back the player's 
+Here is an implementation to get back the player's
 position from the complex thing we added:
 
 ```rust
@@ -212,22 +211,22 @@ The `Player` component is our own marker component, that now actually
 marks something: it marks which `Transform` belongs to the player.
 A `Transform` is a Bevy component that is used for other things too,
 among others, the position of the camera. Due to this, we cannot query
-only for `Transform`, as there will be more `Transform`s in our application. 
+only for `Transform`, as there will be more `Transform`s in our application.
 
-As we asked for a query matching the tuple `(&Transform, &Player)`, 
+As we asked for a query matching the tuple `(&Transform, &Player)`,
 our (single, thanks to `single`) result will be of the same type.
 Of that tuple, we only keep the `Transform` and ignore the (empty) `Player`.
 
-Of the `Transform`, we assume that the z coordinat is zero: 
+Of the `Transform`, we assume that the z coordinat is zero:
 we are working on a 2D game after all! Instead of only assuming this to be
 true, we can let Rust confirm this for real. The `assert` macros exist
 to do exactly that. Hence, instead of commenting or documenting that the
-z coordinat is zero, we `assert` this to be so. 
+z coordinat is zero, we `assert` this to be so.
 Use assertions to document you assumptions `[Lakos, 1996]` `[McConnell, 2004a]`
 `[Stroustrup, 1997]` `[Sutter & Alexandrescu, 2004]`.
 Use assertions liberally `[Liberty, 2001]` `[Stroustrup, 2012]`.
 
-Of the 3D `Transform` (with a z coordinat of zero), 
+Of the 3D `Transform` (with a z coordinat of zero),
 we return the x and y coordinat of the translation.
 
 ## Fifth test: a player has a size
@@ -244,9 +243,9 @@ fn test_player_has_a_custom_size() {
 }
 ```
 
-This test is nearly identical to the previous test, 
+This test is nearly identical to the previous test,
 except now for using `get_player_size` and comparing it to the
-initial player size. 
+initial player size.
 
 ## Fifth fix
 
@@ -261,14 +260,13 @@ fn get_player_size(app: &mut App) -> Vec2 {
 }
 ```
 
-This time, we assert that the player's scale is one, 
+This time, we assert that the player's scale is one,
 which is needed for a 2D game.
 
 ## `main.rs`
 
 All our tests pass! However, the we have not yet *seen* the player.
 To see our game in action, we need the proper `main` function:
-
 
 ```rust
 fn main() {
