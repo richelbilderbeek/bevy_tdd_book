@@ -63,7 +63,7 @@ tests into one.
 
 To fix all this, we need to:
 
-- write a `create_app` function that uses our desired camera scale 
+- write a `create_app` function that uses our desired camera scale
   and add a camera with that scale
 - write a `get_camera_scale` function that reads the camera's scale
 
@@ -83,12 +83,12 @@ pub fn create_app(initial_camera_scale: f32) -> App {
 ```
 
 One difference is the use of a local closure: instead of writing
-a new function called -for example- `add_camera`, the things that 
+a new function called -for example- `add_camera`, the things that
 it would need to do are written in the closure's body.
 
 Writing the `get_camera_scale` is also similar to earlier functions:
 
-```
+```rust
 fn get_camera_scale(app: &mut App) -> f32 {
     let mut query = app.world_mut().query::<&OrthographicProjection>();
     let projection = query.single(app.world());
