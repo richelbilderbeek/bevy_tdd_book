@@ -4,6 +4,10 @@ This chapter shows how to move a camera with a keyboard.
 
 The idea is to change the camera's position, rotation and zoom upon a key press.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: an empty `App` has no players
 
 ```rust

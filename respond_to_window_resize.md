@@ -4,6 +4,10 @@ This chapter shows how to respond to the resizing of a window.
 
 The idea is to do something when a window resizes.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: create an `App`
 
 A trivial test, to get us to write `create_app`:

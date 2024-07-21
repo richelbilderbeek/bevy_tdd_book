@@ -4,6 +4,10 @@ This chapter shows how to respond to a mouse button press.
 
 The idea is to do something upon a mouse button press.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: an emty `App` has no players
 
 Forces us to write `count_n_players`.

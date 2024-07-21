@@ -4,6 +4,10 @@ This chapter shows how to respond to a mouse move.
 
 The idea is to do something upon a mouse move.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: an empty `App` has no players
 
 Forces us to write `count_n_players`.

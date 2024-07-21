@@ -6,6 +6,10 @@ The idea is to change the camera's position, rotation and zoom upon mouse input.
 
 These tests are the same as in the minimal examples.
 
+This chapter introduces:
+
+- TODO
+
 ## `main.rs`
 
 ```rust

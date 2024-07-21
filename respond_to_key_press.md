@@ -4,6 +4,10 @@ This chapter shows how to respond to a key press as done on a keyboard.
 
 The idea is to do something upon a key press.
 
+This chapter introduces:
+
+- TODO
+
 ## Second test: an empty `App` has no players
 
 ```rust

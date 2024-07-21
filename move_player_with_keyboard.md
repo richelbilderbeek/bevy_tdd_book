@@ -4,6 +4,10 @@ This chapter shows how to move a player with a keyboard.
 
 The idea is to give a player a velocity upon a key press.
 
+This chapter introduces:
+
+- TODO
+
 ## `main.rs`
 
 ```rust

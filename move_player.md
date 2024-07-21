@@ -5,6 +5,10 @@ This chapter shows how to move a player.
 The idea is to give a player a velocity,
 making the player move on screen.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: an empty `App` has no players
 
 In `game_parameter.rs`:

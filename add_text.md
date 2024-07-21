@@ -2,6 +2,10 @@
 
 This chapter shows how to add a text to a game.
 
+This chapter introduces:
+
+- The Bevy `TextBundle`
+
 ## First test: an `App` has no text
 
 Similar to earlier chapters,
@@ -97,7 +101,12 @@ to fit our `add_text` function in the `app.add_systems` member function.
 The `add_text` function may look like this:
 
 ```rust
-CODE HERE
+fn add_text(mut commands: Commands, str: &String) {
+    commands.spawn(Text2dBundle {
+        text: Text::from_section(str, TextStyle { ..default() }),
+        ..default()
+    });
+}
 ```
 
 Most of this function is similar to adding a `SpriteBundle`.

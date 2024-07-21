@@ -1,5 +1,9 @@
 # Add camera
 
+This chapter introduces:
+
+- TODO
+
 ## First test
 
 ```rust

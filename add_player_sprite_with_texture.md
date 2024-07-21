@@ -3,6 +3,16 @@
 This chapter shows how to add a player sprite with a texture to a game.
 This allows us to use images in our game.
 
+This chapter introduces:
+
+- The Bevy `Handle`
+- The Bevy `Image`
+- `cfg!(test)`, an `if` statement only true during testing
+- Adding the `AssetPlugin` and `TaskPoolPlugin`
+- Initializing a Bevy image
+- Where to put assets (i.e. images, sounds, etc.)
+- Loading an image from file using `AssetServer`
+
 ![Our application in action](add_player_sprite_with_texture.png)
 
 ## First tests

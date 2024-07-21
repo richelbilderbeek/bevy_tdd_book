@@ -5,6 +5,10 @@ pressed on a keyboard.
 
 The idea is to do something upon a key just being pressed.
 
+This chapter introduces:
+
+- TODO
+
 ## First test: an empty `App` has no players
 
 ```rust

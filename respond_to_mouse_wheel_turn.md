@@ -4,6 +4,11 @@ This chapter shows how to respond to a mouse wheel turn.
 
 The idea is to do something upon a mouse wheel turn.
 
+This chapter introduces:
+
+- TODO
+
+
 ## First test: create an `App`
 
 A trivial test, to get us to write `create_app`:
