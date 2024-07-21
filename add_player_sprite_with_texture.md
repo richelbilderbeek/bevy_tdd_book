@@ -33,7 +33,7 @@ The image will be displayed at its original 1:1 scale:
 
 
 ```rust
-fn test_player_has_the_default_size() {
+fn test_player_has_the_default_scale() {
     let mut app = create_app();
     app.update();
     assert_eq!(get_player_scale(&mut app), Vec2::new(1.0, 1.0));
