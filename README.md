@@ -14,21 +14,20 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ### Section 1: introduction
 
-- [introduction.md](introduction.md)
+- [1. Introduction.md](introduction.md)
 
 ### Section 2: basics
 
 ```mermaid
 flowchart TD
   introduction[1. Introduction]
-  hello_world[2. hello_world\nGet started]
-  add_player[3. add_player\nAdd a player]
-  add_player_sprite[4. add_player_sprite\nAdd a player sprite]
-  add_player_sprite_with_texture[5. add_player_sprite_with_texture\nAdd a player sprite\nwith a texture]
-  add_camera[6. add_camera\nAdd a camara]
-  move_player[7. move_player\nMove the player]
-  add_text[8. add_text\nAdd text]
-  move_camera[9. move_camera\nMove the camera]
+  hello_world[2.1. hello_world\nGet started]
+  add_player[2.2. add_player\nAdd a player]
+  add_player_sprite[2.3. add_player_sprite\nAdd a player sprite]
+  add_player_sprite_with_texture[2.4. add_player_sprite_with_texture\nAdd a player sprite\nwith a texture]
+  add_camera[2.5. add_camera\nAdd a camara]
+  move_player[2.6. move_player\nMove the player]
+  add_text[2.7. add_text\nAdd text]
 
   introduction -.-> hello_world
   hello_world --> add_player
@@ -37,7 +36,6 @@ flowchart TD
   add_player_sprite_with_texture --> add_text
   add_player_sprite_with_texture --> add_camera
   add_player_sprite --> move_player
-  add_camera --> move_camera
   move_camera -.- |similar\nchapters| move_player
 ```
 
@@ -50,7 +48,6 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_text)                      |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_text/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_text)                                            |[add_text.md](add_text.md)                                            |Adding text on screen                    |Using `Text2dBundle`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_camera)                    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera)                                        |[add_camera.md](add_camera.md)                                        |Adding a camera                          |Using `Camera2dBundle`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                                      |[move_player.md](move_player.md)                                      |Move the player                          |Extending a Component
-[code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera)                                      |[move_camera.md](move_camera.md)                                      |Move the camera                          |Extending a Component
 
 ### Section 3: user input
 
@@ -83,6 +80,7 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse)                |[move_camera_with_mouse.md](move_camera_with_mouse.md)                |Respond to mouse                         |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)                |[move_player_with_mouse.md](move_player_with_mouse.md)                |Respond to mouse                         |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)        |[show_2d_coordinate_systems.md](show_2d_coordinate_systems.md)        |Show 2D coordinate systems               |2D coordinate systems
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera)                                      |[move_camera.md](move_camera.md)                                      |Move the camera                          |Extending a Component
 
 ## Chapter overview
 
