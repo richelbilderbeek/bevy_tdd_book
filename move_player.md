@@ -50,10 +50,9 @@ fn test_can_set_and_get_velocity() {
 To fix this, we'll need to:
 
 - write a `Player` `Component` that can hold a velocity
-- `create_app` must accept a velocity and add a `Player` component 
+- `create_app` must accept a velocity and add a `Player` component
   with that velocity to the world
 - `get_player_velocity` must extract the velocity from our `Player` component
-
 
 Writing a `Player` `Component` that can hold a velocity is hard
 as extending any Rust structure:
@@ -67,7 +66,7 @@ pub struct Player {
 
 Because the game is 2D, the velocity is also in two dimensions.
 
-Our `create_app` must accept a velocity and add a `Player` component 
+Our `create_app` must accept a velocity and add a `Player` component
 with that velocity to the world:
 
 ```rust
@@ -107,10 +106,10 @@ as we've done earlier. New is that we now initialize the `Player` component
 too. You may have expected to see `velocity: velocity` as a syntax,
 but, no, this is the proper Rust syntax :-) .
 
-The `get_player_velocity` that extracts the velocity from our `Player` 
+The `get_player_velocity` that extracts the velocity from our `Player`
 component can be implemented like this:
 
-```
+```rust
 fn get_player_velocity(app: &mut App) -> Vec2 {
     let mut query = app.world_mut().query::<&Player>();
     let player = query.single(app.world());
@@ -141,7 +140,6 @@ See the [`add_player`](add_player.md) chapter for its implementation.
 
 We've been getting the position of the player
 at the [`add_player_sprite`](add_player_sprite.md) chapter:
-
 
 ```rust
 fn test_player_starts_at_the_origin() {
@@ -181,7 +179,7 @@ ahead and add these!
 Making a player move is a (Bevy) system: it is a -typically-
 function that works on entities in the world.
 Unlike other earlier systems, moving a player needs to be done
-every frame (instead of only at startup). 
+every frame (instead of only at startup).
 To specify this, use the `Update` `ScheduleLabel`:
 
 ```rust
