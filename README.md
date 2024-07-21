@@ -36,7 +36,6 @@ flowchart TD
   add_player_sprite_with_texture --> add_text
   add_player_sprite_with_texture --> add_camera
   add_player_sprite --> move_player
-  move_camera -.- |similar\nchapters| move_player
 ```
 
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter [2]                                                           |Description                              |Concepts
