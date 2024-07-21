@@ -5,9 +5,7 @@ This chapter shows how to move a camera.
 The idea is to give a camera a velocity,
 making the camera move on screen.
 
-This chapter introduces:
-
-- TODO
+This chapter introduces nothing new.
 
 ## First test: our `App` needs a camera velocity
 
