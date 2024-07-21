@@ -27,8 +27,9 @@ can be answered with a 'yes'.
 
 ## What is the intended audience of this book?
 
-Intermediate Rust developers: people that have read parts of
-'The Rust programming language' `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`.
+This book is suitable for intermediate Rust developers: people that have read parts of
+'The Rust programming language' `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`
+and are able to write functions and structures.
 
 This book does not teach Rust, nor Bevy.
 Instead, it shows Test-Driven Development in Rust with Bevy.
