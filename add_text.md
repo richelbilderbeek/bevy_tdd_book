@@ -4,7 +4,7 @@ This chapter shows how to add a text to a game.
 
 ## First test: an `App` has no text
 
-Similar to earlier chapters, 
+Similar to earlier chapters,
 we'll start our game development for counting the number
 of texts to be zero:
 
@@ -15,10 +15,9 @@ fn test_empty_app_has_text() {
 }
 ```
 
-
 ## First fix
 
-Taking a look at 
+Taking a look at
 [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html),
 one can see that there is a field called `text` of data type `Text`.
 We'll use that -and only that- for our query:
@@ -39,7 +38,7 @@ to the right `Transform`.
 
 ## Second test: can create an `App` with text
 
-As our game will show a text, we'll have to be able to pass our 
+As our game will show a text, we'll have to be able to pass our
 desired text to it. We do so using a `create_app` function:
 
 ```rust
@@ -54,7 +53,7 @@ but this approach felt better.
 
 ## Second fix
 
-All that this test forces us to do, is to write a `create_app` 
+All that this test forces us to do, is to write a `create_app`
 function that accepts a `String`. Here is an example stub
 that will pass the test:
 
@@ -123,7 +122,7 @@ fn test_app_uses_text() {
 
 If your implementations matched the earlier fixes, this test would already
 pass. In case you've cut a corner, this is the test that will force you to
-write a non-stub implementation. 
+write a non-stub implementation.
 
 ## `main.rs`
 
