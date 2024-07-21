@@ -66,6 +66,7 @@ Code                                                                            
 
 ### Section 4: media
 
+- Adding a 3D player with a texture
 - 3D models
 - drawing
 - animations
