@@ -8,7 +8,6 @@ This chapter introduces:
 
 - TODO
 
-
 ## First test: create an `App`
 
 A trivial test, to get us to write `create_app`:
