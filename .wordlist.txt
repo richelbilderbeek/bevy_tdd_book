@@ -69,4 +69,11 @@ Lakos
 Lomow
 Sutter
 ECS
-
+Sams
+Bjarne
+Stroustrup
+postconditions
+Alexandrescu
+invariants
+modularity
+SpriteBundle

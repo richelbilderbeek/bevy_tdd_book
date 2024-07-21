@@ -67,7 +67,7 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-This is the last time I will repeat tests that are indentical
+This is the last time I will repeat tests that are identical
 to earlier chapters: it is not worth the space in a book.
 The fix is identical to the one shown in the previous chapter.
 
@@ -156,9 +156,9 @@ Here I unpack `add_player`:
 - `translation: ..., scale: ..., ..default()`:
   initialize the `translation` and `scale` fields with particular value,
   keeping the others at default values. A translation is a relative (3D)
-  movement compared to the origin (i.e, at coordinat `(0, 0, 0)`)
+  movement compared to the origin (i.e, at coordinate `(0, 0, 0)`)
 - `Vec2::extend(initial_player_position, 0.0)`: create a 3D coordinat,
-  by extending our 2D position with a z coordinat of zero
+  by extending our 2D position with a z coordinate of zero
 - `Vec2::extend(initial_player_size, 1.0)`: create a 3D scale of the sprite,
   by extending our 2D size with a z scale of one. A z scale of one means that
   the sprite will have its regular scale
@@ -217,17 +217,17 @@ As we asked for a query matching the tuple `(&Transform, &Player)`,
 our (single, thanks to `single`) result will be of the same type.
 Of that tuple, we only keep the `Transform` and ignore the (empty) `Player`.
 
-Of the `Transform`, we assume that the z coordinat is zero:
+Of the `Transform`, we assume that the z coordinate is zero:
 we are working on a 2D game after all! Instead of only assuming this to be
 true, we can let Rust confirm this for real. The `assert` macros exist
 to do exactly that. Hence, instead of commenting or documenting that the
-z coordinat is zero, we `assert` this to be so.
+z coordinate is zero, we `assert` this to be so.
 Use assertions to document you assumptions `[Lakos, 1996]` `[McConnell, 2004a]`
 `[Stroustrup, 1997]` `[Sutter & Alexandrescu, 2004]`.
 Use assertions liberally `[Liberty, 2001]` `[Stroustrup, 2012]`.
 
-Of the 3D `Transform` (with a z coordinat of zero),
-we return the x and y coordinat of the translation.
+Of the 3D `Transform` (with a z coordinate of zero),
+we return the x and y coordinate of the translation.
 
 ## Fifth test: a player has a size
 

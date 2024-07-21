@@ -125,7 +125,7 @@ The `if` statement and its body are new, I unpack it here:
   asset
 
 A plugin is a combination of entities, components and systems that work
-together to archieve a goal. It is a unit of modularity: you can put these
+together to achieve a goal. It is a unit of modularity: you can put these
 in a Rust crate and become part of the Bevy ecosystem.
 
 With the `AssetPlugin` present, we need to initialize it to allow for
@@ -156,7 +156,7 @@ a structure for assets.
 
 The creation of the player's `SpriteBundle` is similar too, except for
 `texture: asset_server.load("bevy_bird_dark.png")`, where a texture is
-loaded from file by the asser server. For this to work, that file (in this
+loaded from file by the assets server. For this to work, that file (in this
 case, `bevy_bird_dark.png`) must be present in the `assets` folder
 of the Rust project.
 
