@@ -79,4 +79,8 @@ modularity
 SpriteBundle
 nd
 gamepad
+Camera2dBundle
+Text2dBundle
 TODO
+
+
