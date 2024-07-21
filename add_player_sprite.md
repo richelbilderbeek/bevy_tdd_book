@@ -157,7 +157,7 @@ Here I unpack `add_player`:
   initialize the `translation` and `scale` fields with particular value,
   keeping the others at default values. A translation is a relative (3D)
   movement compared to the origin (i.e, at coordinate `(0, 0, 0)`)
-- `Vec2::extend(initial_player_position, 0.0)`: create a 3D coordinat,
+- `Vec2::extend(initial_player_position, 0.0)`: create a 3D coordinate,
   by extending our 2D position with a z coordinate of zero
 - `Vec2::extend(initial_player_size, 1.0)`: create a 3D scale of the sprite,
   by extending our 2D size with a z scale of one. A z scale of one means that
@@ -169,7 +169,7 @@ hence the variable `initial_player_size` should be called `initial_player_transl
 However, in this context, we (and our other users) do want to set the player's
 translation and we should ignore that in the implementation details we need to
 modify a translation. This is a good feature of TDD: it prevents us from using
-needlessy technical names.
+needlessly technical names.
 
 ## Fourth test: a player has a position
 
