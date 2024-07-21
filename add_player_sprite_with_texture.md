@@ -31,7 +31,6 @@ The previous chapter discusses these steps in details.
 
 The image will be displayed at its original 1:1 scale:
 
-
 ```rust
 fn test_player_has_the_default_scale() {
     let mut app = create_app();
@@ -55,7 +54,6 @@ fn get_player_scale(app: &mut App) -> Vec2 {
 
 In the context of using an image, it is more natural to work with a
 scale than with a size.
-
 
 ## Fourth test: our player has a texture
 
@@ -91,11 +89,11 @@ fn get_player_has_texture(app: &mut App) -> bool {
 There are two new elements:
 
 - `&Handle<Image>`: this reads as 'a handle to an image'.
-  This data type is chosen from 
+  This data type is chosen from
   [the Bevy documentation of `SpriteBundle`](https://docs.rs/bevy/latest/bevy/prelude/struct.SpriteBundle.html),
   as it is the data type of the `SpriteBundle` field called `texture`.
   A 'handle to an image' is a lightweight way to work with images, similar
-  to the Rust `box` class: both can be copied and cloned and ... empty 
+  to the Rust `box` class: both can be copied and cloned and ... empty
 - `handle.is_strong()` determines if the handle indeed refers to an image
   that is actually (being) loaded
 
@@ -152,14 +150,14 @@ fn add_player(mut commands: Commands, asset_server: Res<AssetServer>) {
 
 The biggest surprise is the `asset_server: Res<AssetServer>`:
 apparently, when adding a Bevy system, one can 'magically' get
-access to an `asset_server` of datatype `Res<AssetServer>`. 
+access to an `asset_server` of datatype `Res<AssetServer>`.
 A `Res` is a unique Bevy resource, in this case of type `AssetServer`:
 a structure for assets.
 
 The creation of the player's `SpriteBundle` is similar too, except for
 `texture: asset_server.load("bevy_bird_dark.png")`, where a texture is
 loaded from file by the asser server. For this to work, that file (in this
-case, `bevy_bird_dark.png`) must be present in the `assets` folder 
+case, `bevy_bird_dark.png`) must be present in the `assets` folder
 of the Rust project.
 
 ## `main.rs`
