@@ -16,7 +16,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # The link checker will only work if mlc_config.json is a valid JSON
       - name: Validate JSON
