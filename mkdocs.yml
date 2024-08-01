@@ -3,7 +3,7 @@ site_name: Developing Bevy games using TDD
 repo_url: https://github.com/richelbilderbeek/bevy_tdd_book
 
 nav:
-  - Home: home.md
+  - Home: welcome.md
   - Introduction:
     - 1. Introduction: introductions/main_introduction.md
   - Basic:
