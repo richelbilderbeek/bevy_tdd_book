@@ -8,7 +8,7 @@
 Start of a book [1] called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
-- [FAQ](faq.md)
+- [FAQ](docs/chapters/faq.md)
 
 ## Chapters
 
@@ -184,7 +184,7 @@ Filename                              |Descriptions
 
 These are people and websites that helped me, in alphabetical order:
 
-- [https://www.rustacean.net/](https://www.rustacean.net/) for providing [ferris.png](ferris.png)
+- [https://www.rustacean.net/](https://www.rustacean.net/) for providing [ferris.png](docs/chapters/ferris.png)
 - [`inodentry`](https://github.com/inodentry) for starting [the Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook), as well as its contributors
 - `kristoff3r`: answered a question on the Bevy Discord channel
 - `Periwinkle`: answered a question on the Bevy Discord channel
