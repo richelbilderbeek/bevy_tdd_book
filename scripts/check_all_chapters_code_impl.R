@@ -52,13 +52,20 @@ for (chapter_filename in chapter_filenames) {
   # chapter_filename <- "add_camera.md"
   testthat::expect_true(file.exists(chapter_filename))
   
-  chapter_name <- stringr::str_sub(chapter_filename, end = -4)
+  md_filename <- basename(chapter_filename)
+  chapter_name <- stringr::str_sub(md_filename, end = -4)
 
   app_code_filename <- paste0(getwd(), "_", chapter_name, "/src/app.rs")
   main_code_filename <- paste0(getwd(), "_", chapter_name, "/src/main.rs")
 
   if (!file.exists(app_code_filename)) {
-    stop(paste0("ERROR: cannot find 'app_code_filename': ", app_code_filename))
+    stop(
+      paste0(
+        "ERROR: cannot find 'app_code_filename': ", app_code_filename, " \n",
+        "chapter_filename: ", chapter_filename, "\n",
+        "md_filename: ", md_filename
+      )
+    )
   }
   if (!file.exists(main_code_filename)) {
     stop(paste0("ERROR: cannot find 'main_code_filename': ", main_code_filename))
