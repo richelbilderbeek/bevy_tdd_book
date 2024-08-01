@@ -4,7 +4,6 @@ repo_url: https://github.com/richelbilderbeek/bevy_tdd_book
 
 nav:
   - Home: index.md
-  - Introduction:
     - 1. Introduction: introduction/introduction.md
   - Basic:
     - 2.1. Hello world: chapters/hello_world.md
