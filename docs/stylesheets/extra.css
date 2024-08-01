@@ -1,0 +1,65 @@
+/* Color Settings */
+/* https://github.com/squidfunk/mkdocs-material/blob/6b5035f5580f97532d664e3d1babf5f320e88ee9/src/assets/stylesheets/main/_colors.scss */
+/* https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors */
+:root > * {
+  --md-primary-fg-color: #E6E6E6;
+  --md-primary-bg-color: #1d1d20;
+
+  --md-default-fg-color: #1d1d20;
+  --md-default-bg-color: #ffffff;
+
+  --md-code-fg-color: #1d1d20;
+
+  --md-accent-fg-color: #999;
+
+  --md-admonition-fg-color: #1d1d20;
+
+  --md-typeset-color: #1d1d20;
+  --md-typeset-a-color: #0645AD;
+
+  --md-footer-bg-color: #E6E6E6;
+  --md-footer-fg-color: #000000;
+
+}
+
+
+/* https://github.com/squidfunk/mkdocs-material/issues/4832#issuecomment-1374891676 */
+.md-nav__link[for] {
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Center Markdown Tables (requires md_in_html extension) */
+.center-table {
+  text-align: center;
+}
+
+/* Reset alignment for table cells */
+.md-typeset .center-table :is(td, th):not([align]) {
+  text-align: initial;
+}
+
+  .md-typeset a {
+  text-decoration: underline;
+}
+
+
+/* Markdown Header */
+/* https://github.com/squidfunk/mkdocs-material/blob/dcab57dd1cced4b77875c1aa1b53467c62709d31/src/assets/stylesheets/main/_typeset.scss */
+.md-typeset h1 {
+  font-weight: 400;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 400;
+}
+
+.md-typeset h3 {
+  font-weight: 500;
+}
+
+/* Image align center */
+.center {
+  display: block;
+  margin: 0 auto;
+}
