@@ -21,5 +21,5 @@ get_all_chapter_filenames <- function() {
   # md_files <- stringr::str_subset(md_files, "functions.md", negate = TRUE) 
   # testthat::expect_equal(length(all_md_files)- 4, length(md_files))
   
-  md_files
+  all_md_files
 }
