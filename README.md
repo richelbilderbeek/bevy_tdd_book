@@ -8,7 +8,7 @@
 Start of a book [1] called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
-- [FAQ](docs/chapters/faq.md)
+- [FAQ](docs/misc/faq.md)
 
 ## Chapters
 
