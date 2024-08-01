@@ -31,9 +31,9 @@ nav:
     - Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
   - Misc:
     - Contributors: misc/contributors.md
-    - Definitions: chapters/definitions.md
-    - FAQ: chapters/faq.md
-    - Functions: chapters/functions.md
+    - Definitions: misc/definitions.md
+    - FAQ: misc/faq.md
+    - Functions: misc/functions.md
 
 theme:
   name: material
