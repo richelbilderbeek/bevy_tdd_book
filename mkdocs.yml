@@ -6,8 +6,30 @@ nav:
   - Home: index.md
   - Chapters:
     - 1. Introduction: chapters/introduction.md
-    - 2. Hello world: chapters/hello_world.md
-    
+    - 2.1. Hello world: chapters/hello_world.md
+    - 2.2. Add a player: chapters/add_player.md
+    - 2.3. Add a player sprite: chapters/add_player_sprite.md
+    - 2.4. Add a player sprite with a texture: chapters/add_player_sprite_with_texture.md
+    - 2.5. Add text: chapters/add_text.md
+    - 2.6. Add a camera: chapters/add_camera.md
+    - 2.7. Move the player: x: chapters/move_player.md
+    - 3.x. Move the camera: chapters/move_camera.md
+    - 3.x. Move the camera with the keyboard: chapters/move_camera_with_keyboard.md
+    - 3.x. Move the camera with the mouse: chapters/move_camera_with_mouse.md
+    - 4.x. Respond to a key just being pressed: chapters/respond_to_just_key_pressed.md
+    - 4.x. Repond to a key press: chapters/respond_to_key_press.md
+    - 4.x. Respond to a mouse button press: chapters/respond_to_mouse_button_press.md
+    - 4.x. Respond to mouse movement: chapters/respond_to_mouse_move.md
+    - 4.x. Respond to a mouse wheel press: chapters/respond_to_mouse_wheel_press.md
+    - 4.x. Respond to a mouse wheel turn: chapters/respond_to_mouse_wheel_turn.md
+    - 4.x. Respond to a window resize: chapters/respond_to_window_resize.md
+    - A1. Defintions: chapters/definitions.md
+    - A2. FAQ: chapters/faq.md
+    - A3. Function: chapters/functions.md
+    - A4. Move the player with the keyboard: chapters/move_player_with_keyboard.md
+    - A5. Move the player with the mouse: chapters/move_player_with_mouse.md
+    - A6. Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
+
 theme:
   name: material
   greetings: Welcome to 'Developing Bevy games using TDD'
