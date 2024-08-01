@@ -184,11 +184,6 @@ Filename                              |Descriptions
 [.markdownlint.jsonc](.markdownlint.jsonc)|Configuration of the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [.markdownlintignore](.markdownlintignore)|Files ignored by the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 
-## Footnotes
-
-- [1] 'book' is an overstatement for now: it is just a collection of notes
-- [2] There is no chapter numbering yet
-
 ## Links
 
 - [Blog post 'Test-Driven Development in Rust Game Development with Bevy' by Edgardo Carreras](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/)
