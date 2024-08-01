@@ -19,4 +19,3 @@ flowchart TD
   add_player_sprite_with_texture --> add_camera
   add_player_sprite --> move_player
 ```
-

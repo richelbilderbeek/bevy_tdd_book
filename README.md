@@ -14,7 +14,8 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ### Section 1: introduction
 
-- [1. Introduction.md](docs/introduction/introduction.md)
+- [Section 1: Introduction](docs/introductions/main_introduction.md)
+- [Section 2: Basics](docs/introductions/basic_introduction.md)
 
 ### Section 2: basics
 
