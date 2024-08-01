@@ -11,7 +11,7 @@ template: home.html
 <br/>
 
 
-# Welcome to the UPPMAX documentation
+# Welcome to 'Developing Bevy games using TDD'
 
 
 <br/>
