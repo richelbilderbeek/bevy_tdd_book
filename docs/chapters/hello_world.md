@@ -1,12 +1,6 @@
 # Hello world
 
-
-
-
-
-
-
-This chapter is about creating a minimal Bevy program that is completely testedsefgeubpwebfewpibu.
+This chapter is about creating a minimal Bevy program that is completely tested.
 
 This chapter introduces:
 
@@ -44,7 +38,7 @@ i.e. it does not crash:
 ```rust
 #[test]
 fn test_can_create_app() {
-    create_app(); NIET IN CODE
+    create_app();
 }
 ```
 
