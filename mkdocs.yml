@@ -41,7 +41,7 @@ theme:
     text: Lato
     code: JetBrains Mono
 
-  logo: assets/logo_color.png
+  logo: assets/ferris.png
 
   features:
     - toc.integrate

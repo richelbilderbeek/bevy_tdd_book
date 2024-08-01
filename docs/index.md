@@ -6,7 +6,7 @@ template: home.html
 
 <br/><br/>
 
-<img src="assets/UU_logo_color.svg" alt="drawing" width="200"/>
+<img src="assets/ferris.svg" alt="drawing" width="200"/>
 
 <br/>
 
