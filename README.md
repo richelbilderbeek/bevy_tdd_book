@@ -170,6 +170,10 @@ flowchart TD
   move_camera_mouse -.- |similar\nchapters| move_player_mouse
 ```
 
+## Contributors
+
+These can be found at [docs/misc/contributors.md](docs/misc/contributors.md).
+
 ## Files used by continuous integration scripts
 
 Filename                              |Descriptions
@@ -179,18 +183,6 @@ Filename                              |Descriptions
 [.wordlist.txt](.wordlist.txt)        |Whitelisted words for the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
 [.markdownlint.jsonc](.markdownlint.jsonc)|Configuration of the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [.markdownlintignore](.markdownlintignore)|Files ignored by the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
-
-## Contributors
-
-These are people and websites that helped me, in alphabetical order:
-
-- [https://www.rustacean.net/](https://www.rustacean.net/) for providing [ferris.png](docs/chapters/ferris.png)
-- [`inodentry`](https://github.com/inodentry) for starting [the Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook), as well as its contributors
-- `kristoff3r`: answered a question on the Bevy Discord channel
-- `Periwinkle`: answered a question on the Bevy Discord channel
-- `Shane Celis`: helped answer multiple questions on the Bevy Discord channel
-- `Trent (SleepyTea)`: helped answer some questions on the Bevy Discord channel
-- `Ziven`: helped answer a question on the Bevy Discord channel
 
 ## Footnotes
 

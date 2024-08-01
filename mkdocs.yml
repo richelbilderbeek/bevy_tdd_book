@@ -28,10 +28,11 @@ nav:
     - Move the player with the keyboard: chapters/move_player_with_keyboard.md
     - Move the player with the mouse: chapters/move_player_with_mouse.md
     - Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
-  - Appendix:
-    - Defintions: chapters/definitions.md
+  - Misc:
+    - Contributors: misc/contributors.md
+    - Definitions: chapters/definitions.md
     - FAQ: chapters/faq.md
-    - Function: chapters/functions.md
+    - Functions: chapters/functions.md
 
 theme:
   name: material
