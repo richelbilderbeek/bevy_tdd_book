@@ -12,6 +12,10 @@ if (!stringr::str_detect(pwd, "bevy_tdd_book$")) {
 source(file.path("scripts/helper_functions.R"))
 
 chapter_filenames <- get_all_chapter_filenames()
+if (length(chapter_filenames) == 0) {
+  stop("No chapter filenames found")
+}
+testthat::expect_true(length(chapter_filenames) > 0)
 
 
 #' Returns a vector of booleans whether a line is code

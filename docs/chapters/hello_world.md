@@ -38,7 +38,7 @@ i.e. it does not crash:
 ```rust
 #[test]
 fn test_can_create_app() {
-    create_app();
+    create_app(); NIET IN CODE
 }
 ```
 

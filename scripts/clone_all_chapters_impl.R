@@ -11,7 +11,12 @@ if (!stringr::str_detect(pwd, "bevy_tdd_book$")) {
 source("scripts/helper_functions.R")
 
 
-md_files <- get_all_chapter_filenames()
+chapter_filenames <- get_all_chapter_filenames()
+if (length(chapter_filenames) == 0) {
+  stop("No chapter filenames found")
+}
+testthat::expect_true(length(chapter_filenames) > 0)
+md_files <- chapter_filenames
 
 chapter_names <- stringr::str_sub(md_files, end = -4)
 
