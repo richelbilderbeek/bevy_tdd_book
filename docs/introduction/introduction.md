@@ -6,15 +6,17 @@ The goal of this book is to demonstrate how to do Test-Driven Development
 with Bevy.
 
 This introductory chapter describes the ideas behind this book.
-If you want to dive right in, go to the next chapter now!
+If you want to dive right in, go to [the next chapter](../misc/basic_introduction.md) now!
 
 ## 1.1. Why this book?
 
-This book started from the question: 'Is Bevy suitable for Test-Driven Development?',
+This book started from the question: 
+'Is Bevy suitable for Test-Driven Development?',
 as the author was looking for a Rust gaming library
 suitable for Test-Driven Development.
 
-At the time of writing, there is only one [blog post on Test-Driven Development with Bevy](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/),
+At the time of writing, there is only one
+[blog post on Test-Driven Development with Bevy](https://edgardocarreras.com/blog/tdd-in-rust-game-engine-bevy/),
 which only has two tests. And that test suite has not been
 built up from scratch.
 
@@ -27,8 +29,9 @@ can be answered with a 'yes'.
 
 ## 1.2. What is the intended audience of this book?
 
-This book is suitable for intermediate Rust developers: people that have read parts of
-'The Rust programming language' `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`
+This book is suitable for intermediate Rust developers: people that have 
+read parts of 'The Rust programming language' 
+`[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`
 and are able to write functions and structures.
 
 This book does not teach Rust, nor Bevy.
