@@ -17,6 +17,7 @@ nav:
     - 2.8. Move the player: chapters/move_player.md
     - 2.9. Move the camera: chapters/move_camera.md
   - Respond to input:
+    - 3.1. Introduction: misc/respond_to_input_introduction.md
     - 3.x. Respond to a key just being pressed: chapters/respond_to_just_key_pressed.md
     - 3.x. Repond to a key press: chapters/respond_to_key_press.md
     - 3.x. Respond to a mouse button press: chapters/respond_to_mouse_button_press.md
@@ -25,12 +26,14 @@ nav:
     - 3.x. Respond to a mouse wheel turn: chapters/respond_to_mouse_wheel_turn.md
     - 3.x. Respond to a window resize: chapters/respond_to_window_resize.md
   - Example programs:
+    - Introduction: misc/exampe_programs_introduction.md
     - Move the camera with the keyboard: chapters/move_camera_with_keyboard.md
     - Move the camera with the mouse: chapters/move_camera_with_mouse.md
     - Move the player with the keyboard: chapters/move_player_with_keyboard.md
     - Move the player with the mouse: chapters/move_player_with_mouse.md
     - Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
   - Misc:
+    - Introduction: misc/misc_introduction.md
     - Contributors: misc/contributors.md
     - Definitions: misc/definitions.md
     - FAQ: misc/faq.md
