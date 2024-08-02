@@ -19,3 +19,4 @@ if [[ "$PWD" =~ scripts$ ]]; then
 fi
 
 markdownlint "**/*.md" --fix
+git status
