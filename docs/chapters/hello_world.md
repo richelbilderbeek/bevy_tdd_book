@@ -2,10 +2,13 @@
 
 This chapter is about creating a minimal Bevy program that is completely tested.
 
+![An empty Bevy App](hello_world.png)
+
 This chapter introduces:
 
 - The Bevy `App`
 - Test-Driven Development ('TDD')
+- Types of implementations
 - Code coverage.
 - The `create_app` function
 
@@ -80,37 +83,53 @@ pub fn create_app() -> App {
 All it does is create a new Bevy `App` and return it.
 This will pass our test!
 
-There are other implementations possible:
+### 2.2.4. Types of implementations
 
-- stubs
-- implementations that do not follow the Rust style recommended by the `clippy` crate
+The implementation of `create_app` shown above is a complete implementation:
+it does what it is expected to do completely.
+However, there are other implementations possible:
 
-In software development, a 'stub' is 'a start of something'. The
-purpose of a stub is to, for example, start the architectural setup.
-An example stub would be:
+- implementations that do not follow the recommended Rust style
+- implementations that are stubs
+
+Here is an implementation that does not follow
+the recommended Rust style:
+
+```text
+pub fn create_app() -> App {
+    return App::new();
+}
+```
+
+Following a consistent coding style improves software quality `[Fang, 2001]`.
+All code shown in this book is tested to follow the 
+Rust style recommended by the `clippy` crate.
+
+Here is an implementation that is a stub:
 
 ```text
 pub fn create_app() -> () {}
 ```
 
+In software development, a 'stub' is 'a start of something'. The
+purpose of a stub is to, for example, start the architectural setup.
 This stub will pass all tests and hence is acceptable too.
 If one chooses to write a stub like this,
 one will need to write an addition test, that, for example, checks
 if the return value of `create_app` is indeed of type `App`.
 
-There are non-stub/complete implementations possible too.
-However, those implementation are less likely to
-follow the Rust style recommended by the `clippy` crate.
-Following a consistent coding style improves software quality `[Fang, 2001]`.
-Note that all code shown in this book is checked for style
-and, if a style guideline is breached, results in an error too.
-
 ## 2.2.4. `main.rs`
 
 The `main` function will not be used in automated testing,
-as it starts our game: starting the game
-will require that a user needs to do something to close it.
-Hence, the `main` function 'just' runs the `App`.
+as it starts our game. This is useful to play the game,
+but not for testing.
+For testing to be done automatically, it is required
+that there is no user input.
+Starting the game will require at least
+that a user needs to do something to close it.
+Hence, the `main` function is useless for testing.
+
+Instead, the `main` function 'just' runs the `App`.
 
 ```rust
 fn main() {
@@ -120,40 +139,53 @@ fn main() {
 }
 ```
 
-The `main` function does add the Bevy default plugins.
+The `main` function, however, does something our tests do not do:
+it adds the Bevy default plugins.
 These plugins will add functionality to an `App`, such
-as creating a window.
-Due to this, our `App` that does nothing can be displayed:
+as creating a window to display the program, which can be
+closed by, among others, pressing `ALT + F4`.
+Thanks to this plugin, we can see our `App`!
+Our game -a game that does nothing- is hence properly displayed as such:
 
-[An empty Bevy App](hello_world.md)
+![An empty Bevy App](hello_world.png)
 
 ## 2.2.5. Code coverage
 
 The code coverage of a software project is the percentage of code
 that has been used at least once by tests.
 Code coverage correlates with code quality `[Horgan et al., 1994]`
-`[Del Frate et al., 1995]` and due to this,
-having a code coverage of (around) 100%
-is mandatory to pass a code peer-review by committees such as, for example,
+`[Del Frate et al., 1995]`. 
+Some communities have a mandatory 100% code coverage
+to pass a code peer-review by committees such as, for example,
 rOpenSci `[Ram, 2013]`.
+When doing TDD well, reaching a 100% code coverage happens
+almost automatically, as you'll see throughout this book.
 
 However, one needs to decide upon **what** to test for code coverage.
 This project now has two functions: `main` and `create_app`.
-The function `create_app` can be tested automatically and hence
-it is tested for code coverage.
 
-The `main` function, however, requires input (i.e closing the window)
-to close the program.
-One can test for this, by writing a script that simulates input,
-for example, by send the standard key combination `ALT + F4`
+The `create_app` function is a good candidate to be tested for code coverage,
+as it can be tested automatically.
+
+The `main` function is a bad candidate to be tested for code coverage,
+as it cannot be tested automatically. Instead, when `main` is called,
+the game is started, which requires user input, for example, 
+pressing `ALT + F4`, to close it.
+
+Although the `main` function is a bad candidate, one **can** test it
+if one really wants to! 
+For example, by writing a script that simulates input,
+such as sending the standard key combination `ALT + F4`
 to the program to close it.
-However, one can decide if this is worth the effort.
+However, one needs to decide on a per-project basis if this
+extra testing is worth the extra effort. 
 
-In this book, it is decide to test all code, except for the `main` function,
+In this book, it is decided to test all code, except for the `main` function,
 as writing scripts to simulate user input is judged to be not worth the
-effort: the programs shown are judged to be not critical
-(read: people will die if the window does not close with `ALT + F4`)
-enough. You will see that excluding the `main` function
+effort: the programs shown are judged to be not critical enough
+(read 'critical' as 'people will die if the window
+does not close with `ALT + F4`'). 
+You will see that excluding the `main` function
 from being tested for code coverage is not a big problem:
 the `main` functions used in this book are always short:
 they create an `App` and run it!
