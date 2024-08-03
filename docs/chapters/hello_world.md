@@ -23,6 +23,19 @@ TDD cycles. A TDD cycle has three steps:
 - Green: fix the test
 - Blue: cleanup
 
+```mermaid
+flowchart TD
+  classDef red_node fill:#fdd,color:#000,stroke:#f00
+  classDef green_node fill:#dfd,color:#000,stroke:#0f0
+  classDef blue_node fill:#ddf,color:#000,stroke:#00f
+
+  red[Red\nBreak the code]:::red_node
+  green[Green\nFix the code]:::green_node
+  blue[Blue\nRefactor]:::blue_node
+
+  red --> green --> blue --> red
+```
+
 This book follows these cycles, by first showing the test(s),
 then their fixes.
 
