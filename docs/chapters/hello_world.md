@@ -83,7 +83,7 @@ pub fn create_app() -> App {
 All it does is create a new Bevy `App` and return it.
 This will pass our test!
 
-### 2.2.4. Types of implementations
+## 2.2.4. Types of implementations
 
 The implementation of `create_app` shown above is a complete implementation:
 it does what it is expected to do completely.
@@ -118,7 +118,7 @@ If one chooses to write a stub like this,
 one will need to write an addition test, that, for example, checks
 if the return value of `create_app` is indeed of type `App`.
 
-## 2.2.4. `main.rs`
+## 2.2.5. `main.rs`
 
 The `main` function will not be used in automated testing,
 as it starts our game. This is useful to play the game,
@@ -149,7 +149,7 @@ Our game -a game that does nothing- is hence properly displayed as such:
 
 ![An empty Bevy App](hello_world.png)
 
-## 2.2.5. Code coverage
+## 2.2.6. Code coverage
 
 The code coverage of a software project is the percentage of code
 that has been used at least once by tests.
@@ -190,14 +190,14 @@ from being tested for code coverage is not a big problem:
 the `main` functions used in this book are always short:
 they create an `App` and run it!
 
-## 2.2.6. Conclusion
+## 2.2.7. Conclusion
 
 We can now create an `App`. It does nothing.
 We do have tested everything (i.e. nothing) it does!
 
 The full program can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world).
 
-## 2.2.7. References
+## 2.2.8. References
 
 - `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
 - `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
