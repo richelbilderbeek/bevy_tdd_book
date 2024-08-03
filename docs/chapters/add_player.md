@@ -1,4 +1,4 @@
-# Add player
+# 2.3. Add player
 
 This chapter shows how to add a player to a game.
 
@@ -12,7 +12,7 @@ This chapter introduces:
 - A Bevy `System`
 - A Bevy entity
 
-## First test: an empty `App` has no players
+## 2.3.1. First test: an empty `App` has no players
 
 First, we test that there are zero players in an empty `App`.
 We could call the function `count_number_of_players`.
@@ -49,7 +49,7 @@ const correct `[C++ FAQ]` `[Cline et al., 1998]` `[Eckel, 2000]` `[Lakos, 1996]`
 regard, this book strives to be `mut`-correct (and please, contact me if you can
 share a `mut`-correct implementation of `count_n_players`).
 
-## First fix
+## 2.3.2. First fix
 
 Here is a possible implementation of `count_n_players`:
 
@@ -94,7 +94,7 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-## Second test: our `App` has one player
+## 2.3.3. Second test: our `App` has one player
 
 Now that we can count the number of players,
 we can test that an `App` we create has one player:
@@ -110,7 +110,7 @@ fn test_create_app_has_a_player() {
 This will fail, as `create_app` does not create an `App` with
 a player.
 
-## Second fix
+## 2.3.4. Second fix
 
 To add a `Player` object to our `App` we need to:
 
@@ -184,7 +184,7 @@ This function has some magic to it:
 After having modified `create_app`, added the `Player` `Component`
 and the `add_player` function, the test passes. Well done!
 
-## `main.rs`
+## 2.3.5. `main.rs`
 
 To run our application, we need not change our `main` function,
 it still looks like this:
@@ -197,7 +197,7 @@ fn main() {
 }
 ```
 
-## Conclusion
+## 2.3.6. Conclusion
 
 We can now create an `App` with one player.
 
@@ -211,7 +211,7 @@ We have tested everything that the App does!
 
 The full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player](https://github.com/richelbilderbeek/bevy_tdd_book_add_player).
 
-## References
+## 2.3.7. References
 
 - `[C++ FAQ]` [C++ FAQ](https://isocpp.org/faq), question [What is “const correctness”?](https://isocpp.org/wiki/faq/const-correctness#overview-const), accessed 2024-06-14. Answer: 'A good thing.'
 - `[Cline et al., 1998]` Marshall Cline, Greg Lomow and Mike Girou. C++ FAQs, second edition. 1998. ISBN: 0-201-3098301. FAQ 14.05: 'Is const correctness tedious?' (Answer: no).
