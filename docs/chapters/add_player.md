@@ -46,9 +46,11 @@ but it would be an improperly conducted test.
 In general, a read-only operation should work on an immutable data structure.
 Correct use the Rust keyword `mut` is what I call `mut`-correctness,
 which is similar to C++ const correctness. In C++, it is recommended to be
-const correct `[C++ FAQ]` `[Cline et al., 1998]` `[Eckel, 2000]` `[Lakos, 1996]`
-`[Sutter, 2004]`. As there is no reason why Rust would be different in this
-regard, this book strives to be `mut`-correct (and please, contact me if you can
+const correct 
+`[C++ FAQ][Cline et al., 1998][Eckel, 2000][Lakos, 1996][Sutter, 2004]`. 
+As there is no reason why Rust would be different in this
+regard, this book strives to be `mut`-correct
+(and please, contact me if you can
 share a `mut`-correct implementation of `count_n_players`).
 
 ## 2.3.2. First fix
