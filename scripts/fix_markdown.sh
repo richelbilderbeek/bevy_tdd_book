@@ -18,5 +18,8 @@ if [[ "$PWD" =~ scripts$ ]]; then
     exit 42
 fi
 
+git add .
+git commit -m "Before checking markdown style"
 markdownlint "**/*.md" --fix
-git status
+git add .
+git commit -m "Fixed markdown style"
