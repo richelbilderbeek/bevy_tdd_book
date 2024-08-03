@@ -1,4 +1,4 @@
-# Add text
+# 2.6. Add text
 
 This chapter shows how to add a text to a game.
 
@@ -6,7 +6,7 @@ This chapter introduces:
 
 - The Bevy `TextBundle`
 
-## First test: an `App` has no text
+## 2.6.1. First test: an `App` has no text
 
 Similar to earlier chapters,
 we'll start our game development for counting the number
@@ -19,7 +19,7 @@ fn test_empty_app_has_text() {
 }
 ```
 
-## First fix
+## 2.6.2. First fix
 
 Taking a look at
 [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html),
@@ -40,7 +40,7 @@ for a player's `Transform`, as a default camera also has a `Transform`
 Component, hence we had to use a `Player` marker component to get access
 to the right `Transform`.
 
-## Second test: can create an `App` with text
+## 2.6.3. Second test: can create an `App` with text
 
 As our game will show a text, we'll have to be able to pass our
 desired text to it. We do so using a `create_app` function:
@@ -55,7 +55,7 @@ The `String` used by Bevy is the standard Rust `String`.
 We could just as well have picked to use a string slice instead,
 but this approach felt better.
 
-## Second fix
+## 2.6.4. Second fix
 
 All that this test forces us to do, is to write a `create_app`
 function that accepts a `String`. Here is an example stub
@@ -65,7 +65,7 @@ that will pass the test:
 pub fn create_app(_text: String) -> () {}
 ```
 
-## Third test: an `App` has text
+## 2.6.5. Third test: an `App` has text
 
 Now we force the app to actually store the text in an entity:
 
@@ -77,7 +77,7 @@ fn test_app_has_text() {
 }
 ```
 
-## Third fix
+## 2.6.6. Third fix
 
 To make this test pass, we need to:
 
@@ -113,7 +113,7 @@ Most of this function is similar to adding a `SpriteBundle`.
 It may come as a surprise that the `text` field is more than just
 a `String`: a `Text` contains multiple `TextSection`s.
 
-## Fourth test: an `App` has the correct text
+## 2.6.7. Fourth test: an `App` has the correct text
 
 In the final test we assure that our desired text is actually stored
 by our application:
@@ -127,13 +127,13 @@ fn test_app_uses_text() {
 }
 ```
 
-## Fourth fix
+## 2.6.8. Fourth fix
 
 If your implementations matched the earlier fixes, this test would already
 pass. In case you've cut a corner, this is the test that will force you to
 write a non-stub implementation.
 
-## `main.rs`
+## 2.6.9. `main.rs`
 
 The resulting `main` function is not much different than we are used to:
 
@@ -152,7 +152,7 @@ fn main() {
 
 ![The App shows a text](add_text.png)
 
-## Conclusion
+## 2.6.10. Conclusion
 
 We can now create an `App` with a text.
 We have tested everything that the App does!
