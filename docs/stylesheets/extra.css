@@ -67,7 +67,7 @@
 
 /* Numbered chapters */
 /* From https://stackoverflow.com/a/51139662 */
-
+/*
 body {
 counter-reset : h2;
     }
@@ -117,3 +117,4 @@ h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.n
 content : "";
 counter-increment : none;
     }
+*/
