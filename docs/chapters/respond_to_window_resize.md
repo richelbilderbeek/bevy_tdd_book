@@ -2,6 +2,11 @@
 
 This chapter shows how to respond to the resizing of a window.
 
+!!! note "Not ready for yet"
+
+    This section remains unfinished until feedback about the previous sections
+    has been received.
+
 The idea is to do something when a window resizes.
 
 This chapter introduces:

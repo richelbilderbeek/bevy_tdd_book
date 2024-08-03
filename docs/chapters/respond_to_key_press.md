@@ -2,6 +2,11 @@
 
 This chapter shows how to respond to a key press as done on a keyboard.
 
+!!! note "Not ready for yet"
+
+    This section remains unfinished until feedback about the previous sections
+    has been received.
+
 The idea is to do something upon a key press.
 
 This chapter introduces:

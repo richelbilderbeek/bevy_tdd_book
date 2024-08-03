@@ -2,6 +2,11 @@
 
 This chapter shows how to respond to a mouse move.
 
+!!! note "Not ready for yet"
+
+    This section remains unfinished until feedback about the previous sections
+    has been received.
+
 The idea is to do something upon a mouse move.
 
 This chapter introduces:

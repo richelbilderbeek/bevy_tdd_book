@@ -2,6 +2,11 @@
 
 This chapter shows how to move a camera with a mouse.
 
+!!! note "Not ready for yet"
+
+    This section remains unfinished until feedback about the previous sections
+    has been received.
+
 The idea is to change the camera's position, rotation and zoom upon mouse input.
 
 These tests are the same as in the minimal examples.

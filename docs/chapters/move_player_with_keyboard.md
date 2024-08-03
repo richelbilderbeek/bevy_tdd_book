@@ -2,6 +2,11 @@
 
 This chapter shows how to move a player with a keyboard.
 
+!!! note "Not ready for yet"
+
+    This section remains unfinished until feedback about the previous sections
+    has been received.
+
 The idea is to give a player a velocity upon a key press.
 
 This chapter introduces:
