@@ -1,4 +1,4 @@
-# Introduction
+# 2.1. Introduction
 
 In this section, we start building simple Bevy programs,
 using test-driven development and gradually introducing

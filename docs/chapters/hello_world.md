@@ -1,4 +1,4 @@
-# Hello world
+# 2.2. Hello world
 
 This chapter is about creating a minimal Bevy program that is completely tested.
 
@@ -9,7 +9,7 @@ This chapter introduces:
 - Code coverage.
 - The `create_app` function
 
-## Test-Driven Development
+## 2.2.1. Test-Driven Development
 
 Test-Driven Develop, or TDD, is a software methodology to develop
 computer code in a systematic way,
@@ -26,7 +26,7 @@ TDD cycles. A TDD cycle has three steps:
 This book follows these cycles, by first showing the test(s),
 then their fixes.
 
-## First test: `create_app` should not crash
+## 2.2.2. First test: `create_app` should not crash
 
 Our first test is about creating a computer program that uses the Bevy game library.
 The Bevy class for this, is called [`App`](https://docs.rs/bevy/latest/bevy/app/struct.App.html).
@@ -54,7 +54,7 @@ so the Rust compiler will give an error message.
 This allows us to make our dreams come true and
 write that `create_app` function!
 
-## First fix
+## 2.2.3. First fix
 
 Here is a possible implementation of `create_app`:
 
@@ -92,7 +92,7 @@ Following a consistent coding style improves software quality `[Fang, 2001]`.
 Note that all code shown in this book is checked for style
 and, if a style guideline is breached, results in an error too.
 
-## `main.rs`
+## 2.2.4. `main.rs`
 
 The `main` function will not be used in automated testing,
 as it starts our game: starting the game
@@ -114,7 +114,7 @@ Due to this, our `App` that does nothing can be displayed:
 
 [An empty Bevy App](hello_world.md)
 
-## Code coverage
+## 2.2.5. Code coverage
 
 The code coverage of a software project is the percentage of code
 that has been used at least once by tests.
@@ -145,14 +145,14 @@ from being tested for code coverage is not a big problem:
 the `main` functions used in this book are always short:
 they create an `App` and run it!
 
-## Conclusion
+## 2.2.6. Conclusion
 
 We can now create an `App`. It does nothing.
 We do have tested everything (i.e. nothing) it does!
 
 The full program can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_hello_world](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world).
 
-## References
+## 2.2.7. References
 
 - `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
 - `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
