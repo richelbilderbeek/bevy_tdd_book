@@ -102,7 +102,7 @@ pub fn create_app() -> App {
 ```
 
 Following a consistent coding style improves software quality `[Fang, 2001]`.
-All code shown in this book is tested to follow the 
+All code shown in this book is tested to follow the
 Rust style recommended by the `clippy` crate.
 
 Here is an implementation that is a stub:
@@ -154,7 +154,7 @@ Our game -a game that does nothing- is hence properly displayed as such:
 The code coverage of a software project is the percentage of code
 that has been used at least once by tests.
 Code coverage correlates with code quality `[Horgan et al., 1994]`
-`[Del Frate et al., 1995]`. 
+`[Del Frate et al., 1995]`.
 Some communities have a mandatory 100% code coverage
 to pass a code peer-review by committees such as, for example,
 rOpenSci `[Ram, 2013]`.
@@ -169,22 +169,22 @@ as it can be tested automatically.
 
 The `main` function is a bad candidate to be tested for code coverage,
 as it cannot be tested automatically. Instead, when `main` is called,
-the game is started, which requires user input, for example, 
+the game is started, which requires user input, for example,
 pressing `ALT + F4`, to close it.
 
 Although the `main` function is a bad candidate, one **can** test it
-if one really wants to! 
+if one really wants to!
 For example, by writing a script that simulates input,
 such as sending the standard key combination `ALT + F4`
 to the program to close it.
 However, one needs to decide on a per-project basis if this
-extra testing is worth the extra effort. 
+extra testing is worth the extra effort.
 
 In this book, it is decided to test all code, except for the `main` function,
 as writing scripts to simulate user input is judged to be not worth the
 effort: the programs shown are judged to be not critical enough
 (read 'critical' as 'people will die if the window
-does not close with `ALT + F4`'). 
+does not close with `ALT + F4`').
 You will see that excluding the `main` function
 from being tested for code coverage is not a big problem:
 the `main` functions used in this book are always short:
