@@ -8,6 +8,8 @@
 Start of a book [1] called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
+- [Contributing](CONTRIBUTING.md)
+- [Contributors](docs/misc/contributors.md)
 - [FAQ](docs/misc/faq.md)
 
 ## Chapters
@@ -64,11 +66,6 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_camera_with_mouse)                |[move_camera_with_mouse.md](docs/chapters/move_camera_with_mouse.md)                |Respond to mouse                         |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)                |[move_player_with_mouse.md](docs/chapters/move_player_with_mouse.md)                |Respond to mouse                         |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)        |[show_2d_coordinate_systems.md](docs/chapters/show_2d_coordinate_systems.md)        |Show 2D coordinate systems               |2D coordinate systems
-
-
-## Contributors
-
-These can be found at [docs/misc/contributors.md](docs/misc/contributors.md).
 
 ## Files used by continuous integration scripts
 

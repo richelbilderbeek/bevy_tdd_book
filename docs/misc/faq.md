@@ -68,9 +68,9 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ### Are there other sources you recommend?
 
-- [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples)
-- [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook)
-- [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
+* [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples)
+* [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook)
+* [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
 
 ## General
 

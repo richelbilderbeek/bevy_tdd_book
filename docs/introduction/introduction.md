@@ -10,7 +10,7 @@ If you want to dive right in, go to [the next chapter](../misc/basic_introductio
 
 ## 1.1. Why this book?
 
-This book started from the question: 
+This book started from the question:
 'Is Bevy suitable for Test-Driven Development?',
 as the author was looking for a Rust gaming library
 suitable for Test-Driven Development.
@@ -29,8 +29,8 @@ can be answered with a 'yes'.
 
 ## 1.2. What is the intended audience of this book?
 
-This book is suitable for intermediate Rust developers: people that have 
-read parts of 'The Rust programming language' 
+This book is suitable for intermediate Rust developers: people that have
+read parts of 'The Rust programming language'
 `[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`
 and are able to write functions and structures.
 
