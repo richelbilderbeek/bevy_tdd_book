@@ -31,7 +31,7 @@ can be answered with a 'yes'.
 
 This book is suitable for intermediate Rust developers: people that have
 read parts of 'The Rust programming language'
-`[Klabnik & Nichols, 2018]``[Klabnik & Nichols, 2023]`
+`[Klabnik & Nichols, 2018][Klabnik & Nichols, 2023]`
 and are able to write functions and structures.
 
 This book does not teach Rust, nor Bevy.
