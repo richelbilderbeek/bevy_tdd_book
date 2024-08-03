@@ -4,9 +4,9 @@ repo_url: https://github.com/richelbilderbeek/bevy_tdd_book
 
 nav:
   - Home: index.md
-  - Introduction:
+  - 1. Introduction:
     - 1. Introduction: introduction/introduction.md
-  - Basic:
+  - 2. Basic:
     - 2.1. Introduction: misc/basic_introduction.md
     - 2.2. Hello world: chapters/hello_world.md
     - 2.3. Add a player: chapters/add_player.md
@@ -16,7 +16,7 @@ nav:
     - 2.7. Add a camera: chapters/add_camera.md
     - 2.8. Move the player: chapters/move_player.md
     - 2.9. Move the camera: chapters/move_camera.md
-  - Respond to input:
+  - 3. Respond to input:
     - 3.1. Introduction: misc/respond_to_input_introduction.md
     - 3.x. Respond to a key just being pressed: chapters/respond_to_just_key_pressed.md
     - 3.x. Repond to a key press: chapters/respond_to_key_press.md
