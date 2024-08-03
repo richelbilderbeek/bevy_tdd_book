@@ -3,6 +3,8 @@
 This chapter shows how to add a player sprite to a game,
 at a certain position and of a certain size.
 
+![Our 'add_player_sprite' game](add_player_sprite_4.png)
+
 Bevy supports 2D, isometric ('2.5D') and 3D.
 For simplicity, the game we develop is 2D.
 

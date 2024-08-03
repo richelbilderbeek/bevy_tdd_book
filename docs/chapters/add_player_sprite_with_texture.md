@@ -1,7 +1,9 @@
-# Add player sprite with a texture
+# 2.5. Add player sprite with a texture
 
 This chapter shows how to add a player sprite with a texture to a game.
 This allows us to use images in our game.
+
+![Our 'add_player_sprite_with_texture' game](add_player_sprite_with_texture.png)
 
 This chapter introduces:
 
@@ -15,7 +17,7 @@ This chapter introduces:
 
 ![Our application in action](add_player_sprite_with_texture.png)
 
-## First tests
+## 2.5.1. First tests
 
 Our first tests are the same as earlier chapters,
 forcing us to write `create_app`, `count_n_players` and
@@ -37,7 +39,7 @@ fn test_our_app_has_a_player() {
 
 The previous chapter discusses these steps in details.
 
-## Third test: our player has a default scale
+## 2.5.2. Third test: our player has a default scale
 
 The image will be displayed at its original 1:1 scale:
 
@@ -49,7 +51,7 @@ fn test_player_has_the_default_scale() {
 }
 ```
 
-## Third fix
+## 2.5.3. Third fix
 
 Although the function name `get_player_scale` is new, it has
 exactly the same implementation as `get_player_size` in the previous chapter:
@@ -65,7 +67,7 @@ fn get_player_scale(app: &mut App) -> Vec2 {
 In the context of using an image, it is more natural to work with a
 scale than with a size.
 
-## Fourth test: our player has a texture
+## 2.5.4. Fourth test: our player has a texture
 
 Now for the texture:
 
@@ -77,7 +79,7 @@ fn test_player_has_a_texture() {
 }
 ```
 
-## Fourth fix
+## 2.5.5. Fourth fix
 
 The seemingly innocent test above, forces us into a complex fix:
 
@@ -170,7 +172,7 @@ loaded from file by the assets server. For this to work, that file (in this
 case, `bevy_bird_dark.png`) must be present in the `assets` folder
 of the Rust project.
 
-## `main.rs`
+## 2.5.6. `main.rs`
 
 The `main` function has not changed at all:
 
@@ -186,7 +188,10 @@ fn main() {
 }
 ```
 
-## Conclusion
+![Our 'add_player_sprite_with_texture' game](add_player_sprite_with_texture.png)
+
+
+## 2.5.7. Conclusion
 
 We can now create an `App` with a player sprite that has a texture.
 When running the `App`, we can see the player.
