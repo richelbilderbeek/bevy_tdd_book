@@ -2,6 +2,8 @@
 
 This chapter shows how to add a player to a game.
 
+![Our 'add_player' game](add_player.png)
+
 This chapter introduces:
 
 - The `count_n_players` function
@@ -196,6 +198,8 @@ fn main() {
     app.run();
 }
 ```
+
+![Our 'add_player' game](add_player.png)
 
 ## 2.3.6. Conclusion
 

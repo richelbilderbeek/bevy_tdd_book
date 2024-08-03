@@ -2,7 +2,7 @@
 
 This chapter is about creating a minimal Bevy program that is completely tested.
 
-![An empty Bevy App](hello_world.png)
+![Our 'hello_world' game](hello_world.png)
 
 This chapter introduces:
 
@@ -147,7 +147,7 @@ closed by, among others, pressing `ALT + F4`.
 Thanks to this plugin, we can see our `App`!
 Our game -a game that does nothing- is hence properly displayed as such:
 
-![An empty Bevy App](hello_world.png)
+![Our 'hello_world' game](hello_world.png)
 
 ## 2.2.6. Code coverage
 
