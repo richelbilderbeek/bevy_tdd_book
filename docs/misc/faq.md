@@ -66,6 +66,12 @@ Due to this, the first chapters do not result in a playable game yet.
 * Use fancy idioms that are of personal preference,
   unless described as such
 
+### Are there other sources you recommend?
+
+- [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples)
+- [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook)
+- [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
+
 ## General
 
 ### Why use Test-Driven Development?
