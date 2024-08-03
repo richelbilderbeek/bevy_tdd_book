@@ -1,4 +1,4 @@
-# Move a player
+# 2.8. Move a player
 
 This chapter shows how to move a player.
 
@@ -10,7 +10,7 @@ This chapter introduces:
 - how to extend our own Bevy component
 - adding an `Update` system
 
-## First test: an empty `App` has no players
+## 2.8.1. First test: an empty `App` has no players
 
 Similar to all earlier chapters, we open
 our test suite with counting the number
@@ -24,11 +24,11 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-## First fix
+## 2.8.2. First fix
 
 See the [`add_player`](add_player.md) chapter.
 
-## Second test: our `App` stores an initial velocity
+## 2.8.3. Second test: our `App` stores an initial velocity
 
 The idea of this app is to give the player a velocity,
 so that we can see it move.
@@ -45,7 +45,7 @@ fn test_can_set_and_get_velocity() {
 }
 ```
 
-## Second fix
+## 2.8.4. Second fix
 
 To fix this, we'll need to:
 
@@ -120,7 +120,7 @@ fn get_player_velocity(app: &mut App) -> Vec2 {
 We can directly query for a `Player` component, as we can be sure
 other Bevy plugins will not add it for us.
 
-## Third test: our `App` has a player
+## 2.8.5. Third test: our `App` has a player
 
 We've been counting the number of players
 since the [`add_player`](add_player.md) chapter:
@@ -136,7 +136,7 @@ fn test_create_app_has_a_player() {
 
 See the [`add_player`](add_player.md) chapter for its implementation.
 
-## Fourth test: the player starts at the origin
+## 2.8.6. Fourth test: the player starts at the origin
 
 We've been getting the position of the player
 at the [`add_player_sprite`](add_player_sprite.md) chapter:
@@ -153,7 +153,7 @@ fn test_player_starts_at_the_origin() {
 See the [`add_player_sprite`](add_player_sprite.md) chapter for its
 implementation.
 
-## Fifth test: a player moves
+## 2.8.7. Fifth test: a player moves
 
 Now we have all the pieces in place to test for movement:
 
@@ -174,7 +174,7 @@ The test shown here is enough to force us to add player movement,
 hence we'll stick with it. If we need precise movement tests, sure, go
 ahead and add these!
 
-## Fifth fix
+## 2.8.8. Fifth fix
 
 Making a player move is a (Bevy) system: it is a -typically-
 function that works on entities in the world.
@@ -205,7 +205,7 @@ That function argument is the most interesting of the function:
 `query` will contain all `Transforms` marked with a `Player`,
 where -for the first time!- we can modify the `Transform`.
 
-## `main.rs`
+## 2.8.9. `main.rs`
 
 To see that it works, this is the code we can use:
 
@@ -227,7 +227,7 @@ We can indeed see our player move:
 
 ![The player moves](move_player.png)
 
-## Conclusion
+## 2.8.10. Conclusion
 
 We can now create an `App` with one player sprite that moves.
 When running the `App`, we can see the player moves.

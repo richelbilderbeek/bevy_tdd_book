@@ -15,7 +15,6 @@ nav:
     - 2.6. Add text: chapters/add_text.md
     - 2.7. Add a camera: chapters/add_camera.md
     - 2.8. Move the player: chapters/move_player.md
-    - 2.9. Move the camera: chapters/move_camera.md
   - 3. Respond to input:
     - 3.1. Introduction: misc/respond_to_input_introduction.md
     - 3.x. Respond to a key just being pressed: chapters/respond_to_just_key_pressed.md
@@ -27,6 +26,7 @@ nav:
     - 3.x. Respond to a window resize: chapters/respond_to_window_resize.md
   - Example programs:
     - Introduction: misc/example_programs_introduction.md
+    - Move the camera: chapters/move_camera.md
     - Move the camera with the keyboard: chapters/move_camera_with_keyboard.md
     - Move the camera with the mouse: chapters/move_camera_with_mouse.md
     - Move the player with the keyboard: chapters/move_player_with_keyboard.md

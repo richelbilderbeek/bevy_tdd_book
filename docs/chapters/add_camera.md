@@ -1,4 +1,4 @@
-# Add camera
+# 2.7. Add camera
 
 In this chapter, we add adding a camera to our test suites.
 
@@ -7,7 +7,7 @@ This chapter introduces:
 - the Bevy `Camera2dBundle` bundle
 - a local closure
 
-## First test
+## 2.7.1. First test
 
 Similar to earlier chapters, the test starts with
 counting the number of cameras:
@@ -20,7 +20,7 @@ fn test_empty_app_has_no_cameras() {
 }
 ```
 
-## First fix
+## 2.7.2. First fix
 
 Similar to a `Text` component, we take a look
 at [the Bevy documentation on the Camera2dBundle](https://docs.rs/bevy/latest/bevy/prelude/struct.Camera2dBundle.html)
@@ -39,7 +39,7 @@ their own `Camera`s. As long as it is the case that our camera is the
 only `Camera`, this implementation is good enough and does not need
 a marker component.
 
-## Second test
+## 2.7.3. Second test
 
 Our game will have a camera with a custom scale.
 Instead of repeating the smaller steps as in the earlier chapters,
@@ -59,7 +59,7 @@ In TDD, one should have many small tests and only add one tests that breaks
 at the same time. However, to save book pages, I've combined the three
 tests into one.
 
-## Second fix
+## 2.7.4. Second fix
 
 To fix all this, we need to:
 
@@ -100,14 +100,14 @@ Here, we query for the same `projection` field of a `Camera2dBundle`
 of data type `OrthographicProjection` as we've used in the `create_app`
 function.
 
-## Third tests
+## 2.7.5. Third tests
 
 We do want to be able to see something. Hence, we'll probably want to
 add a player with or without a texture. I've picked to add
 a player in the same way as chapter [`add_player`](add_player.md)
 and re-used the same tests and implementations.
 
-## Running `main`
+## 2.7.6. Running `main`
 
 As our `create_app` now also adds a camera, the `main` function
 simplifies to:
@@ -123,7 +123,7 @@ fn main() {
 
 ![The camera has zoomed in](add_camera.png)
 
-## Conclusion
+## 2.7.7. Conclusion
 
 We can now create an `App` with a camera.
 When running the `App`, a rectangle is displayed.

@@ -16,7 +16,7 @@ flowchart TD
   add_camera[2.6. add_camera\nAdd a camara]
   move_player[2.7. move_player\nMove the player]
   add_text[2.8. add_text\nAdd text]
-  move_camera[2.9. move_camera\nMove the camera]
+  move_camera[move_camera\nMove the camera]
 
   introduction --> hello_world
   hello_world --> add_player
@@ -27,3 +27,7 @@ flowchart TD
   add_player_sprite --> move_player
   move_player -.-> |optional| move_camera
 ```
+
+The last chapter `move_camera` is an optional chapter
+and part of the appendix,
+as it introduces no new concepts.
