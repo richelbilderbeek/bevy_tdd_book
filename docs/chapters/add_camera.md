@@ -2,6 +2,8 @@
 
 In this chapter, we add adding a camera to our test suites.
 
+![Our 'add_camera' game](add_camera.png)
+
 This chapter introduces:
 
 - the Bevy `Camera2dBundle` bundle

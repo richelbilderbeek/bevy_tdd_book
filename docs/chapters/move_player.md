@@ -2,6 +2,8 @@
 
 This chapter shows how to move a player.
 
+![Our 'move_player' game](move_player.png)
+
 The idea is to give a player a velocity,
 making the player move on screen.
 

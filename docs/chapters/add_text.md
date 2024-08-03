@@ -2,6 +2,8 @@
 
 This chapter shows how to add a text to a game.
 
+![Our 'add_text' game](add_text.png)
+
 This chapter introduces:
 
 - The Bevy `TextBundle`
