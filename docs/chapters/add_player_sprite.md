@@ -1,4 +1,4 @@
-# Add player sprite
+# 2.4. Add player sprite
 
 This chapter shows how to add a player sprite to a game,
 at a certain position and of a certain size.
@@ -17,7 +17,7 @@ This chapter introduces:
 - a Bevy `Transform`
 - an in-function assertion
 
-## First test: our `App` needs a position and size
+## 2.4.1. First test: our `App` needs a position and size
 
 If we want to add a player sprite to the game
 at a certain position and of a certain size,
@@ -39,7 +39,7 @@ As the game we create is 2D, both a position and a size are two dimensional.
 The test is generous: calling `create_app` must be possible with two arguments,
 after which it should not crash.
 
-## First fix
+## 2.4.2. First fix
 
 A valid stub would be:
 
@@ -52,7 +52,7 @@ fn create_app(_position: Vec2, _size: Vec2) -> App {
 The variable names starting with an underscore (`_`) denote that
 their values are allowed to be unused. This is perfect for a stub!
 
-## Second test: an empty `App` has no players
+## 2.4.3. Second test: an empty `App` has no players
 
 Next step is to count the number of players of an empty `App`,
 so we have a reason to add a player.
@@ -71,7 +71,7 @@ This is the last time I will repeat tests that are identical
 to earlier chapters: it is not worth the space in a book.
 The fix is identical to the one shown in the previous chapter.
 
-## Third test: our `App` has a player
+## 2.4.4. Third test: our `App` has a player
 
 A slightly new test is to determine if `create_app`, now with
 two arguments, indeed creates one player:
@@ -86,7 +86,7 @@ fn test_create_app_has_a_player() {
 }
 ```
 
-## Third fix
+## 2.4.5. Third fix
 
 To fix this test, we need:
 
@@ -171,7 +171,7 @@ translation and we should ignore that in the implementation details we need to
 modify a translation. This is a good feature of TDD: it prevents us from using
 needlessly technical names.
 
-## Fourth test: a player has a position
+## 2.4.6. Fourth test: a player has a position
 
 Our previous implementation could (and maybe should) have been done sloppier.
 Here we enforce that the player's 2D position is implemented correctly:
@@ -186,7 +186,7 @@ fn test_get_player_position() {
 }
 ```
 
-## Fourth fix
+## 2.4.7. Fourth fix
 
 Here is an implementation to get back the player's
 position from the complex thing we added:
@@ -229,7 +229,7 @@ Use assertions liberally `[Liberty, 2001]` `[Stroustrup, 2012]`.
 Of the 3D `Transform` (with a z coordinate of zero),
 we return the x and y coordinate of the translation.
 
-## Fifth test: a player has a size
+## 2.4.8. Fifth test: a player has a size
 
 Now we can work with a player's position, we do the same for a player's size:
 
@@ -263,7 +263,7 @@ fn get_player_size(app: &mut App) -> Vec2 {
 This time, we assert that the player's scale is one,
 which is needed for a 2D game.
 
-## `main.rs`
+## 2.4.9. `main.rs`
 
 All our tests pass! However, the we have not yet *seen* the player.
 To see our game in action, we need the proper `main` function:
@@ -294,7 +294,7 @@ result in the player being 1x1 pixels big:
 
 ![The player is a dot](add_player_sprite_2.png)
 
-## Conclusion
+## 2.4.10. Conclusion
 
 We can now create an `App` with one player sprite,
 where the player has, among others, a position and size.
@@ -303,7 +303,7 @@ We have tested everything that the App does!
 
 Full code can be found at [https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite](https://github.com/richelbilderbeek/bevy_tdd_book_add_player_sprite).
 
-## References
+## 2.4.11. References
 
 - `[Lakos, 1996]` John Lakos. Large-Scale C++ Software Design. 1996. ISBN: 0-201-63362-0. Chapter 2.6: 'The use of assert statements can help to document the assumptions you make when implementing your code
 - `[Liberty, 2001]` Jesse Liberty. Sams teach yourself C++ in 24 hours, 2nd edition. 2001. ISBN: 0-672-32224-2. Hour 24, chapter 'assert()': 'Use assert freely'
