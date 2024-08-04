@@ -32,7 +32,7 @@ is enough to make the test pass:
 ```rust
 fn count_n_cameras(app: &mut App) -> usize {
     let mut query = app.world_mut().query::<&Camera>();
-    return query.iter(app.world_mut()).len();
+    return query.iter(app.world()).len();
 }
 ```
 

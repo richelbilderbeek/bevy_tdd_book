@@ -208,7 +208,7 @@ However, a query always needs a mutable World, hence an implementation that work
 // Does not modify the App, I promise!
 fn count_n_players(app: &mut App) -> usize {
     let mut query = app.world_mut().query::<&Player>();
-    return query.iter(app.world_mut()).len();
+    return query.iter(app.world()).len();
 }
 ```
 

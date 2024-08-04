@@ -31,7 +31,7 @@ We'll use that -and only that- for our query:
 ```rust
 fn count_n_texts(app: &mut App) -> usize {
     let mut query = app.world_mut().query::<&Text>();
-    return query.iter(app.world_mut()).len();
+    return query.iter(app.world()).len();
 }
 ```
 
