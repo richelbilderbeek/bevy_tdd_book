@@ -37,21 +37,35 @@ It is unexpected that a read-only operation (i.e. counting the amount of players
 requires the data it works on to be mutable. The Bevy library probably
 has good reasons why it must be mutable.
 
-The comment `Note 2` is to remind us to always call `app.update()`
-before testing. An `app.update()` lets Bevy initialize an `App`
-and it will give false results to do tests on uninitialized `App`s.
-*Maybe* this test will pass without initialization,
-but it would be an improperly conducted test.
-
-In general, a read-only operation should work on an immutable data structure.
+In general, a read-only operation should be able to work 
+on an immutable data structure: when, for example, getting the name
+of a person structure (a read-only operation), 
+we do not expect the person to change and we expect to be able to do so
+on an immutable person.
 Correct use the Rust keyword `mut` is what I call `mut`-correctness,
-which is similar to C++ const correctness. In C++, it is recommended to be
+which is similar to C++ const correctness, where the C++ `const` keyword
+indicates something immutable. In C++, it is recommended to be
 const correct
 `[C++ FAQ][Cline et al., 1998][Eckel, 2000][Lakos, 1996][Sutter, 2004]`.
 As there is no reason why Rust would be different in this
 regard, this book strives to be `mut`-correct
 (and please, contact me if you can
 share a `mut`-correct implementation of `count_n_players`).
+
+The comment `Note 2` is to remind us to always call `app.update()`
+before testing. An `app.update()` lets Bevy initialize an `App`
+and it will give false results to do tests on uninitialized `App`s.
+*Maybe* this test will pass without initialization,
+but it would be an improperly conducted test.
+
+To put `app.update()` at the end of the 
+`create_app` function is a good idea in some contexts,
+as it means we do not need to call `app.update()` in each test.
+A drawback of calling `app.update()` in a `create_app` function
+is that it does finalize the creation of our `App`:
+we cannot -for example- add another player to our created `App`.
+The decision strategy in this book is, that if `app.update()` can
+be put in `create_app`, it is put there.
 
 ## 2.3.2. First fix
 
@@ -60,7 +74,7 @@ Here is a possible implementation of `count_n_players`:
 ```rust
 fn count_n_players(app: &mut App) -> usize {
     let mut query = app.world_mut().query::<&Player>();
-    return query.iter(app.world_mut()).len();
+    return query.iter(app.world()).len();
 }
 ```
 
@@ -68,8 +82,9 @@ This implementation is a simple way to count the
 amount of `Player` components. Here I break down the implementation:
 
 - `let mut query`: we create a question to ask to Bevy.
-  In the context of informatics, a question such as this is called 'a query'
-- `app.world_mut()` denotes that we mutable (i.e. read and write)
+  In the context of informatics, a question such as this is called 'a query'.
+  The query will be actively used in the next step, hence it must be mutable
+- `app.world_mut()` denotes that we need mutable (i.e. read and write)
   access to the `World` structure of a Bevy `App`. Unsurprisingly,
   the `World` structure holds all things that are part of the world
   in your game.
@@ -78,8 +93,8 @@ amount of `Player` components. Here I break down the implementation:
   `Component`. We will explain entities and components
   later; for now, the code `Player` is related to a
   component (whatever that is) for a player.
-- `query.iter(app.world_mut())` reads as 'iterate over the
-  answers of our question (applied to our world)'
+- `query.iter(app.world())` reads as 'iterate over the
+  answers of our question (applied to our -now immutable!- world)'
 - `.len()` is for counting the amount of players that are found
 
 The Bevy `Query` is the workhorse for reading and writing
@@ -98,28 +113,13 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-## 2.3.3. Second test: our `App` has one player
+However, this test does not compile yet: 
 
-Now that we can count the number of players,
-we can test that an `App` we create has one player:
-
-```rust
-fn test_create_app_has_a_player() {
-    let mut app = create_app();
-    app.update();
-    assert_eq!(count_n_players(&mut app), 1);
-}
+```text
+error[E0412]: cannot find type `Player` in this scope
 ```
 
-This will fail, as `create_app` does not create an `App` with
-a player.
-
-## 2.3.4. Second fix
-
-To add a `Player` object to our `App` we need to:
-
-- Define a `Player` component
-- Add it to our `App`
+The Rust compiler is correct: we need to define it.
 
 Here define a `Player` component:
 
@@ -129,22 +129,48 @@ pub struct Player;
 ```
 
 In English this would read: 'a player is a component'.
-To be more precise is that the `Player` structure is an extension
+Using more formal language, one would say
+that the `Player` structure is an extension
 of the Bevy `Component` structure.
 
-A Bevy `Component` is a blueprint for thing that
+A Bevy `Component` is a blueprint for things that
 can be stored in a Bevy `World`.
+Using more formal language, one would say that the Bevy `Component`
+is a base class or a Rust trait (we ignore that `Component` is a bit
+more complex than this).
 Components are the workhorse unit in Bevy: you'll create components,
 query for components and -later- you'll bundle components.
 
-There are two types of Bevy `Components`:
+There are two types of Bevy components:
 
 - marker components
 - regular components
 
-Marker components are Bevy `Component`s that are extended with only a name,
-where a regular components extends a Bevy `Component` with a name and
-member variables. The `Player` structure above is a marker component.
+Marker components are Bevy components that are extended with only a name,
+where a regular components extends a Bevy component with a name and
+member variables. The `Player` structure above is a marker component,
+as it only extends the Bevy `Component` by adding a name, without having
+member variables nor member functions.
+
+Adding the above implementation of our player class
+will fix all tests. Well done!
+
+## 2.3.3. Second test: our `App` has one player
+
+Now that we can count the number of players,
+we can test that the `App` we create has one player:
+
+```rust
+fn test_create_app_has_a_player() {
+    let mut app = create_app();
+    assert_eq!(count_n_players(&mut app), 1);
+}
+```
+
+This will fail, as `create_app` does not create an `App` with
+a player yet.
+
+## 2.3.4. Second fix
 
 Adding our `Player` `Component` to our `App` takes two steps:
 
@@ -187,6 +213,23 @@ This function has some magic to it:
 
 After having modified `create_app`, added the `Player` `Component`
 and the `add_player` function, the test passes. Well done!
+
+An alternative implementation would be to combine the
+statements above, resulting in:
+
+```text
+app.add_systems(Startup, |mut commands: Commands| {
+    commands.spawn(Player);
+});
+```
+
+This implementation does exactly the same. One could argue that
+it is harder to understand what this does, where the function name `add_player`
+was communicated this clearly. One could argue that the expression is more
+complex, as it introduces a closure (more on those later).
+This book picked the way that is easier to explain.
+This approach also scales better when adding players, enemies, cameras, 
+etcetera.
 
 ## 2.3.5. `main.rs`
 
