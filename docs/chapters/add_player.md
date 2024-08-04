@@ -37,9 +37,9 @@ It is unexpected that a read-only operation (i.e. counting the amount of players
 requires the data it works on to be mutable. The Bevy library probably
 has good reasons why it must be mutable.
 
-In general, a read-only operation should be able to work 
+In general, a read-only operation should be able to work
 on an immutable data structure: when, for example, getting the name
-of a person structure (a read-only operation), 
+of a person structure (a read-only operation),
 we do not expect the person to change and we expect to be able to do so
 on an immutable person.
 Correct use the Rust keyword `mut` is what I call `mut`-correctness,
@@ -58,7 +58,7 @@ and it will give false results to do tests on uninitialized `App`s.
 *Maybe* this test will pass without initialization,
 but it would be an improperly conducted test.
 
-To put `app.update()` at the end of the 
+To put `app.update()` at the end of the
 `create_app` function is a good idea in some contexts,
 as it means we do not need to call `app.update()` in each test.
 A drawback of calling `app.update()` in a `create_app` function
@@ -113,7 +113,7 @@ fn test_empty_app_has_no_players() {
 }
 ```
 
-However, this test does not compile yet: 
+However, this test does not compile yet:
 
 ```text
 error[E0412]: cannot find type `Player` in this scope
@@ -228,7 +228,7 @@ it is harder to understand what this does, where the function name `add_player`
 was communicated this clearly. One could argue that the expression is more
 complex, as it introduces a closure (more on those later).
 This book picked the way that is easier to explain.
-This approach also scales better when adding players, enemies, cameras, 
+This approach also scales better when adding players, enemies, cameras,
 etcetera.
 
 ## 2.3.5. `main.rs`
