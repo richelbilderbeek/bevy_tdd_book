@@ -55,7 +55,7 @@ theme:
     - navigation.sections
     - navigation.path
     - navigation.footer
-    # - navigation.expand
+    - navigation.expand
     - search.suggest
     - content.code.annotate
     - content.code.copy
