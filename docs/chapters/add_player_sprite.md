@@ -54,6 +54,13 @@ fn create_app(_position: Vec2, _size: Vec2) -> App {
 The variable names starting with an underscore (`_`) denote that
 their values are allowed to be unused. This is perfect for a stub!
 
+One could argue that one should do a complete implementation and
+store the position and size of the player somewhere.
+There are plenty of ways to do so, including quite inconventional ones.
+A consequence of doing TDD is a clean (and conventional) software
+architecture. Instead of doing funky things, settling for a stub
+is -as always!- perfectly fine. 
+
 ## 2.4.3. Second test: an empty `App` has no players
 
 Next step is to count the number of players of an empty `App`,
@@ -71,7 +78,10 @@ fn test_empty_app_has_no_players() {
 
 This is the last time I will repeat tests that are identical
 to earlier chapters: it is not worth the space in a book.
-The fix is identical to the one shown in the previous chapter.
+
+The fix is identical to the one shown in the previous chapter:
+1. create the `count_n_players` function
+1. implement the `Player` marker component
 
 ## 2.4.4. Third test: our `App` has a player
 
@@ -83,7 +93,6 @@ fn test_create_app_has_a_player() {
     let initial_player_position = Vec2::new(0.0, 0.0);
     let initial_player_size = Vec2::new(64.0, 32.0);
     let mut app = create_app(initial_player_position, initial_player_size);
-    app.update();
     assert_eq!(count_n_players(&mut app), 1);
 }
 ```
@@ -92,23 +101,20 @@ fn test_create_app_has_a_player() {
 
 To fix this test, we need:
 
-- a `Player` marker component
-- create a player sprite
-- a way to store the player position and size in that sprite
+- [x] a `Player` marker component: done in the previous test
+- [ ] a way to add a player with a certain position and size
+- [ ] create a player sprite
+- [ ] a way to store the player position and size in that sprite
 
-Creating a `Player` marker component is the same as in previous chapter:
+The `Player` marker component already has been created in the previous test,
+when counting the amount of players. 
 
-```rust
-#[derive(Component)]
-pub struct Player;
-```
-
-`Player` is a marker component, as it does not store any additional information.
-We could have chosen to store the player's position and size in this `Player`
-structure. However, when adding the Bevy Components (plural!) for a sprite,
-there will be a place to do so there.
-
-In `create_app`, an empty `App` is created, after which a player is added:
+The way to add a player with a certain position and size is to 
+forward this problem to the `add_player` function:
+we'll implement the `add_player` function soon, 
+but we'll start assuming that it does not only take
+`Commands` as an arguments, 
+but also a player's position and size:
 
 ```rust
 pub fn create_app(initial_player_position: Vec2, initial_player_size: Vec2) -> App {
@@ -117,18 +123,21 @@ pub fn create_app(initial_player_position: Vec2, initial_player_size: Vec2) -> A
         add_player(commands, initial_player_position, initial_player_size);
     };
     app.add_systems(Startup, add_player_fn);
+    app.update();
     app
 }
 ```
 
-New to `create_app` is the use of a closure,
-the `move |commands: Commands| { ...}`.
-The closure allows us add a system to the `App`
-with only one function argument (i.e. the `Commands`).
-It does so by calling `add_player` with the captured function arguments.
+One can see that indeed `add_player` is called with three
+arguments (`commands`, `initial_player_position` and `initial_player_size`).
+However, that function call is wrapped inside of a closure.
+That closure is called `add_player_fn`, where `fn` is a common abbreviation
+of 'function'. We need this closure as a bridge between what we need (i.e.
+a function with three function arguments) to what Bevy needs (i.e.
+a function with one function argument).
 
-Finally, `add_player` adds the structures needed to display a sprite,
-here is its implementation:
+Creating a player sprite and storing the player's position and size
+is done in the `add_player` function:
 
 ```rust
 fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_size: Vec2) {
