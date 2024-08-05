@@ -55,12 +55,12 @@ theme:
     - navigation.sections
     - navigation.path
     - navigation.footer
-#    - navigation.expand
+    # - navigation.expand
     - search.suggest
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
-  custom_dir: mkdocs_uppmax/
+  # custom_dir: mkdocs_uppmax/
     
 extra_css:
   - stylesheets/extra.css
@@ -91,3 +91,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+
+
+
+
