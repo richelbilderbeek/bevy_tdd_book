@@ -56,7 +56,7 @@ their values are allowed to be unused. This is perfect for a stub!
 
 One could argue that one should do a complete implementation and
 store the position and size of the player somewhere.
-There are plenty of ways to do so, including quite inconventional ones.
+There are plenty of ways to do so, including quite unconventional ones.
 A consequence of doing TDD is a clean (and conventional) software
 architecture. Instead of doing funky things, settling for a stub
 is -as always!- perfectly fine.
