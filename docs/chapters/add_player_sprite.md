@@ -59,7 +59,7 @@ store the position and size of the player somewhere.
 There are plenty of ways to do so, including quite inconventional ones.
 A consequence of doing TDD is a clean (and conventional) software
 architecture. Instead of doing funky things, settling for a stub
-is -as always!- perfectly fine. 
+is -as always!- perfectly fine.
 
 ## 2.4.3. Second test: an empty `App` has no players
 
@@ -80,6 +80,7 @@ This is the last time I will repeat tests that are identical
 to earlier chapters: it is not worth the space in a book.
 
 The fix is identical to the one shown in the previous chapter:
+
 1. create the `count_n_players` function
 1. implement the `Player` marker component
 
@@ -107,13 +108,13 @@ To fix this test, we need:
 - [ ] a way to store the player position and size in that sprite
 
 The `Player` marker component already has been created in the previous test,
-when counting the amount of players. 
+when counting the amount of players.
 
-The way to add a player with a certain position and size is to 
+The way to add a player with a certain position and size is to
 forward this problem to the `add_player` function:
-we'll implement the `add_player` function soon, 
+we'll implement the `add_player` function soon,
 but we'll start assuming that it does not only take
-`Commands` as an arguments, 
+`Commands` as an arguments,
 but also a player's position and size:
 
 ```rust
