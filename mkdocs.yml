@@ -60,7 +60,6 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
-  # custom_dir: mkdocs_uppmax/
     
 extra_css:
   - stylesheets/extra.css
