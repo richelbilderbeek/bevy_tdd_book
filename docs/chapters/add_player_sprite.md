@@ -259,7 +259,7 @@ This test is nearly identical to the previous test,
 except now for using `get_player_size` and comparing it to the
 initial player size.
 
-## Fifth fix
+## 2.4.9. Fifth fix
 
 The fix is nearly identical to the previous one:
 
@@ -273,12 +273,13 @@ fn get_player_size(app: &mut App) -> Vec2 {
 ```
 
 This time, we assert that the player's scale is one,
-which is needed for a 2D game.
+which is needed for (the correct rendering of) a 2D game.
 
-## 2.4.9. `main.rs`
+## 2.4.10. `main.rs`
 
-All our tests pass! However, the we have not yet *seen* the player.
-To see our game in action, we need the proper `main` function:
+All our tests pass! However, we have not yet *seen* the player.
+To see our game in action, we need to actually run the game.
+Here is a `main` function:
 
 ```rust
 fn main() {
@@ -296,15 +297,13 @@ fn main() {
 
 New to this `main` function is adding a camera, again using a closure.
 The camera is needed to display a sprite.
+Without the camera, we will see nothing at all.
+In chapter the chapter ['Add a camera'](add_camera.md)
+we will add this camera in a TDD way.
 
 This is how our game looks like now:
 
 ![The player is a big rectangle](add_player_sprite_4.png)
-
-Setting the initial player size to the default (1.0, 1.0) would
-result in the player being 1x1 pixels big:
-
-![The player is a dot](add_player_sprite_2.png)
 
 ## 2.4.10. Conclusion
 
