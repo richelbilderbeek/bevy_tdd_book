@@ -19,7 +19,7 @@ This chapter introduces:
 
 ## 2.5.1. First tests
 
-Our first tests are the same as earlier chapters,
+Our first tests are the same as in earlier chapters,
 forcing us to write `create_app`, `count_n_players` and
 the `Player` component:
 
@@ -37,11 +37,29 @@ fn test_our_app_has_a_player() {
 }
 ```
 
-The previous chapter discusses these steps in details.
+See the ['Add a player'](add_player.md) chapter for the implementations
+and an in-depth discussion.
 
 ## 2.5.2. Third test: our player has a default scale
 
-The image will be displayed at its original 1:1 scale:
+In [the 'Add a player sprite' chapter](add_player_sprite.md)
+the size of the player's sprite was set to its
+size (i.e width and height) in pixels, using
+the `scale` of a player's `Transform`. In that context,
+`scale` is a misnomer: it indicates the size of the player (and not the
+scale). 
+
+When using an image, 'scale' is nicely named: an image
+has its inherent size in pixels, where `scale`
+will scale the image up or down. When the scale is set to one,
+an image will be displayed at its original 1:1 scale.
+In Bevy, a scale has three dimensions.
+
+Here we test that the scale of our image is one in both two 
+dimensions, as we are working on as 2D game. We will later assert
+that the scale in the third dimension is one too. 
+
+Here is the test:
 
 ```rust
 fn test_player_has_the_default_scale() {
