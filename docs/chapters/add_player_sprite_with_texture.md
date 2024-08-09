@@ -40,6 +40,15 @@ fn test_our_app_has_a_player() {
 See the ['Add a player'](add_player.md) chapter for the implementations
 and an in-depth discussion.
 
+There is one big difference in these tests: `app.update` is called
+in each test! In all earlier chapters, we called `app.update`
+at the end of the `create_app` function.
+In this chapter, we don't, because doing so finalizes the `App`
+too early and this will cause that our game
+to panic in the `main` function (hence we cannot play the game).
+This will be discussed in both the `create_app` and
+the `main` function paragraph.
+
 ## 2.5.2. Third test: our player has a default scale
 
 In [the 'Add a player sprite' chapter](add_player_sprite.md)
@@ -164,6 +173,16 @@ working with images.
 Note that one only needs to remember to add the `AssetPlugin`: the following
 two lines are taken from helpful error messages.
 
+The reason why we do not add `app.update()` to the `create_app` function
+is because of the `if cfg!(test)`: as a consequence of this if statement,
+running the tests will differ from running the game: the test build
+will have two plugins added and one asset initialized,
+where this will not be done when running the game normally.
+When running the game normally with an `app.update()` in the end,
+the program will panic, because `add_player` is called *without*
+the needed plugins. This problem is solved by, in `main`,
+adding the (many more) plugins there.
+
 The `add_player` function may look like this:
 
 ```rust
@@ -205,6 +224,20 @@ fn main() {
     app.run();
 }
 ```
+
+The reason why we did not add `app.update()` to the `create_app` function
+is because of that we add the default plugins here.
+Would the plugins from the test build already have been added,
+this would cause our program to panic: Bevy asserts
+that a plugin is not added twice.
+Because the plugins we add in our test build are part of the
+default plugins added in our `main` function,
+we need a mechanism to have the right plugins added to the right build.
+Only after adding the default plugins here should our `App` be updated,
+as calling `app.update` (which will be done by `app.run`) will assume
+that the plugin for the `AsserServer` is loaded.
+
+Here is how our game looks like:
 
 ![Our 'add_player_sprite_with_texture' game](add_player_sprite_with_texture.png)
 
