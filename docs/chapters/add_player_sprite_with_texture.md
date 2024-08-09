@@ -56,7 +56,7 @@ the size of the player's sprite was set to its
 size (i.e width and height) in pixels, using
 the `scale` of a player's `Transform`. In that context,
 `scale` is a misnomer: it indicates the size of the player (and not the
-scale). 
+scale).
 
 When using an image, 'scale' is nicely named: an image
 has its inherent size in pixels, where `scale`
@@ -64,9 +64,9 @@ will scale the image up or down. When the scale is set to one,
 an image will be displayed at its original 1:1 scale.
 In Bevy, a scale has three dimensions.
 
-Here we test that the scale of our image is one in both two 
+Here we test that the scale of our image is one in both two
 dimensions, as we are working on as 2D game. We will later assert
-that the scale in the third dimension is one too. 
+that the scale in the third dimension is one too.
 
 Here is the test:
 
