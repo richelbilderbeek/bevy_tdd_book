@@ -162,7 +162,13 @@ Here I unpack `add_player`:
 - `SpriteBundle { ... }: adds a Bevy`SpriteBundle`, which is -unsurprisingly-
   a bundle of Components for a sprite. A Bevy bundle is a collection of
   Bevy Components, put into a structure. That structure has, among other,
-  the elements`sprite`,`transform` and `texture`.
+  the elements`sprite`,`transform` and `texture`,
+  as shown by the Bevy SpriteBundle documentation
+
+![Part of the Bevy SpriteBundle documentation](spritebundle_documentation.png)
+
+> Part of the Bevy SpriteBundle documentation
+
 - `transform: Transform { ... }, ..default()`: initialize the `transform` field
   of the `SpriteBundle`, leave the rest at default values
 - `translation: ..., scale: ..., ..default()`:

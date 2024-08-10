@@ -241,7 +241,6 @@ Here is how our game looks like:
 
 ![Our 'add_player_sprite_with_texture' game](add_player_sprite_with_texture.png)
 
-
 ## 2.5.7. Conclusion
 
 We can now create an `App` with a player sprite that has a texture.

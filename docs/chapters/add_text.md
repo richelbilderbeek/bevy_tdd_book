@@ -23,6 +23,10 @@ fn test_empty_app_has_text() {
 
 ## 2.6.2. First fix
 
+![The Bevy TextBundle documentation](texbundle_documentation.png)
+
+> Part of the Bevy TextBundle documentation
+
 Taking a look at
 [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html),
 one can see that there is a field called `text` of data type `Text`.
