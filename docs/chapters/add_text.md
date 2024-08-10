@@ -108,11 +108,16 @@ Where [the previous chapter](add_player_sprite_with_texture.md)
 needed to have `app.update()` to prevent a panic,
 here we have a different reason:
 would we add `app.update()` in the `create_app` function,
-our text will not be shown in a regular run!
+our text will not be shown in a regular run:
 
 ![This game when `app.update()` is added to `create_app`](add_text_no_text_shown.png)
 
 > This game when `app.update()` is added to `create_app`: no text is visible
+
+The reason is, again, that calling `app.update()` finalizes the `App`'s
+currents state. When then, in the `main` function, the default plugins
+are added, something happens to the already initialized text
+making it not appear.
 
 ## 2.6.6. Third fix
 
@@ -148,7 +153,8 @@ fn add_text(mut commands: Commands, str: &String) {
 
 Most of this function is similar to adding a `SpriteBundle`.
 It may come as a surprise that the `text` field is more than just
-a `String`: a `Text` contains multiple `TextSection`s.
+a `String`: a `Text` contains multiple `TextSection`s,
+of which each `TextSection` can have its own text and style.
 
 ## 2.6.7. Fourth test: an `App` has the correct text
 
@@ -163,6 +169,9 @@ fn test_app_uses_text() {
     assert_eq!(get_text(&mut app), text);
 }
 ```
+
+In ths test, our `text` string needs to be cloned
+and the Rust compiler will remind us of that.
 
 ## 2.6.8. Fourth fix
 
