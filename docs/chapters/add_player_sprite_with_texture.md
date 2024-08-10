@@ -169,9 +169,17 @@ in a Rust crate and become part of the Bevy ecosystem.
 
 With the `AssetPlugin` present, we need to initialize it to allow for
 working with images.
-
 Note that one only needs to remember to add the `AssetPlugin`: the following
-two lines are taken from helpful error messages.
+two lines were copied from helpful error messages.
+
+Adding the default plugins (called `DefaultPlugins`) seems like
+a good idea: one can be sure that the most important plugins
+are present. The problem with this, however, is that will turn
+our program into a full-blown application with a window that
+needs to be closed by a user. Our tests should run without
+user input, hence we cannot use all the default plugins.
+Instead, we only add the plugins we need for testing in a build
+that runs the test.   
 
 The reason why we do not add `app.update()` to the `create_app` function
 is because of the `if cfg!(test)`: as a consequence of this if statement,

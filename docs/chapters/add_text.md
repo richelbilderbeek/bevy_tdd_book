@@ -61,8 +61,26 @@ fn test_can_create_app_from_str() {
 ```
 
 The `String` used by Bevy is the standard Rust `String`.
+
 We could just as well have picked to use a string slice instead,
-but this approach felt better.
+as it would have made our test look cleaner:
+
+
+```text
+fn test_can_create_app_from_str_slice() {
+    create_app("irrelevant");
+}
+```
+
+When trying out if the string slice resulted in cleaner
+code over using a `String`, the answer turned out to be no:
+due to the string slice lifespans it was needed to create `String`s
+for them. 
+
+One could argue that the cleanest looking test should be chosen
+and, hence, the string slice. However, having a String construction
+in a test is reasonable enough and because it resulted in a cleaner
+implementation, using a `String` was chosen.
 
 ## 2.6.4. Second fix
 
@@ -76,15 +94,25 @@ pub fn create_app(_text: String) -> () {}
 
 ## 2.6.5. Third test: an `App` has text
 
-Now we force the app to actually store the text in an entity:
+Now we force our game to actually store the text in an entity:
 
 ```rust
 fn test_app_has_text() {
     let mut app = create_app(String::from("irrelevant"));
-    app.update();
+    app.update()
     assert_eq!(count_n_texts(&mut app), 1);
 }
 ```
+
+Where [the previous chapter](add_player_sprite_with_texture.md)
+needed to have `app.update()` to prevent a panic,
+here we have a different reason:
+would we add `app.update()` in the `create_app` function,
+our text will not be shown in a regular run!
+
+![This game when `app.update()` is added to `create_app`](add_text_no_text_shown.png)
+
+> This game when `app.update()` is added to `create_app`: no text is visible
 
 ## 2.6.6. Third fix
 
