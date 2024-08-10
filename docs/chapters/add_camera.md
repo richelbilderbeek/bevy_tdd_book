@@ -51,7 +51,6 @@ here we test many new things as one:
 fn test_create_app_uses_camera_scale() {
     let initial_camera_scale = 1.2;
     let mut app = create_app(initial_camera_scale);
-    app.update();
     assert_eq!(count_n_cameras(&mut app), 1);
     assert_eq!(get_camera_scale(&mut app), initial_camera_scale);
 }
@@ -60,6 +59,12 @@ fn test_create_app_uses_camera_scale() {
 In TDD, one should have many small tests and only add one tests that breaks
 at the same time. However, to save book pages, I've combined the three
 tests into one.
+
+Similar to [the 'Add a player sprite' chapter](add_player_sprite.md),
+we do not need to add `app.update()` between creating the `App`
+and running the tests, as `create_app` will do so.
+Also here, when running our game normally,
+our game will work as expected.
 
 ## 2.7.4. Second fix
 
@@ -87,6 +92,13 @@ pub fn create_app(initial_camera_scale: f32) -> App {
 One difference is the use of a local closure: instead of writing
 a new function called -for example- `add_camera`, the things that
 it would need to do are written in the closure's body.
+Using a dedicated `add_camera` function could be considered
+better readable and clearer (hence, used more often in this book),
+it is useful to at least having seen the same approach with a local closure.
+
+Using a 
+
+![The Bevy `Camera2dBundle` documentation](camera2dbundle_documentation.png)
 
 Writing the `get_camera_scale` is also similar to earlier functions:
 

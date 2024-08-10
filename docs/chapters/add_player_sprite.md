@@ -98,6 +98,11 @@ fn test_create_app_has_a_player() {
 }
 ```
 
+This test has no `app.update()` between creating the `App`
+and running the tests, as `create_app` will do so.
+In this case, when running our game normally,
+our game will work as expected.
+
 ## 2.4.5. Third fix
 
 To fix this test, we need:
@@ -199,7 +204,6 @@ fn test_get_player_position() {
     let initial_player_position = Vec2::new(1.2, 3.4);
     let initial_player_size = Vec2::new(64.0, 32.0);
     let mut app = create_app(initial_player_position, initial_player_size);
-    app.update();
     assert_eq!(get_player_position(&mut app), initial_player_position);
 }
 ```
@@ -256,7 +260,6 @@ fn test_player_has_a_custom_size() {
     let initial_player_position = Vec2::new(1.2, 3.4);
     let initial_player_size = Vec2::new(64.0, 32.0);
     let mut app = create_app(initial_player_position, initial_player_size);
-    app.update();
     assert_eq!(get_player_size(&mut app), initial_player_size);
 }
 ```
