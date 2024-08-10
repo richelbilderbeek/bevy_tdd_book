@@ -21,11 +21,14 @@ fn test_empty_app_has_text() {
 }
 ```
 
+Like in earlier chapters, we already make `App` mutable, 
+as querying requires the `App` to be so.
+
 ## 2.6.2. First fix
 
-![The Bevy TextBundle documentation](texbundle_documentation.png)
+![The Bevy TextBundle documentation](textbundle_documentation.png)
 
-> Part of the Bevy TextBundle documentation
+> Part of [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html)
 
 Taking a look at
 [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html),
