@@ -86,4 +86,5 @@ dBundle
 svg
 etcetera
 aldeka
+TextBundle
 
