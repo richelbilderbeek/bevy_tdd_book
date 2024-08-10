@@ -6,7 +6,9 @@ This chapter shows how to add a text to a game.
 
 This chapter introduces:
 
+- Working with Rust `String`s
 - The Bevy `TextBundle`
+- Using `app.update()` in the wrong place causing problems
 
 ## 2.6.1. First test: an `App` has no text
 
