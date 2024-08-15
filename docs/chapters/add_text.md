@@ -189,7 +189,7 @@ The resulting `main` function is not much different than we are used to:
 fn main() {
     let text = String::from("Hello from main");
     let mut app = create_app(text);
-    let add_camera_fun = |mut commands: Commands| {
+    let add_camera_fn = |mut commands: Commands| {
         commands.spawn(Camera2dBundle::default());
     };
     app.add_systems(Startup, add_camera_fun);
