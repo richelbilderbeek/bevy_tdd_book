@@ -28,14 +28,16 @@ fn test_empty_app_has_no_players() {
 
 ## 2.8.2. First fix
 
-See the [`add_player`](add_player.md) chapter.
+We have done this before, in the [`add_player`](add_player.md) chapter.
+If you've forgot, look up the implementation there
+and come back here.
 
 ## 2.8.3. Second test: our `App` stores an initial velocity
 
 The idea of this app is to give the player a velocity,
 so that we can see it move.
 
-Here we shorten two/three TDD tests into one (to save book pages,
+Here we shorten two TDD tests into one (to save book pages,
 not because it is good practice):
 
 ```rust
@@ -46,6 +48,20 @@ fn test_can_set_and_get_velocity() {
     assert_eq!(get_player_velocity(&mut app), velocity);
 }
 ```
+
+The two tests are:
+
+- `create_app` must be a function that takes a velocity as an input argument
+- `get_player_velocity` returns the velocity from a game
+
+Note that we pick a `Vec2` as the data type to store a velocity.
+Bevy uses `Vec2` and `Vec3` extenstively, among other for coordinats,
+hence here I extend that practice. This is just a social convention,
+so feel free to create your own velocity structure if you feel like it!
+
+Again, shortening the amount of tests is done here
+to save book pages, not because it is good practice:
+it forces me to go quicker (and not write about intermediate stubs).
 
 ## 2.8.4. Second fix
 
@@ -106,10 +122,11 @@ fn add_player(mut commands: Commands, velocity: Vec2) {
 The `add_player` function adds a `SpriteBundle` with a `Player` component,
 as we've done earlier. New is that we now initialize the `Player` component
 too. You may have expected to see `velocity: velocity` as a syntax,
-but, no, this is the proper Rust syntax :-) .
+but, no, this is the proper Rust syntax (and if you disagree,
+`clippy` will remind you) :-) .
 
 The `get_player_velocity` that extracts the velocity from our `Player`
-component can be implemented like this:
+component can be implemented in the familiar fashion as shown here:
 
 ```rust
 fn get_player_velocity(app: &mut App) -> Vec2 {
@@ -120,7 +137,10 @@ fn get_player_velocity(app: &mut App) -> Vec2 {
 ```
 
 We can directly query for a `Player` component, as we can be sure
-other Bevy plugins will not add it for us.
+other Bevy plugins will not add more `Player` components: those Bevy
+plugins have no idea our `Player` structure exists, nor do they feel
+the need to add one. This is a different from when using a `Transform`,
+which is used by multiple default Bevy plugins.
 
 ## 2.8.5. Third test: our `App` has a player
 
@@ -140,7 +160,15 @@ See the [`add_player`](add_player.md) chapter for its implementation.
 
 ## 2.8.6. Fourth test: the player starts at the origin
 
-We've been getting the position of the player
+Without other information, we expect a player to be created
+at the origin (i.e. position `(0.0, 0.0)`).
+And when such a player has no velocity (i.e. a speed of zero
+in both dimensions), it's position should remain at the origin.
+We use this test as a prelude for the next, where we will
+test that the player is actually moving.
+
+With this context added, the test is familiar,
+as we've been getting the position of the player
 at the [`add_player_sprite`](add_player_sprite.md) chapter:
 
 ```rust
@@ -192,6 +220,11 @@ pub fn create_app(velocity: Vec2) -> App {
 }
 ```
 
+The word 'Update' is the name of our second
+[schedule](https://bevy-cheatbook.github.io/programming/schedules.html#the-main-schedule),
+i.e. it indicates when the system should be run. In our case, the system
+should be run when updating the screen.
+
 The `move_player` function 'magically' has a `Query` as a function
 argument:
 
@@ -206,6 +239,19 @@ fn move_player(mut query: Query<(&mut Transform, &Player)>) {
 That function argument is the most interesting of the function:
 `query` will contain all `Transforms` marked with a `Player`,
 where -for the first time!- we can modify the `Transform`.
+
+These 'magic' function arguments are not magic at all
+when reading the Bevy documentation.
+Especially, the Unofficial Bevy Cheat Book (at <https://bevy-cheatbook.github.io>)
+nicely document all these 'magic' options:
+
+![Part of the Unofficial Bevy Cheat Book 'SystemParams' documentation](ubcb_system_params_documentation.png)
+
+> Part of the Unofficial Bevy Cheat Book 'SystemParams' documentation
+
+These options are available to all Bevy systems. To repeat, a Bevy system
+is a function that works on a Bevy World. And `move_player` indeed
+is a Bevy system, that modifies the `Player` in our Bevy `World`.
 
 ## 2.8.9. `main.rs`
 
@@ -225,7 +271,11 @@ fn main() {
 
 ```
 
-We can indeed see our player move:
+This, by now, is quite familiar code, most similar to
+the ['Add a player sprite'](add_player_sprite) chapter.
+See that chapter for a refresher.
+
+Running this code, we can indeed see our player move:
 
 ![The player moves](move_player.png)
 
