@@ -101,7 +101,7 @@ Now we force our game to actually store the text in an entity:
 ```rust
 fn test_app_has_text() {
     let mut app = create_app(String::from("irrelevant"));
-    app.update()
+    app.update();
     assert_eq!(count_n_texts(&mut app), 1);
 }
 ```
