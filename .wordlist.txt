@@ -90,3 +90,5 @@ TextBundle
 cheatbook
 io
 SystemParams
+Acknowledgements
+
