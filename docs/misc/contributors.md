@@ -1,4 +1,4 @@
-# Contributors
+# Acknowledgements and contributors
 
 These are people and websites that helped me, in alphabetical order:
 

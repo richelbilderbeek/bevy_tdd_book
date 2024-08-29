@@ -34,7 +34,7 @@ nav:
     - Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
   - Misc:
     - Introduction: misc/misc_introduction.md
-    - Contributors: misc/contributors.md
+    - Acknowledgements and contributors: misc/contributors.md
     - Definitions: misc/definitions.md
     - FAQ: misc/faq.md
     - Functions: misc/functions.md
