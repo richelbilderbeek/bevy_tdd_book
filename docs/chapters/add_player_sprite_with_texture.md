@@ -184,7 +184,7 @@ our program into a full-blown application with a window that
 needs to be closed by a user. Our tests should run without
 user input, hence we cannot use all the default plugins.
 Instead, we only add the plugins we need for testing in a build
-that runs the test.   
+that runs the test.
 
 The reason why we do not add `app.update()` to the `create_app` function
 is because of the `if cfg!(test)`: as a consequence of this if statement,

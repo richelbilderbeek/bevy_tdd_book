@@ -96,7 +96,7 @@ Using a dedicated `add_camera` function could be considered
 better readable and clearer (hence, used more often in this book),
 it is useful to at least having seen the same approach with a local closure.
 
-Using a 
+Using a
 
 ![The Bevy `Camera2dBundle` documentation](camera2dbundle_documentation.png)
 

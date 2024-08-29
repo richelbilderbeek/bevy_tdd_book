@@ -23,7 +23,7 @@ fn test_empty_app_has_text() {
 }
 ```
 
-Like in earlier chapters, we already make `App` mutable, 
+Like in earlier chapters, we already make `App` mutable,
 as querying requires the `App` to be so.
 
 ## 2.6.2. First fix
@@ -77,7 +77,7 @@ fn test_can_create_app_from_str_slice() {
 When trying out if the string slice resulted in cleaner
 code over using a `String`, the answer turned out to be no:
 due to the string slice lifespans it was needed to create `String`s
-for them. 
+for them.
 
 One could argue that the cleanest looking test should be chosen
 and, hence, the string slice. However, having a String construction
