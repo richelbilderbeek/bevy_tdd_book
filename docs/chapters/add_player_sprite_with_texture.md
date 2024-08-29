@@ -129,12 +129,17 @@ There are two new elements:
 
 - `&Handle<Image>`: this reads as 'a handle to an image'.
   This data type is chosen from
-  [the Bevy documentation of `SpriteBundle`](https://docs.rs/bevy/latest/bevy/prelude/struct.SpriteBundle.html),
+  [the Bevy documentation of `SpriteBundle`](https://docs.rs/bevy/latest/bevy/prelude/struct.SpriteBundle.html)
+  (see below),
   as it is the data type of the `SpriteBundle` field called `texture`.
   A 'handle to an image' is a lightweight way to work with images, similar
   to the Rust `box` class: both can be copied and cloned and ... empty
 - `handle.is_strong()` determines if the handle indeed refers to an image
   that is actually (being) loaded
+
+![Part of the Bevy SpriteBundle documentation](spritebundle_documentation.png)
+
+> Part of the Bevy SpriteBundle documentation
 
 The `create_app` function may look like this:
 
