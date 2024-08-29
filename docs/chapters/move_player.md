@@ -272,7 +272,7 @@ fn main() {
 ```
 
 This, by now, is quite familiar code, most similar to
-the ['Add a player sprite'](add_player_sprite) chapter.
+the ['Add a player sprite'](add_player_sprite.md) chapter.
 See that chapter for a refresher.
 
 Running this code, we can indeed see our player move:
