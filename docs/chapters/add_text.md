@@ -172,7 +172,7 @@ fn test_app_uses_text() {
 }
 ```
 
-In ths test, our `text` string needs to be cloned
+In this test, our `text` string needs to be cloned
 and the Rust compiler will remind us of that.
 
 ## 2.6.8. Fourth fix
