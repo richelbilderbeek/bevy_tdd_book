@@ -55,7 +55,7 @@ The two tests are:
 - `get_player_velocity` returns the velocity from a game
 
 Note that we pick a `Vec2` as the data type to store a velocity.
-Bevy uses `Vec2` and `Vec3` extenstively, among other for coordinats,
+Bevy uses `Vec2` and `Vec3` extensively, among other for coordinates,
 hence here I extend that practice. This is just a social convention,
 so feel free to create your own velocity structure if you feel like it!
 
