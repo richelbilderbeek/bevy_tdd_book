@@ -48,6 +48,7 @@ Code                                                                            
 
 - gamepad
 
+
 ### Section 4: media
 
 - Adding a 3D player with a texture
@@ -60,6 +61,13 @@ Code                                                                            
 ### Section 99: Graphical user interface testing
 
 - Testing for a key press to close the game
+
+### Section for possible chapters
+
+Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter [2]                                                                         |Description                              |Concepts
+----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|------------------
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_use_game_state)                |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_game_state/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_game_state)                                |.                                                                                   |Use Bevy states                          |Minimal example, state, States
+[code](https://github.com/richelbilderbeek/bevy_tdd_book_use_resources)                 |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_resources/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_resources)                                  |.                                                                                   |Use Bevy resourcs                        |Minimal example, resources
 
 ### Appendix
 
