@@ -68,8 +68,18 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ### Are there other sources you recommend?
 
-* [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples)
-* [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook)
+* [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples):
+  these are the official examples supported by Bevy.
+  The difference with this book is that some of these examples
+  show multiple things and does not have tests.
+  Compare, for example,
+  [the Bevy Text2d example](https://bevyengine.org/examples/2d-rendering/text2d/)
+  with [this books 'Add text' chapter](https://github.com/richelbilderbeek/bevy_tdd_book/blob/master/docs/chapters/add_text.md)
+  seem to be more focused on being pretty, over being focused.
+* [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook):
+  these are code snippets alongside explanations.
+  The difference with this book is that these snippets
+  are not stand-alone and do not have tests.
 * [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
 
 ## General
