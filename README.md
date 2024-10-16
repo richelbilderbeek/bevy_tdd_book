@@ -1,9 +1,13 @@
 # bevy_tdd_book
 
+<!-- markdownlint-disable MD013 -->
+
 [![Check chapters](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_chapters.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_chapters.yaml)
 [![Check links](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_links.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_links.yaml)
 [![Check markdown](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_markdown.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_markdown.yaml)
 [![Check spelling](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_spelling.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_spelling.yaml)
+
+<!-- markdownlint-enable MD013 -->
 
 Start of a book [1] called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
@@ -22,6 +26,8 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 - [2.1. Introduction](docs/misc/basic_introduction.md)
 
+<!-- markdownlint-disable MD013 -->
+
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter                                                                             |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|------------------
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_hello_world)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_hello_world)                                      |[hello_world.md](docs/chapters/hello_world.md)                                      |Hello world                              |A minimal `App`
@@ -32,9 +38,13 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_add_camera)                    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_add_camera)                                        |[add_camera.md](docs/chapters/add_camera.md)                                        |Adding a camera                          |Using `Camera2dBundle`
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player)                   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player)                                      |[move_player.md](docs/chapters/move_player.md)                                      |Move the player                          |Extending a Component
 
+<!-- markdownlint-enable MD013 -->
+
 ### Section 3: user input
 
 - [3.1. Introduction](docs/misc/respond_to_input_introduction.md)
+
+<!-- markdownlint-disable MD013 -->
 
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter                                                                             |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|------------------
@@ -45,6 +55,8 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press) |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_button_press)  |[respond_to_mouse_button_press.md](docs/chapters/respond_to_mouse_button_press.md)  |Respond to mouse, minimal example        |Minimal example, mouse button press
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn)   |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_turn)      |[respond_to_mouse_wheel_turn.md](docs/chapters/respond_to_mouse_wheel_turn.md)      |Respond to mouse, minimal example        |Minimal example, mouse wheel turn
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press)  |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_wheel_press)    |[respond_to_mouse_wheel_press.md](docs/chapters/respond_to_mouse_wheel_press.md)    |Respond to mouse, minimal example        |Minimal example, mouse wheel press
+
+<!-- markdownlint-enable MD013 -->
 
 - gamepad
 
@@ -64,6 +76,8 @@ Code                                                                            
 
 ### Section for possible chapters
 
+<!-- markdownlint-disable MD013 -->
+
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter                                                                             |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|------------------
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_use_game_state)                |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_game_state/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_game_state)                                |.                                                                                   |Use Bevy states                          |Minimal example, state, States
@@ -71,7 +85,11 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_use_window_title)              |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_window_title/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_use_window_title)                            |.                                                                                   |Get and set a window's title             |Minimal example, window title
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_click_sprite)                  |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_click_sprite/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_click_sprite)                                    |.                                                                                   |Click on a sprite                        |Minimal example, sprite, mouse click, interaction
 
+<!-- markdownlint-enable MD013 -->
+
 ### Appendix
+
+<!-- markdownlint-disable MD013 -->
 
 Code                                                                                    |Code coverage                                                                                                                                                                                                          |Chapter [2]                                                                         |Description                              |Concepts
 ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|------------------
@@ -82,7 +100,11 @@ Code                                                                            
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)        |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_move_player_with_mouse)                |[move_player_with_mouse.md](docs/chapters/move_player_with_mouse.md)                |Respond to mouse                         |.
 [code](https://github.com/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)    |[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_show_2d_coordinate_systems)        |[show_2d_coordinate_systems.md](docs/chapters/show_2d_coordinate_systems.md)        |Show 2D coordinate systems               |2D coordinate systems
 
+<!-- markdownlint-enable MD013 -->
+
 ## Files used by continuous integration scripts
+
+<!-- markdownlint-disable MD013 -->
 
 Filename                                  |Descriptions
 ------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
@@ -91,6 +113,8 @@ Filename                                  |Descriptions
 [.wordlist.txt](.wordlist.txt)            |Whitelisted words for the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
 [.markdownlint.jsonc](.markdownlint.jsonc)|Configuration of the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [.markdownlintignore](.markdownlintignore)|Files ignored by the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
+
+<!-- markdownlint-enable MD013 -->
 
 ## Links
 

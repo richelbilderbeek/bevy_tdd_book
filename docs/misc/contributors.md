@@ -3,6 +3,7 @@
 These are people and websites that helped me, in alphabetical order:
 
 - [https://github.com/aldeka/rustacean.net](https://github.com/aldeka/rustacean.net) for providing [ferris.png](../assets/ferris.png) and [ferris.svg](../assets/ferris.svg)
+- [Edgardo Carreras](https://github.com/donedgardo) for [his feedback on an early draft](https://github.com/richelbilderbeek/bevy_tdd_book/issues/8)
 - [`inodentry`](https://github.com/inodentry) for starting [the Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook), as well as its contributors
 - `kristoff3r`: answered a question on the Bevy Discord channel
 - `mgi388`: answered a question on the Bevy Discord channel
