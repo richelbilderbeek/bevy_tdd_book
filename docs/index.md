@@ -7,4 +7,5 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 ## Footnotes
 
-- [1] 'book' is an overstatement for now: it is just a collection of notes
+- [1] 'book' is an overstatement for now: it is just a collection of chapters
+  and drafts of chapters
