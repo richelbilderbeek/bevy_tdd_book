@@ -32,9 +32,9 @@ flowchart TD
   classDef green_node fill:#dfd,color:#000,stroke:#0f0
   classDef blue_node fill:#ddf,color:#000,stroke:#00f
 
-  red[Red\nBreak the code]:::red_node
-  green[Green\nFix the code]:::green_node
-  blue[Blue\nRefactor]:::blue_node
+  red[Red: Break the code]:::red_node
+  green[Green: Fix the code]:::green_node
+  blue[Blue: Refactor]:::blue_node
 
   red --> green --> blue --> red
 ```

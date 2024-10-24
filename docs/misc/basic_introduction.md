@@ -8,15 +8,15 @@ Here you can see the recommended reading order of chapters:
 
 ```mermaid
 flowchart TD
-  introduction[2.1. Introduction\nThis chapter]
-  hello_world[2.2. hello_world\nGet started]
-  add_player[2.3. add_player\nAdd a player]
-  add_player_sprite[2.4. add_player_sprite\nAdd a player sprite]
-  add_player_sprite_with_texture[2.5. add_player_sprite_with_texture\nAdd a player sprite\nwith a texture]
-  add_camera[2.6. add_camera\nAdd a camara]
-  move_player[2.7. move_player\nMove the player]
-  add_text[2.8. add_text\nAdd text]
-  move_camera[move_camera\nMove the camera]
+  introduction[2.1.Introduction: This chapter]
+  hello_world[2.2.hello_world: Get started]
+  add_player[2.3.add_player: Add a player]
+  add_player_sprite[2.4.add_player_sprite: Add a player sprite]
+  add_player_sprite_with_texture[2.5.add_player_sprite_with_texture: Add a player sprite with a texture]
+  add_camera[2.6.add_camera: Add a camara]
+  move_player[2.7.move_player: Move the player]
+  add_text[2.8.add_text: Add text]
+  move_camera[move_camera: Move the camera]
 
   introduction --> hello_world
   hello_world --> add_player
