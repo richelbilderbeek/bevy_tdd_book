@@ -10,5 +10,6 @@ These are people and websites that helped me, in alphabetical order:
 - `Periwinkle`: answered a question on the Bevy Discord channel
 - `s33n`: answered a question on the Bevy Discord channel
 - `Shane Celis`: helped answer multiple questions on the Bevy Discord channel
+- [https://github.com/TheoPannetier](https://github.com/TheoPannetier) for pointing out I should update my mermaid markup
 - `Trent (SleepyTea)`: helped answer some questions on the Bevy Discord channel
 - `Ziven`: helped answer a question on the Bevy Discord channel
