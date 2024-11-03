@@ -34,8 +34,9 @@ The error will be that the `count_n_players` function is absent.
 The comment `Note 1` is to foreshadow
 that an `App` needs to be mutable to have its amount of players counted.
 It is unexpected that a read-only operation (i.e. counting the amount of players)
-requires the data it works on to be mutable. The Bevy library probably
-has good reasons why it must be mutable.
+requires the data it works on to be mutable.
+The Bevy library, however, has good reasons why `App` must be mutable:
+also reading data need to be done in a safe way.
 
 In general, a read-only operation should be able to work
 on an immutable data structure: when, for example, getting the name
@@ -74,7 +75,7 @@ Here is a possible implementation of `count_n_players`:
 ```rust
 fn count_n_players(app: &mut App) -> usize {
     let mut query = app.world_mut().query::<&Player>();
-    return query.iter(app.world()).len();
+    query.iter(app.world()).len()
 }
 ```
 
