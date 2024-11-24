@@ -85,8 +85,90 @@ Before we start counting actual players,
 let's write a simple test to make use write
 a player class.
 
+A simple test is:
 
 
+```text
+fn test_player_class_exists() {
+    let player: Player;
+}
+```
+
+This test does not compile yet:
+
+```text
+error[E0412]: cannot find type `Player` in this scope
+```
+
+The Rust compiler is correct: we need to define it.
+
+## 2.3.4. :green_circle: a `Player` exists
+
+Here is the code to fix this:
+
+```rust
+pub struct Player;
+```
+
+## 2.3.5. :red_circle: Third test: a `Player` is a Bevy Component
+
+Bevy uses a `Component` class in most of its functions.
+
+```rust
+fn test_player_class_is_a_bevy_component() {
+    let player = Player;
+    assert!(is_bevy_component(player));
+}
+```
+
+## 2.3.6. :green_circle: Third test: a `Player` is a Bevy Component
+
+```rust
+#[cfg(test)]
+fn is_bevy_component<T: Component>(_t: T) -> bool {
+    true
+}
+```
+
+Which allows us to write:
+
+```rust
+#[derive(Component)]
+pub struct Player;
+```
+
+## 2.3.7. Bevy Components
+
+Going back to this code:
+
+```rust
+#[derive(Component)]
+pub struct Player;
+```
+
+In English this would read: 'a player is a component'.
+Using more formal language, one would say
+that the `Player` structure is an extension
+of the Bevy `Component` structure.
+
+A Bevy `Component` is a blueprint for things that
+can be stored in a Bevy `World`.
+Using more formal language, one would say that the Bevy `Component`
+is a base class or a Rust trait (we ignore that `Component` is a bit
+more complex than this).
+Components are the workhorse unit in Bevy: you'll create components,
+query for components and -later- you'll bundle components.
+
+There are two types of Bevy components:
+
+- marker components
+- regular components
+
+Marker components are Bevy components that are extended with only a name,
+where a regular components extends a Bevy component with a name and
+member variables. The `Player` structure above is a marker component,
+as it only extends the Bevy `Component` by adding a name, without having
+member variables nor member functions.
 
 ## 2.3.3. :red_circle: Second test: our `App` has one player
 
@@ -211,48 +293,6 @@ fn test_empty_app_has_no_players() {
     assert_eq!(count_n_players(&mut app), 0);
 }
 ```
-
-However, this test does not compile yet:
-
-```text
-error[E0412]: cannot find type `Player` in this scope
-```
-
-The Rust compiler is correct: we need to define it.
-
-Here define a `Player` component:
-
-```rust
-#[derive(Component)]
-pub struct Player;
-```
-
-In English this would read: 'a player is a component'.
-Using more formal language, one would say
-that the `Player` structure is an extension
-of the Bevy `Component` structure.
-
-A Bevy `Component` is a blueprint for things that
-can be stored in a Bevy `World`.
-Using more formal language, one would say that the Bevy `Component`
-is a base class or a Rust trait (we ignore that `Component` is a bit
-more complex than this).
-Components are the workhorse unit in Bevy: you'll create components,
-query for components and -later- you'll bundle components.
-
-There are two types of Bevy components:
-
-- marker components
-- regular components
-
-Marker components are Bevy components that are extended with only a name,
-where a regular components extends a Bevy component with a name and
-member variables. The `Player` structure above is a marker component,
-as it only extends the Bevy `Component` by adding a name, without having
-member variables nor member functions.
-
-Adding the above implementation of our player class
-will fix all tests. Well done!
 
 ## 2.3.5. `main.rs`
 
