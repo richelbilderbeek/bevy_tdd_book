@@ -42,7 +42,7 @@ flowchart TD
 This book follows these cycles, by first showing the test(s),
 then their fixes.
 
-## 2.2.2. First test: `create_app` should not crash
+## 2.2.2. :red_circle: First test: `create_app` should not crash
 
 Our first test is about creating a computer program that uses the Bevy game library.
 The Bevy class for this, is called [`App`](https://docs.rs/bevy/latest/bevy/app/struct.App.html).
@@ -70,7 +70,7 @@ so the Rust compiler will give an error message.
 This allows us to make our dreams come true and
 write that `create_app` function!
 
-## 2.2.3. First fix
+## 2.2.3. :green_circle:  First fix
 
 Here is a possible implementation of `create_app`:
 
