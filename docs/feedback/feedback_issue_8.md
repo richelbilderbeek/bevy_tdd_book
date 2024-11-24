@@ -12,7 +12,12 @@
 > I believe the focus of 100 percent coverage is not a good reason for TDD.
 > Aiming for 100 percent is an ok goal yet it is unachievable
 > (Eg You cant have test coverage on main.)
->
+
+Edgardo has a point here: 100% code coverage is not always
+possible. I've changed this:
+
+> [...] always aiming for 100% code coverage whenever possible.
+
 > A better reason for adopting TDD is to give developers
 > the confidence that their changes work. As a byproduct of this newly
 > found confidence, developers deliver value to customers at a high pace with
@@ -20,19 +25,22 @@
 > and high confidence, and easy of adding new features is the value to the
 > developer.
 >
-> Pressing a button that tells you that its ok to deploy the new changes to your users confidently, this is what truly is all about.
+> Pressing a button that tells you that its ok to deploy the new changes to 
+> your users confidently, this is what truly is all about.
 
 Edgardo has a point here: the goal of TDD is indeed not a high code coverage.
-I will consider after checking the literature.
+I've changed the paragraph to state it way my personal goal of the book.
 
-- [ ] TODO: check literature.
+- [ ] Check if indeed 100% code coverage is not mentioned as a goal,
+  like Eduardo states here
 
 > 2.3.1
 > The reason app has to be mutable is because of the update method.
 
 Changed to:
 
-'The Bevy library, however, has good reasons why `App` must be mutable: also reading data need to be done in a safe way.'
+> 'The Bevy library, however, has good reasons why `App` must be mutable: 
+> also reading data need to be done in a safe way.'
 
 I feel mentioning the 'update' method does not help the reader
 
