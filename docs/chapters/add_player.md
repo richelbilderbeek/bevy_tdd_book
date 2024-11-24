@@ -14,7 +14,7 @@ This chapter introduces:
 - A Bevy `System`
 - A Bevy entity
 
-## 2.3.1. First test: an empty `App` has no players
+## 2.3.1. :red_circle: First test: an empty `App` has no players
 
 First, we test that there are zero players in an empty `App`.
 We could call the function `count_number_of_players`.
@@ -68,7 +68,7 @@ we cannot -for example- add another player to our created `App`.
 The decision strategy in this book is, that if `app.update()` can
 be put in `create_app`, it is put there.
 
-## 2.3.2. First fix
+## 2.3.2. :green_circle: First fix
 
 Here is a possible implementation of `count_n_players`:
 
@@ -156,7 +156,7 @@ member variables nor member functions.
 Adding the above implementation of our player class
 will fix all tests. Well done!
 
-## 2.3.3. Second test: our `App` has one player
+## 2.3.3. :red_circle: Second test: our `App` has one player
 
 Now that we can count the number of players,
 we can test that the `App` we create has one player:
@@ -171,7 +171,7 @@ fn test_create_app_has_a_player() {
 This will fail, as `create_app` does not create an `App` with
 a player yet.
 
-## 2.3.4. Second fix
+## 2.3.4. :green_circle: Second fix
 
 Adding our `Player` `Component` to our `App` takes two steps:
 

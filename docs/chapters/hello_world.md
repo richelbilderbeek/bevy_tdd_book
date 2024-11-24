@@ -154,15 +154,18 @@ Our game -a game that does nothing- is hence properly displayed as such:
 The code coverage of a software project is the percentage of code
 that has been used at least once by tests.
 Code coverage correlates with code quality `[Horgan et al., 1994]`
-`[Del Frate et al., 1995]`.
-Some communities have a mandatory 100% code coverage
-to pass a code peer-review by committees such as, for example,
-rOpenSci `[Ram, 2013]`.
-When doing TDD well, reaching a 100% code coverage happens
-almost automatically, as you'll see throughout this book.
+`[Del Frate et al., 1995]`
+and some communities have a mandatory 100% code coverage
+to pass a code peer-review `[Hart et al., 2013][Ram, 2013]`.
+
+When doing TDD well, reaching a high code coverage happens
+almost automatically, as tests are written before any new
+functionality, hence that new functionality is nearly
+guaranteed to be tested.
 
 However, one needs to decide upon **what** to test for code coverage.
-This project now has two functions: `main` and `create_app`.
+Already in this simple project, we have two functions:
+`main` and `create_app`. Will we measure code coverage in both?
 
 The `create_app` function is a good candidate to be tested for code coverage,
 as it can be tested automatically.
@@ -202,6 +205,11 @@ The full program can be found at [https://github.com/richelbilderbeek/bevy_tdd_b
 - `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
 - `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
 - `[Fang, 2001]` Fang, Xuefen. "Using a coding standard to improve program quality." Proceedings Second Asia-Pacific Conference on Quality Software. IEEE, 2001.
+- `[Hart et al., 2013]` Hart, Edmumd, et al.
+  "rOpenSci-a collaborative effort to develop R-based tools for facilitating
+  Open Science." figshare (2013): 791569.
 - `[Horgan et al., 1994]` Horgan, Joseph R., Saul London, and Michael R. Lyu. "Achieving software quality with testing coverage measures." Computer 27.9 (1994): 60-69.
 - `[Janzen & Saiedian, 2006]` Janzen, David S., and Hossein Saiedian. "Test-driven learning: intrinsic integration of testing into the CS/SE curriculum." Acm Sigcse Bulletin 38.1 (2006): 254-258.
 - `[Ram, 2013]` Ram, K. "rOpenSci-open tools for open science." AGU Fall Meeting Abstracts. Vol. 2013. 2013.
+
+

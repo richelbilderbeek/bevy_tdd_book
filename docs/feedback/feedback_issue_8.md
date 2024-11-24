@@ -55,9 +55,11 @@ I feel mentioning the 'update' method does not help the reader
 I corrected the code: Eduardo is right. I wonder why clippy did not fix this, I guess
 because it is a test function ...
 
-Color-coding sections seems like a fun idea
+Color-coding sections seems like a fun idea. I try it out.
 
-- [ ] Consider color-coding sections
+- [x] Consider color-coding sections
+
+I've added it to two sections to see how it feels.
 
 > 2.3.4
 > I dont like the fact that we just wrote a test that now will fail by
