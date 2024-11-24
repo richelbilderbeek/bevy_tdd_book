@@ -77,6 +77,18 @@ I've added it to two sections to see how it feels.
 > but for someone just learning I would suggest breaking those down even
 > further.
 
+I agree this is indeed quite some code that needs to be added to pass
+the test. I considered to indeed make `count_n_players` return `1`
+as a stub. The constrain, however, that is on the code it that
+all code in the book is tested to be part of the tested projects.
+Due to this, adding a stub that is changed away later, will result
+in a mismatch between book text and tested project code.
+
+However, I can mention this...
+
+Blimey, the `count_n_players` function is not even mentioned!
+
+
 > I feel that using create_app function to test individual systems will be
 > hard to maintain our test. I suggest separating the app creation and systems
 > under different test cases. The create app should just create the app,

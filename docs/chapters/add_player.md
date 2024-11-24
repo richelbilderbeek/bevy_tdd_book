@@ -70,7 +70,105 @@ be put in `create_app`, it is put there.
 
 ## 2.3.2. :green_circle: First fix
 
-Here is a possible implementation of `count_n_players`:
+In test-driven development, one needs to write minimal fixes to
+tests. Hence, this would be a valid fix:
+
+```text
+fn count_n_players(app: &App) -> usize {
+    0
+}
+```
+
+## 2.3.3. :red_circle: Second test: a `Player` exists
+
+Before we start counting actual players,
+let's write a simple test to make use write
+a player class.
+
+
+
+
+## 2.3.3. :red_circle: Second test: our `App` has one player
+
+Now that we can count the number of players,
+we can test that the `App` we create has one player:
+
+```rust
+fn test_create_app_has_a_player() {
+    let mut app = create_app();
+    assert_eq!(count_n_players(&mut app), 1);
+}
+```
+
+This will fail, as `create_app` does not create an `App` with
+a player yet.
+
+## 2.3.4. :green_circle: Second fix
+
+Adding our `Player` `Component` to our `App` takes two steps:
+- 
+- Write an `add_player` function
+- Let the `create_app` function call the `add_player` function
+
+Here is the `create_app` function:
+
+```rust
+pub fn create_app() -> App {
+    let mut app = App::new();
+    app.add_systems(Startup, add_player);
+    app
+}
+```
+
+The new line introduces us to the Bevy `System`
+and reads as 'in the startup phase, run the `add_player` function'.
+
+In Bevy, a 'system' is -loosely phrased- 'something that works on the world'.
+This 'something' is typically a function.
+
+The word 'Startup' is the name of a so-called
+[schedule](https://bevy-cheatbook.github.io/programming/schedules.html#the-main-schedule),
+i.e. it indicates when the system should be run. In our case, the system
+should be run at startup.
+
+Our `create_app` functions adds a system, called `add_player`,
+that is run at the startup phase of the application,
+then returns our `App`.
+
+Here is the `add_player` function:
+
+```rust
+fn add_player(mut commands: Commands) {
+    commands.spawn(Player);
+}
+```
+
+This function has some magic to it:
+
+- `mut commands: Commands`: this function argument is provided by Bevy.
+  The `Commands` structure allows on the modify the Bevy world.
+- `commands.spawn(Player add the entity of type Player to the world
+
+After having modified `create_app`, added the `Player` `Component`
+and the `add_player` function, the test passes. Well done!
+
+An alternative implementation would be to combine the
+statements above, resulting in:
+
+```text
+app.add_systems(Startup, |mut commands: Commands| {
+    commands.spawn(Player);
+});
+```
+
+This implementation does exactly the same. One could argue that
+it is harder to understand what this does, where the function name `add_player`
+was communicated this clearly. One could argue that the expression is more
+complex, as it introduces a closure (more on those later).
+This book picked the way that is easier to explain.
+This approach also scales better when adding players, enemies, cameras,
+etcetera.
+
 
 ```rust
 fn count_n_players(app: &mut App) -> usize {
@@ -155,87 +253,6 @@ member variables nor member functions.
 
 Adding the above implementation of our player class
 will fix all tests. Well done!
-
-## 2.3.3. :red_circle: Second test: our `App` has one player
-
-Now that we can count the number of players,
-we can test that the `App` we create has one player:
-
-```rust
-fn test_create_app_has_a_player() {
-    let mut app = create_app();
-    assert_eq!(count_n_players(&mut app), 1);
-}
-```
-
-This will fail, as `create_app` does not create an `App` with
-a player yet.
-
-## 2.3.4. :green_circle: Second fix
-
-Adding our `Player` `Component` to our `App` takes two steps:
-
-- Write an `add_player` function
-- Let the `create_app` function call the `add_player` function
-
-Here is the `create_app` function:
-
-```rust
-pub fn create_app() -> App {
-    let mut app = App::new();
-    app.add_systems(Startup, add_player);
-    app
-}
-```
-
-The new line introduces us to the Bevy `System`
-and reads as 'in the startup phase, run the `add_player` function'.
-
-In Bevy, a 'system' is -loosely phrased- 'something that works on the world'.
-This 'something' is typically a function.
-
-The word 'Startup' is the name of a so-called
-[schedule](https://bevy-cheatbook.github.io/programming/schedules.html#the-main-schedule),
-i.e. it indicates when the system should be run. In our case, the system
-should be run at startup.
-
-Our `create_app` functions adds a system, called `add_player`,
-that is run at the startup phase of the application,
-then returns our `App`.
-
-Here is the `add_player` function:
-
-```rust
-fn add_player(mut commands: Commands) {
-    commands.spawn(Player);
-}
-```
-
-This function has some magic to it:
-
-- `mut commands: Commands`: this function argument is provided by Bevy.
-  The `Commands` structure allows on the modify the Bevy world.
-- `commands.spawn(Player add the entity of type Player to the world
-
-After having modified `create_app`, added the `Player` `Component`
-and the `add_player` function, the test passes. Well done!
-
-An alternative implementation would be to combine the
-statements above, resulting in:
-
-```text
-app.add_systems(Startup, |mut commands: Commands| {
-    commands.spawn(Player);
-});
-```
-
-This implementation does exactly the same. One could argue that
-it is harder to understand what this does, where the function name `add_player`
-was communicated this clearly. One could argue that the expression is more
-complex, as it introduces a closure (more on those later).
-This book picked the way that is easier to explain.
-This approach also scales better when adding players, enemies, cameras,
-etcetera.
 
 ## 2.3.5. `main.rs`
 
