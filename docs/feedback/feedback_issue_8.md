@@ -27,7 +27,6 @@ I will consider after checking the literature.
 
 - [ ] TODO: check literature.
 
-
 > 2.3.1
 > The reason app has to be mutable is because of the update method.
 
