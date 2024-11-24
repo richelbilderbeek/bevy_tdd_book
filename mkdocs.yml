@@ -61,6 +61,8 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
+    - content.action.edit
+    - content.action.view
     
 extra_css:
   - stylesheets/extra.css
