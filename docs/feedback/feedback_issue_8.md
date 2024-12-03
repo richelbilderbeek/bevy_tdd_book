@@ -119,12 +119,12 @@ Blimey, the `count_n_players` function is not even mentioned!
 > 2.4.5
 > An important concept when doing TDD is to write only enough production (non-test code) to pass the test. In this section I think you are writing more than needed to pass the test. Eg the test don’t care about sprite or its transform yet in this section you are writing the code for it.
 
-I see now that you add the test for transorm afterwards which is ok when you are experienced, but for a new TDDer you need to break thibgs down in really small steps:
+> I see now that you add the test for transorm afterwards which is ok when you are experienced, but for a new TDDer you need to break thibgs down in really small steps:
+> 
+> - write a list of possible tests
+> - pick an easy test
+> - write a failing test
+> - write enough production code to make it pass
+> - clean up removing duplications/refactoring
 
-    write a list of possible tests
-    pick an easy test
-    write a failing test
-    write enough production code to make it pass
-    clean up removing duplications/refactoring
-
-I believe your audience( new to tdd) would benefit of this breaking down of small steps.
+> I believe your audience (new to tdd) would benefit of this breaking down of small steps.
