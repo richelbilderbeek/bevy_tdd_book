@@ -92,3 +92,9 @@ io
 SystemParams
 Acknowledgements
 TheoPannetier
+clippy
+donedgardo
+Edmumd
+figshare
+Hukasu
+
