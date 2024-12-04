@@ -88,7 +88,6 @@ However, I can mention this...
 
 Blimey, the `count_n_players` function is not even mentioned!
 
-
 > I feel that using create_app function to test individual systems will be
 > hard to maintain our test. I suggest separating the app creation and systems
 > under different test cases. The create app should just create the app,
@@ -96,6 +95,8 @@ Blimey, the `count_n_players` function is not even mentioned!
 > candidate for end to end test instead of an unit test. Thinking more about
 > this I think first testing a system is more straightforward that testing
 > the if the app crashes or not.
+
+...
 
 > 2.4.1
 > As I feared, create app is doing too much and by adding a feature of adding
@@ -107,6 +108,8 @@ Blimey, the `count_n_players` function is not even mentioned!
 > Testing create app where it adds all systems will be hard to maintain,
 > especially when systems that depend on third party plugins
 
+...
+
 > 2.4.3
 > I think it’s wasteful to add a test that just passes without any change
 > requirements of the production code. Maybe im mistaken but the
@@ -116,15 +119,27 @@ Blimey, the `count_n_players` function is not even mentioned!
 > It seem lazy when you say I will not repeat myself here
 > but maybe im missing something.
 
-> 2.4.5
-> An important concept when doing TDD is to write only enough production (non-test code) to pass the test. In this section I think you are writing more than needed to pass the test. Eg the test don’t care about sprite or its transform yet in this section you are writing the code for it.
+...
 
-> I see now that you add the test for transorm afterwards which is ok when you are experienced, but for a new TDDer you need to break thibgs down in really small steps:
+> 2.4.5
+> An important concept when doing TDD is to write only enough production 
+> (non-test code) to pass the test. In this section I think you are writing
+> more than needed to pass the test. Eg the test don’t care about sprite or
+> its transform yet in this section you are writing the code for it.
+
+...
+
+> I see now that you add the test for transorm afterwards which is ok when you
+> are experienced, but for a new TDDer you need to break thibgs down in
+> really small steps:
 >
 > - write a list of possible tests
 > - pick an easy test
 > - write a failing test
 > - write enough production code to make it pass
 > - clean up removing duplications/refactoring
+>
+> I believe your audience (new to tdd) would benefit of this breaking down of
+> small steps.
 
-> I believe your audience (new to tdd) would benefit of this breaking down of small steps.
+
