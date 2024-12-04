@@ -1,14 +1,14 @@
-# https://github.com/richelbilderbeek/bevy_tdd_book/issues/8
+# <https://github.com/richelbilderbeek/bevy_tdd_book/issues/8>
 
 > Feedback from @donedgardo below:
-> 
+>
 > I have had this draft for a while. The thoughts are unorganized,
 > and haven’t had the chance to finish reading the book.
-> 
+>
 > But I thought early feedback is better than late.
-> 
+>
 > Introduction:
-> 
+>
 > I believe the focus of 100 percent coverage is not a good reason for TDD.
 > Aiming for 100 percent is an ok goal yet it is unachievable
 > (Eg You cant have test coverage on main.)
@@ -25,7 +25,7 @@ possible. I've changed this:
 > and high confidence, and easy of adding new features is the value to the
 > developer.
 >
-> Pressing a button that tells you that its ok to deploy the new changes to 
+> Pressing a button that tells you that its ok to deploy the new changes to
 > your users confidently, this is what truly is all about.
 
 Edgardo has a point here: the goal of TDD is indeed not a high code coverage.
@@ -39,7 +39,7 @@ I've changed the paragraph to state it way my personal goal of the book.
 
 Changed to:
 
-> 'The Bevy library, however, has good reasons why `App` must be mutable: 
+> 'The Bevy library, however, has good reasons why `App` must be mutable:
 > also reading data need to be done in a safe way.'
 
 I feel mentioning the 'update' method does not help the reader
@@ -111,7 +111,7 @@ Blimey, the `count_n_players` function is not even mentioned!
 > I think it’s wasteful to add a test that just passes without any change
 > requirements of the production code. Maybe im mistaken but the
 > count_n_players should already be implemented. I guess what you mean is that
-> the call signature if create app has to be modified here. 
+> the call signature if create app has to be modified here.
 > :thinking: i would suggest rethinking this section.
 > It seem lazy when you say I will not repeat myself here
 > but maybe im missing something.
@@ -120,7 +120,7 @@ Blimey, the `count_n_players` function is not even mentioned!
 > An important concept when doing TDD is to write only enough production (non-test code) to pass the test. In this section I think you are writing more than needed to pass the test. Eg the test don’t care about sprite or its transform yet in this section you are writing the code for it.
 
 > I see now that you add the test for transorm afterwards which is ok when you are experienced, but for a new TDDer you need to break thibgs down in really small steps:
-> 
+>
 > - write a list of possible tests
 > - pick an easy test
 > - write a failing test
