@@ -194,8 +194,7 @@ a player yet.
 
 ## 2.3.4. :green_circle: Second fix
 
-Adding our `Player` `Component` to our `App` takes two steps
--
+Adding our `Player` `Component` to our `App` takes two steps:
 
 - Write an `add_player` function
 - Let the `create_app` function call the `add_player` function

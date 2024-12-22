@@ -18,6 +18,8 @@ possible. I've changed this:
 
 > [...] always aiming for 100% code coverage whenever possible.
 
+...
+
 > A better reason for adopting TDD is to give developers
 > the confidence that their changes work. As a byproduct of this newly
 > found confidence, developers deliver value to customers at a high pace with
@@ -102,6 +104,8 @@ Blimey, the `count_n_players` function is not even mentioned!
 > As I feared, create app is doing too much and by adding a feature of adding
 > player sprite it forces us to change a lot of signatures of test that
 > where using create_app.
+
+...
 
 > An idea would be to create a empty app on each test and add the system
 > under test, and only those systems to keep test easier to maintain.
