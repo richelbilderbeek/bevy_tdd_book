@@ -35,10 +35,13 @@ nav:
   - Misc:
     - Introduction: misc/misc_introduction.md
     - Acknowledgements and contributors: misc/contributors.md
+    - Code of conduct: CODE_OF_CONDUCT.md
+    - Contributing: CONTRIBUTING.md
     - Definitions: misc/definitions.md
     - FAQ: misc/faq.md
-    - FAQ: feedback/README.md
+    - Feedback: feedback/README.md
     - Functions: misc/functions.md
+    - License: LICENSE.md
 
 theme:
   name: material
