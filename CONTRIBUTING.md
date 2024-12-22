@@ -55,6 +55,7 @@ Of course, 'to improve the code' is subjective.
 
 Here are things that are likely to be accepted:
 
+- Removing use of `mut` for read-only operations
 - Using a more elegant construct that is just as readable
 
 Here are things that are unlikely to be accepted:

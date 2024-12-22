@@ -1,0 +1,101 @@
+site_name: Developing Bevy games using TDD
+
+repo_url: https://github.com/richelbilderbeek/bevy_tdd_book
+
+nav:
+  - Home: index.md
+  - 1. Introduction:
+    - 1. Introduction: introduction/introduction.md
+  - 2. Basic:
+    - 2.1. Introduction: misc/basic_introduction.md
+    - 2.2. Hello world: chapters/hello_world.md
+    - 2.3. Add a player: chapters/add_player.md
+    - 2.4. Add a player sprite: chapters/add_player_sprite.md
+    - 2.5. Add a player sprite with a texture: chapters/add_player_sprite_with_texture.md
+    - 2.6. Add text: chapters/add_text.md
+    - 2.7. Add a camera: chapters/add_camera.md
+    - 2.8. Move the player: chapters/move_player.md
+  - 3. Respond to input:
+    - 3.1. Introduction: misc/respond_to_input_introduction.md
+    - 3.x. Respond to a key just being pressed: chapters/respond_to_just_key_pressed.md
+    - 3.x. Repond to a key press: chapters/respond_to_key_press.md
+    - 3.x. Respond to a mouse button press: chapters/respond_to_mouse_button_press.md
+    - 3.x. Respond to mouse movement: chapters/respond_to_mouse_move.md
+    - 3.x. Respond to a mouse wheel press: chapters/respond_to_mouse_wheel_press.md
+    - 3.x. Respond to a mouse wheel turn: chapters/respond_to_mouse_wheel_turn.md
+    - 3.x. Respond to a window resize: chapters/respond_to_window_resize.md
+  - Example programs:
+    - Introduction: misc/example_programs_introduction.md
+    - Move the camera: chapters/move_camera.md
+    - Move the camera with the keyboard: chapters/move_camera_with_keyboard.md
+    - Move the camera with the mouse: chapters/move_camera_with_mouse.md
+    - Move the player with the keyboard: chapters/move_player_with_keyboard.md
+    - Move the player with the mouse: chapters/move_player_with_mouse.md
+    - Show the 2D coordinate systems: chapters/show_2d_coordinate_systems.md    
+  - Misc:
+    - Introduction: misc/misc_introduction.md
+    - Acknowledgements and contributors: misc/contributors.md
+    - Definitions: misc/definitions.md
+    - FAQ: misc/faq.md
+    - FAQ: feedback/README.md
+    - Functions: misc/functions.md
+
+theme:
+  name: material
+  greetings: Welcome to 'Developing Bevy games using TDD'
+  font:
+    text: Lato
+    code: JetBrains Mono
+
+  logo: assets/ferris.png
+
+  features:
+    - toc.integrate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.footer
+    - navigation.expand
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
+    
+extra_css:
+  - stylesheets/extra.css
+      
+markdown_extensions:
+  - toc:
+      toc_depth: 2
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+  - admonition
+  - tables
+  - attr_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.keys
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+
+
+
+

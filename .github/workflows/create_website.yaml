@@ -1,0 +1,26 @@
+# Create the website
+name: Create website
+
+# Check spelling on the 2nd day of the month.
+# 2nd as the first letter of this repo is the 2nd letter in the alphabet.
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 0 2 * *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt natsort
+
+      - name: Render HTML
+        run: mkdocs gh-deploy --force

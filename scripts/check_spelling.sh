@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Fix the markdown style
+# Checks the spelling of all text in this repo
 #
 # Usage:
 #
-#   ./scripts/fix_markdown.sh
+#   ./scripts/check_spelling.sh
 
 if [[ "$PWD" =~ scripts$ ]]; then
     echo "FATAL ERROR."
@@ -13,13 +13,9 @@ if [[ "$PWD" =~ scripts$ ]]; then
     echo " "
     echo "Tip: like this"
     echo " "
-    echo "  ./scripts/fix_markdown.sh"
+    echo "  ./scripts/check_spelling.sh"
     echo " "
     exit 42
 fi
 
-git add .
-git commit -m "Before checking markdown style"
-markdownlint "**/*.md" --fix
-git add .
-git commit -m "Fixed markdown style"
+pyspelling -c .spellcheck.yml

@@ -1,0 +1,49 @@
+# Check that all code used in the chapters
+# are indeed copy-pasted from the tested working code
+name: Check chapters
+
+# Check links on the 2nd day of the month.
+# 2nd as the first letter of this repo is the 2nd letter in the alphabet.
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 0 2 * *"
+
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+
+      - name: Install dependencies
+        run: |
+            install.packages("remotes")
+            remotes::install_cran("testthat")
+            remotes::install_cran("readr")
+            remotes::install_cran("stringr")
+        shell: Rscript {0}
+
+      # We need to work in a folder, so the code of the chapters can become sister folders
+      - name: Allow to work in subfolder
+        run: |
+            mkdir working_folder
+            cd working_folder
+            git clone https://github.com/richelbilderbeek/bevy_tdd_book
+            cd bevy_tdd_book
+
+      - name: Clone the code of all chapters
+        run: |
+            cd working_folder/bevy_tdd_book
+            ./scripts/clone_all_chapters.sh
+
+      - name: Check if all chapters have copy-pasted code from tested repos 
+        run: |
+            cd working_folder/bevy_tdd_book
+            ./scripts/check_all_chapters_code.sh
+

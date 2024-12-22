@@ -1,13 +1,14 @@
+# Check that all links are valid, i.e. there are no broken links
+name: Check links
 
-# Check links on the 21st day of the month.
-# 21st as the first letter of this repo is the 21st letter in the alphabet.
+# Check links on the 2nd day of the month.
+# 2nd as the first letter of this repo is the 2nd letter in the alphabet.
 on:
   push:
   pull_request:
   schedule:
-  - cron: "0 0 21 * *"
+  - cron: "0 0 2 * *"
 
-name: check links
 
 jobs:
   check-links:
@@ -15,7 +16,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # The link checker will only work if mlc_config.json is a valid JSON
       - name: Validate JSON

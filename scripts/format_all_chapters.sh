@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# Fix the markdown style
+# Format all chapters' code using 'cargo fmt'
+#
 #
 # Usage:
 #
-#   ./scripts/fix_markdown.sh
+#   ./scripts/format_all_chapters.sh
 
 if [[ "$PWD" =~ scripts$ ]]; then
     echo "FATAL ERROR."
@@ -13,13 +14,11 @@ if [[ "$PWD" =~ scripts$ ]]; then
     echo " "
     echo "Tip: like this"
     echo " "
-    echo "  ./scripts/fix_markdown.sh"
+    echo "  ./scripts/format_all_chapters.sh"
     echo " "
     exit 42
 fi
 
-git add .
-git commit -m "Before checking markdown style"
-markdownlint "**/*.md" --fix
-git add .
-git commit -m "Fixed markdown style"
+Rscript scripts/format_all_chapters_impl.R
+
+
