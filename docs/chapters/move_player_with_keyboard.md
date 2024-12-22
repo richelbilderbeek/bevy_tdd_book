@@ -1,3 +1,10 @@
+---
+tags:
+  - move
+  - player
+  - keyboard
+---
+
 # Move a player with a keyboard
 
 This chapter shows how to move a player with a keyboard.

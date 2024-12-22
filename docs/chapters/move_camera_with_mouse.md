@@ -1,3 +1,11 @@
+---
+tags:
+  - chapter
+  - move
+  - camera
+  - mouse
+---
+
 # Move a camera with a mouse
 
 This chapter shows how to move a camera with a mouse.

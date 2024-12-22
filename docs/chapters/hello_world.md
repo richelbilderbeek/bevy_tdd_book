@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - hello
+  - world
+---
+
 # 2.2. Hello world
 
 This chapter is about creating a minimal Bevy program that is completely tested.

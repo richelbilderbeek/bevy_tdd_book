@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - add
+  - text
+---
+
 # 2.6. Add text
 
 This chapter shows how to add a text to a game.

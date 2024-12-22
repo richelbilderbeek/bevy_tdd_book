@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - move
+  - camera
+---
+
 # Move a camera
 
 This chapter shows how to move a camera.

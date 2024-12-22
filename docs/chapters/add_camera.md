@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - add
+  - camera
+---
+
 # 2.7. Add camera
 
 In this chapter, we add adding a camera to our test suites.

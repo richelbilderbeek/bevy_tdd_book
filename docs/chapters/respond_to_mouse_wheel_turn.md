@@ -1,3 +1,9 @@
+---
+tags:
+  - respond
+  - mouse wheel
+  - turn
+---
 # Respond to a mouse wheel turn
 
 This chapter shows how to respond to a mouse wheel turn.

@@ -1,3 +1,12 @@
+---
+tags:
+  - chapter
+  - add
+  - player
+  - sprite
+  - texture
+---
+
 # 2.5. Add player sprite with a texture
 
 This chapter shows how to add a player sprite with a texture to a game.

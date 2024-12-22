@@ -1,3 +1,10 @@
+---
+tags:
+  - respond
+  - window
+  - resize
+---
+
 # Respond to a window resize
 
 This chapter shows how to respond to the resizing of a window.

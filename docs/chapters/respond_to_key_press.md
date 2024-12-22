@@ -1,3 +1,10 @@
+---
+tags:
+  - respond
+  - key
+  - press
+---
+
 # Respond to a key press
 
 This chapter shows how to respond to a key press as done on a keyboard.

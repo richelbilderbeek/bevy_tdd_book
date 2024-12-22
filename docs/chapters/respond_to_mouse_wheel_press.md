@@ -1,3 +1,10 @@
+---
+tags:
+  - respond
+  - mouse wheel
+  - press
+---
+
 # Respond to a mouse wheel press
 
 This chapter shows how to respond to a mouse wheel press.

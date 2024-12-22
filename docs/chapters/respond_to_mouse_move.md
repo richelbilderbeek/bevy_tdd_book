@@ -1,3 +1,10 @@
+---
+tags:
+  - respond
+  - mouse
+  - move
+---
+
 # Respond to a mouse move
 
 This chapter shows how to respond to a mouse move.

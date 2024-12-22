@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - add
+  - player
+---
+
 # 2.3. Add player
 
 This chapter shows how to add a player to a game.

@@ -1,3 +1,12 @@
+---
+tags:
+  - coordinate
+  - 2D
+  - system
+  - display
+  - show
+---
+
 # Showing the 2D coordinate systems
 
 This application is more of a demonstration.

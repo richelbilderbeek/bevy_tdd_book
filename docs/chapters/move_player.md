@@ -1,3 +1,10 @@
+---
+tags:
+  - chapter
+  - move
+  - player
+---
+
 # 2.8. Move a player
 
 This chapter shows how to move a player.

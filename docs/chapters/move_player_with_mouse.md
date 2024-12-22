@@ -1,3 +1,10 @@
+---
+tags:
+  - move
+  - camera
+  - keyboard
+---
+
 # Move a camera with a keyboard
 
 This chapter shows how to move a camera with a keyboard.

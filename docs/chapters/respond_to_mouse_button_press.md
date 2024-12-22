@@ -1,3 +1,10 @@
+---
+tags:
+  - respond
+  - mouse button
+  - press
+---
+
 # Respond to a mouse button press
 
 This chapter shows how to respond to a mouse button press.

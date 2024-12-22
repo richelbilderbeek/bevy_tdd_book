@@ -1,0 +1,6 @@
+---
+tags:
+  - resources
+---
+
+# Use resources

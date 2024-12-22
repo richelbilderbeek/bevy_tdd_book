@@ -1,3 +1,11 @@
+---
+tags:
+  - chapter
+  - add
+  - player
+  - sprite
+---
+
 # 2.4. Add player sprite
 
 This chapter shows how to add a player sprite to a game,
