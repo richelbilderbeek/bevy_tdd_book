@@ -114,7 +114,7 @@ Here is the `add_player` function:
 ```rust
 fn add_player(mut commands: Commands, velocity: Vec2) {
     commands.spawn((
-        SpriteBundle {
+        Sprite {
             transform: Transform {
                 scale: Vec3::new(64.0, 32.0, 0.0),
                 ..default()
@@ -126,7 +126,7 @@ fn add_player(mut commands: Commands, velocity: Vec2) {
 }
 ```
 
-The `add_player` function adds a `SpriteBundle` with a `Player` component,
+The `add_player` function adds a `Sprite` with a `Player` component,
 as we've done earlier. New is that we now initialize the `Player` component
 too. You may have expected to see `velocity: velocity` as a syntax,
 but, no, this is the proper Rust syntax (and if you disagree,
@@ -269,7 +269,7 @@ fn main() {
     let velocity = Vec2::new(0.2, 0.1);
     let mut app = create_app(velocity);
     let add_camera_fn = |mut commands: Commands| {
-        commands.spawn(Camera2dBundle::default());
+        commands.spawn(Camera2d::default());
     };
     app.add_systems(Startup, add_camera_fn);
     app.add_plugins(DefaultPlugins);

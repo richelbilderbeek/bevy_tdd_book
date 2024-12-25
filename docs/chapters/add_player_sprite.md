@@ -156,7 +156,7 @@ is done in the `add_player` function:
 ```rust
 fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_player_size: Vec2) {
     commands.spawn((
-        SpriteBundle {
+        Sprite {
             transform: Transform {
                 translation: Vec2::extend(initial_player_position, 0.0),
                 scale: Vec2::extend(initial_player_size, 1.0),
@@ -172,18 +172,18 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 Here I unpack `add_player`:
 
 - `commands.spawn((...,...))`: adds a new entity that is a tuple of two things
-- `SpriteBundle { ... }: adds a Bevy`SpriteBundle`, which is -unsurprisingly-
+- `Sprite { ... }: adds a Bevy`Sprite`, which is -unsurprisingly-
   a bundle of Components for a sprite. A Bevy bundle is a collection of
   Bevy Components, put into a structure. That structure has, among other,
   the elements`sprite`,`transform` and `texture`,
-  as shown by the Bevy SpriteBundle documentation
+  as shown by the Bevy Sprite documentation
 
-![Part of the Bevy SpriteBundle documentation](spritebundle_documentation.png)
+![Part of the Bevy Sprite documentation](spritebundle_documentation.png)
 
-> Part of the Bevy SpriteBundle documentation
+> Part of the Bevy Sprite documentation
 
 - `transform: Transform { ... }, ..default()`: initialize the `transform` field
-  of the `SpriteBundle`, leave the rest at default values
+  of the `Sprite`, leave the rest at default values
 - `translation: ..., scale: ..., ..default()`:
   initialize the `translation` and `scale` fields with particular value,
   keeping the others at default values. A translation is a relative (3D)
@@ -235,7 +235,7 @@ The function is now a bit more complex.
 The query now has `(&Transform, &Player)` tuple in its template arguments.
 The English, the query would read as: 'let me ask for all entities
 that have both a `Transform` and a `Player` component'.
-The `Transform` component is one of the 7-9 components of a `SpriteBundle`,
+The `Transform` component is one of the 7-9 components of a `Sprite`,
 which we will need to get the `translate` field of.
 The `Player` component is our own marker component, that now actually
 marks something: it marks which `Transform` belongs to the player.
@@ -304,7 +304,7 @@ fn main() {
     let initial_player_size = Vec2::new(64.0, 32.0);
     let mut app = create_app(initial_player_position, initial_player_size);
     let add_camera_fn = |mut commands: Commands| {
-        commands.spawn(Camera2dBundle::default());
+        commands.spawn(Camera2d::default());
     };
     app.add_systems(Startup, add_camera_fn);
     app.add_plugins(DefaultPlugins);

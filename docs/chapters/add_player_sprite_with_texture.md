@@ -138,17 +138,17 @@ There are two new elements:
 
 - `&Handle<Image>`: this reads as 'a handle to an image'.
   This data type is chosen from
-  [the Bevy documentation of `SpriteBundle`](https://docs.rs/bevy/latest/bevy/prelude/struct.SpriteBundle.html)
+  [the Bevy documentation of `Sprite`](https://docs.rs/bevy/latest/bevy/prelude/struct.Sprite.html)
   (see below),
-  as it is the data type of the `SpriteBundle` field called `texture`.
+  as it is the data type of the `Sprite` field called `texture`.
   A 'handle to an image' is a lightweight way to work with images, similar
   to the Rust `box` class: both can be copied and cloned and ... empty
 - `handle.is_strong()` determines if the handle indeed refers to an image
   that is actually (being) loaded
 
-![Part of the Bevy SpriteBundle documentation](spritebundle_documentation.png)
+![Part of the Bevy Sprite documentation](spritebundle_documentation.png)
 
-> Part of the Bevy SpriteBundle documentation
+> Part of the Bevy Sprite documentation
 
 The `create_app` function may look like this:
 
@@ -210,7 +210,7 @@ The `add_player` function may look like this:
 ```rust
 fn add_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     commands.spawn((
-        SpriteBundle {
+        Sprite {
             texture: asset_server.load("bevy_bird_dark.png"),
             ..default()
         },
@@ -225,7 +225,7 @@ access to an `asset_server` of datatype `Res<AssetServer>`.
 A `Res` is a unique Bevy resource, in this case of type `AssetServer`:
 a structure for assets.
 
-The creation of the player's `SpriteBundle` is similar too, except for
+The creation of the player's `Sprite` is similar too, except for
 `texture: asset_server.load("bevy_bird_dark.png")`, where a texture is
 loaded from file by the assets server. For this to work, that file (in this
 case, `bevy_bird_dark.png`) must be present in the `assets` folder
@@ -239,7 +239,7 @@ The `main` function has not changed at all:
 fn main() {
     let mut app = create_app();
     let add_camera_fn = |mut commands: Commands| {
-        commands.spawn(Camera2dBundle::default());
+        commands.spawn(Camera2d::default());
     };
     app.add_systems(Startup, add_camera_fn);
     app.add_plugins(DefaultPlugins);

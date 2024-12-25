@@ -13,7 +13,7 @@ In this chapter, we add adding a camera to our test suites.
 
 This chapter introduces:
 
-- the Bevy `Camera2dBundle` bundle
+- the Bevy `Camera2d` bundle
 - a local closure
 
 ## 2.7.1. First test
@@ -32,7 +32,7 @@ fn test_empty_app_has_no_cameras() {
 ## 2.7.2. First fix
 
 Similar to a `Text` component, we take a look
-at [the Bevy documentation on the Camera2dBundle](https://docs.rs/bevy/latest/bevy/prelude/struct.Camera2dBundle.html)
+at [the Bevy documentation on the Camera2d](https://docs.rs/bevy/latest/bevy/prelude/struct.Camera2d.html)
 and look for a field that feels unique. The `camera` field, of type `Camera`
 is enough to make the test pass:
 
@@ -87,7 +87,7 @@ The `create_app` function is similar to earlier versions:
 pub fn create_app(initial_camera_scale: f32) -> App {
     let mut app = App::new();
     let add_camera_fn = move |mut commands: Commands| {
-        let mut bundle = Camera2dBundle::default();
+        let mut bundle = Camera2d::default();
         bundle.projection.scale = initial_camera_scale;
         commands.spawn(bundle);
     };
@@ -105,7 +105,7 @@ it is useful to at least having seen the same approach with a local closure.
 
 Using a
 
-![The Bevy `Camera2dBundle` documentation](camera2dbundle_documentation.png)
+![The Bevy `Camera2d` documentation](camera2dbundle_documentation.png)
 
 Writing the `get_camera_scale` is also similar to earlier functions:
 
@@ -117,7 +117,7 @@ fn get_camera_scale(app: &mut App) -> f32 {
 }
 ```
 
-Here, we query for the same `projection` field of a `Camera2dBundle`
+Here, we query for the same `projection` field of a `Camera2d`
 of data type `OrthographicProjection` as we've used in the `create_app`
 function.
 

@@ -14,7 +14,7 @@ This chapter shows how to add a text to a game.
 This chapter introduces:
 
 - Working with Rust `String`s
-- The Bevy `TextBundle`
+- The Bevy `Text2d`
 - Using `app.update()` in the wrong place causing problems
 
 ## 2.6.1. First test: an `App` has no text
@@ -35,12 +35,12 @@ as querying requires the `App` to be so.
 
 ## 2.6.2. First fix
 
-![The Bevy TextBundle documentation](textbundle_documentation.png)
+![The Bevy Text2d documentation](textbundle_documentation.png)
 
-> Part of [the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html)
+> Part of [the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.Text2d.html)
 
 Taking a look at
-[the Bevy `TextBundle` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.TextBundle.html),
+[the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.Text2d.html),
 one can see that there is a field called `text` of data type `Text`.
 We'll use that -and only that- for our query:
 
@@ -153,14 +153,14 @@ The `add_text` function may look like this:
 
 ```rust
 fn add_text(mut commands: Commands, str: &String) {
-    commands.spawn(Text2dBundle {
+    commands.spawn(Text2d {
         text: Text::from_section(str, TextStyle { ..default() }),
         ..default()
     });
 }
 ```
 
-Most of this function is similar to adding a `SpriteBundle`.
+Most of this function is similar to adding a `Sprite`.
 It may come as a surprise that the `text` field is more than just
 a `String`: a `Text` contains multiple `TextSection`s,
 of which each `TextSection` can have its own text and style.
@@ -197,7 +197,7 @@ fn main() {
     let text = String::from("Hello from main");
     let mut app = create_app(text);
     let add_camera_fn = |mut commands: Commands| {
-        commands.spawn(Camera2dBundle::default());
+        commands.spawn(Camera2d::default());
     };
     app.add_systems(Startup, add_camera_fn);
     app.add_plugins(DefaultPlugins);

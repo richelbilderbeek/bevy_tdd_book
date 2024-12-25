@@ -34,7 +34,7 @@ fn test_can_create_app() {
 
 To force us to write `count_n_texts`.
 The word `text` is shorthand for 'the `Text` `Component`
-of a `TextBundle`'.
+of a `Text2d`'.
 
 ```rust
 fn test_empty_app_has_no_texts() {
@@ -45,7 +45,7 @@ fn test_empty_app_has_no_texts() {
 
 ## Third test: our `App` has a text
 
-Forces us to add a `TextBundle`:
+Forces us to add a `Text2d`:
 
 ```rust
 fn test_create_app_has_a_text() {
