@@ -46,6 +46,27 @@ extract_all_code_from_chapter <- function(chapter_filename) {
   code
 }
 
+#' On GHA the filenames suggested do not work on a local computer
+convert_gha_filename_to_local <- function(filename) {
+  stringr::str_replace_all(
+    filename, 
+    "/home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder",
+    "/home/richel/GitHubs"
+  )
+}
+  # mousepad docs/chapters/add_camera.md /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/app.rs /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/main.rs
+  # mousepad docs/chapters/add_camera.md /home/richel/GitHubs/bevy_tdd_book_add_camera/src/app.rs /home/richel/GitHubs/bevy_tdd_book_add_camera/src/main.rs
+
+testthat::expect_equal(
+  convert_gha_filename_to_local("/home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/app.rs"),
+  "/home/richel/GitHubs/bevy_tdd_book_add_camera/src/app.rs"
+)
+testthat::expect_equal(
+  convert_gha_filename_to_local("/home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/main.rs"),
+  "/home/richel/GitHubs/bevy_tdd_book_add_camera/src/main.rs"
+)
+  
+
 all_ok <- TRUE
 
 for (chapter_filename in chapter_filenames) {
@@ -85,7 +106,10 @@ for (chapter_filename in chapter_filenames) {
     message("  Tip: run the following line:")
     message(" ")
     message(
-      paste0("  mousepad ", chapter_filename, " ", app_code_filename, " ", main_code_filename)
+      paste0("  mousepad ", chapter_filename, " ",
+        convert_gha_filename_to_local(app_code_filename), " ",
+        convert_gha_filename_to_local(main_code_filename)
+      )
     )
     message(" ")
     next
@@ -115,6 +139,8 @@ for (chapter_filename in chapter_filenames) {
   message(" ")
   message("  Tip: run the following line:")
   message(" ")
+  # mousepad docs/chapters/add_camera.md /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/app.rs /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/main.rs
+  # mousepad docs/chapters/add_camera.md /home/richel/GitHubs/bevy_tdd_book_add_camera/src/app.rs /home/richel/GitHubs/bevy_tdd_book_add_camera/src/main.rs
   message(
     paste0("  mousepad ", chapter_filename, " ", app_code_filename, " ", main_code_filename)
   )
