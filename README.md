@@ -1,6 +1,6 @@
 # bevy_tdd_book
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Badges cannot be split up over lines, hence will break 80 characters per line -->
 
 [![Check chapters](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_chapters.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_chapters.yaml)
 [![Check links](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_links.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book/actions/workflows/check_links.yaml)
@@ -26,7 +26,7 @@ The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
 - [2.1. Introduction](docs/misc/basic_introduction.md)
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Code                                                                                    |Build status                                                                                                                                                                                                                                                                       |Code coverage                                                                                                                                                                                                          |Chapter [2]
 -----------|-----------|-----------|------------------------------
@@ -44,7 +44,7 @@ Code                                                                            
 
 - [3.1. Introduction](docs/misc/respond_to_input_introduction.md)
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Code                                                                                    |Build status                                                                                                                                                                                                                                                                       |Code coverage                                                                                                                                                                                                          |Chapter [2]
 -----------|-----------|-----------|------------------------------
@@ -76,7 +76,7 @@ Code                                                                            
 
 ### Section for possible chapters
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Code                                                                                    |Build status                                                                                                                                                                                                                                                                       |Code coverage                                                                                                                                                                                                          |Chapter [2]
 -----------|-----------|-----------|------------------------------
@@ -89,7 +89,7 @@ Code                                                                            
 
 ### Appendix
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Code                                                                                    |Build status                                                                                                                                                                                                                                                                       |Code coverage                                                                                                                                                                                                          |Chapter [2]
 -----------|-----------|-----------|------------------------------
@@ -104,7 +104,7 @@ Code                                                                            
 
 ## Files used by continuous integration scripts
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Filename                                  |Descriptions
 ------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
