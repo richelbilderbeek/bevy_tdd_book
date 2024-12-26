@@ -5,4 +5,4 @@ tags:
   - sprite
 ---
 
-# Respond to clicking on a sprite
+# Respond to clicking on a sprite.

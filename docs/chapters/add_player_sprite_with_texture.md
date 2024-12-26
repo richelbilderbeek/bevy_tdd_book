@@ -96,6 +96,7 @@ exactly the same implementation as `get_player_size` in the previous chapter:
 fn get_player_scale(app: &mut App) -> Vec2 {
     let mut query = app.world_mut().query::<(&Transform, &Player)>();
     let (transform, _) = query.single(app.world());
+    assert_eq!(transform.scale.z, 1.0); // 2D
     transform.scale.xy()
 }
 ```
@@ -128,9 +129,9 @@ we know:
 
 ```rust
 fn get_player_has_texture(app: &mut App) -> bool {
-    let mut query = app.world_mut().query::<(&Handle<Image>, &Player)>();
-    let (handle, _) = query.single(app.world());
-    handle.is_strong()
+    let mut query = app.world_mut().query::<(&Sprite, &Player)>();
+    let (sprite, _) = query.single(app.world());
+    sprite.image.is_strong()
 }
 ```
 
@@ -210,10 +211,7 @@ The `add_player` function may look like this:
 ```rust
 fn add_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     commands.spawn((
-        Sprite {
-            texture: asset_server.load("bevy_bird_dark.png"),
-            ..default()
-        },
+        Sprite::from_image(asset_server.load("bevy_bird_dark.png")),
         Player,
     ));
 }
@@ -239,7 +237,7 @@ The `main` function has not changed at all:
 fn main() {
     let mut app = create_app();
     let add_camera_fn = |mut commands: Commands| {
-        commands.spawn(Camera2d::default());
+        commands.spawn(Camera2d);
     };
     app.add_systems(Startup, add_camera_fn);
     app.add_plugins(DefaultPlugins);
