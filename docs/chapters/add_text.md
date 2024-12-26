@@ -46,7 +46,7 @@ We'll use that -and only that- for our query:
 
 ```rust
 fn count_n_texts(app: &mut App) -> usize {
-    let mut query = app.world_mut().query::<&Text>();
+    let mut query = app.world_mut().query::<&Text2d>();
     return query.iter(app.world()).len();
 }
 ```
@@ -153,10 +153,7 @@ The `add_text` function may look like this:
 
 ```rust
 fn add_text(mut commands: Commands, str: &String) {
-    commands.spawn(Text2d {
-        text: Text::from_section(str, TextStyle { ..default() }),
-        ..default()
-    });
+    commands.spawn(Text2d::new(str));
 }
 ```
 
