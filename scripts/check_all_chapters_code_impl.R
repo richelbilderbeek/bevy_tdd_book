@@ -54,6 +54,8 @@ convert_gha_filename_to_local <- function(filename) {
     "/home/richel/GitHubs"
   )
 }
+
+
   # mousepad docs/chapters/add_camera.md /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/app.rs /home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/main.rs
   # mousepad docs/chapters/add_camera.md /home/richel/GitHubs/bevy_tdd_book_add_camera/src/app.rs /home/richel/GitHubs/bevy_tdd_book_add_camera/src/main.rs
 
@@ -65,6 +67,12 @@ testthat::expect_equal(
   convert_gha_filename_to_local("/home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_camera/src/main.rs"),
   "/home/richel/GitHubs/bevy_tdd_book_add_camera/src/main.rs"
 )
+testthat::expect_equal(
+  convert_gha_filename_to_local("/home/runner/work/bevy_tdd_book/bevy_tdd_book/working_folder/bevy_tdd_book_add_player_sprite_with_texture/src/app.rs"),
+  "/home/richel/GitHubs/bevy_tdd_book_add_player_sprite_with_texture/src/app.rs"
+)
+
+
   
 
 all_ok <- TRUE
