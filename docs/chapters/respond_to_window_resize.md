@@ -92,12 +92,12 @@ Results in:
 
 ```rust
 fn respond_to_window_resize(
-    mut q: Query<&mut Text>,
+    mut q: Query<&mut Text2d>,
     mut resize_reader: EventReader<bevy::window::WindowResized>,
 ) {
     let mut text = q.single_mut();
     for e in resize_reader.read() {
-        text.sections[0].value = format!("{:.1} x {:.1}", e.width, e.height);
+        text.0 = format!("{:.1} x {:.1}", e.width, e.height);
     }
 }
 ```

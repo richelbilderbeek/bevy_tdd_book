@@ -160,7 +160,7 @@ pub fn create_app() -> App {
     if cfg!(test) {
         app.add_plugins(AssetPlugin::default());
         app.add_plugins(TaskPoolPlugin::default());
-        app.init_asset::<bevy::render::texture::Image>();
+        app.init_asset::<bevy::image::Image>();
     }
     app.add_systems(Startup, add_player);
 
