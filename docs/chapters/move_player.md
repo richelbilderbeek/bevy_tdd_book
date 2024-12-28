@@ -252,7 +252,7 @@ when reading the Bevy documentation.
 Especially, the Unofficial Bevy Cheat Book (at <https://bevy-cheatbook.github.io>)
 nicely document all these 'magic' options:
 
-![Part of the Unofficial Bevy Cheat Book 'SystemParams' documentation](ubcb_system_params_documentation.png)
+![Part of the Unofficial Bevy Cheat Book 'SystemParams' documentation](bevy_cheatbook_doc_ubcb_system_params.png)
 
 > Part of the Unofficial Bevy Cheat Book 'SystemParams' documentation
 

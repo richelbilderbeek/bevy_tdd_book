@@ -147,7 +147,7 @@ There are two new elements:
 - `handle.is_strong()` determines if the handle indeed refers to an image
   that is actually (being) loaded
 
-![Part of the Bevy Sprite documentation](spritebundle_documentation.png)
+![Part of the Bevy Sprite documentation](bevy_doc_sprite.png)
 
 > Part of the Bevy Sprite documentation
 

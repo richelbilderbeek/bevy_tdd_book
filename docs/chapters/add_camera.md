@@ -105,7 +105,7 @@ it is useful to at least having seen the same approach with a local closure.
 
 Using a
 
-![The Bevy `Camera2d` documentation](camera2dbundle_documentation.png)
+![The Bevy `Camera2d` documentation](bevy_doc_camera2d.png)
 
 Writing the `get_camera_scale` is also similar to earlier functions:
 

@@ -35,7 +35,7 @@ as querying requires the `App` to be so.
 
 ## 2.6.2. :green_circle: First fix
 
-![The Bevy Text2d documentation](text2d_documentation.png)
+![The Bevy Text2d documentation](bevy_doc_text2d.png)
 
 > Part of [the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/text/struct.Text2d.html)
 
