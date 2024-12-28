@@ -9,7 +9,8 @@ tags:
 # 2.4. Add player sprite
 
 This chapter shows how to add a player sprite to a game,
-at a certain position and of a certain size.
+at a certain position and of a certain size,
+starting from scratch again.
 
 ![Our 'add_player_sprite' game](add_player_sprite_4.png)
 
@@ -27,7 +28,7 @@ This chapter introduces:
 - a Bevy `Transform`
 - an in-function assertion
 
-## 2.4.1. First test: our `App` needs a position and size
+## 2.4.1. :red_circle: First test: our `App` needs a position and size
 
 If we want to add a player sprite to the game
 at a certain position and of a certain size,
@@ -49,7 +50,7 @@ As the game we create is 2D, both a position and a size are two dimensional.
 The test is generous: calling `create_app` must be possible with two arguments,
 after which it should not crash.
 
-## 2.4.2. First fix
+## 2.4.2. :green_circle: First fix
 
 A valid stub would be:
 
@@ -69,7 +70,7 @@ A consequence of doing TDD is a clean (and conventional) software
 architecture. Instead of doing funky things, settling for a stub
 is -as always!- perfectly fine.
 
-## 2.4.3. Second test: an empty `App` has no players
+## 2.4.3. :red_circle: Second test: an empty `App` has no players
 
 Next step is to count the number of players of an empty `App`,
 so we have a reason to add a player.
@@ -92,7 +93,7 @@ The fix is identical to the one shown in the previous chapter:
 1. create the `count_n_players` function
 1. implement the `Player` marker component
 
-## 2.4.4. Third test: our `App` has a player
+## 2.4.4. :red_circle: Third test: our `App` has a player
 
 A slightly new test is to determine if `create_app`, now with
 two arguments, indeed creates one player:
@@ -111,7 +112,7 @@ and running the tests, as `create_app` will do so.
 In this case, when running our game normally,
 our game will work as expected.
 
-## 2.4.5. Third fix
+## 2.4.5. :green_circle: Third fix
 
 To fix this test, we need:
 
@@ -202,7 +203,7 @@ translation and we should ignore that in the implementation details we need to
 modify a translation. This is a good feature of TDD: it prevents us from using
 needlessly technical names.
 
-## 2.4.6. Fourth test: a player has a position
+## 2.4.6. :red_circle: Fourth test: a player has a position
 
 Our previous implementation could (and maybe should) have been done sloppier.
 Here we enforce that the player's 2D position is implemented correctly:
@@ -216,7 +217,7 @@ fn test_get_player_position() {
 }
 ```
 
-## 2.4.7. Fourth fix
+## 2.4.7. :green_circle: Fourth fix
 
 Here is an implementation to get back the player's
 position from the complex thing we added:
@@ -259,7 +260,7 @@ Use assertions liberally `[Liberty, 2001]` `[Stroustrup, 2012]`.
 Of the 3D `Transform` (with a z coordinate of zero),
 we return the x and y coordinate of the translation.
 
-## 2.4.8. Fifth test: a player has a size
+## 2.4.8. :red_circle: Fifth test: a player has a size
 
 Now we can work with a player's position, we do the same for a player's size:
 
@@ -276,7 +277,7 @@ This test is nearly identical to the previous test,
 except now for using `get_player_size` and comparing it to the
 initial player size.
 
-## 2.4.9. Fifth fix
+## 2.4.9. :green_circle: Fifth fix
 
 The fix is nearly identical to the previous one:
 

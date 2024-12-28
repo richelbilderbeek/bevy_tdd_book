@@ -9,12 +9,10 @@
 
 <!-- markdownlint-enable MD013 -->
 
-Start of a book [1] called 'Developing Bevy games using TDD'.
+Start of a book called 'Developing Bevy games using TDD'.
 The goal is to demonstrate how to do Test-Driven Development with Bevy.
 
-- [Contributing](docs/CONTRIBUTING.md)
-- [Contributors](docs/misc/contributors.md)
-- [FAQ](docs/misc/faq.md)
+- [Go to the nicely rendered version](https://richelbilderbeek.github.io/bevy_tdd_book/)
 
 ## Chapters
 

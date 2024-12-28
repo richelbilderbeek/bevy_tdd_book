@@ -18,7 +18,7 @@ possible. I've changed this:
 
 > [...] always aiming for 100% code coverage whenever possible.
 
-...
+Done!
 
 > A better reason for adopting TDD is to give developers
 > the confidence that their changes work. As a byproduct of this newly
@@ -79,14 +79,7 @@ I've added it to two sections to see how it feels.
 > but for someone just learning I would suggest breaking those down even
 > further.
 
-I agree this is indeed quite some code that needs to be added to pass
-the test. I considered to indeed make `count_n_players` return `1`
-as a stub. The constrain, however, that is on the code it that
-all code in the book is tested to be part of the tested projects.
-Due to this, adding a stub that is changed away later, will result
-in a mismatch between book text and tested project code.
-
-However, I can mention this...
+Agreed, I've added more smaller tests!
 
 Blimey, the `count_n_players` function is not even mentioned!
 
@@ -98,21 +91,27 @@ Blimey, the `count_n_players` function is not even mentioned!
 > this I think first testing a system is more straightforward that testing
 > the if the app crashes or not.
 
-...
+For this, I simply don't know how to implement 'separating the app creation
+and systems'. Maybe that explains why we disagree on the usefulness
+of the `create_app` function. I agree with 'testing a system is more
+straightforward that testing the if the app crashes or not',
+but -again- I don't know how to create a system...
 
 > 2.4.1
 > As I feared, create app is doing too much and by adding a feature of adding
 > player sprite it forces us to change a lot of signatures of test that
 > where using create_app.
 
-...
+I think the reviewer misunderstood that this chapter starts
+from scratch again. I've made this more clear in the chapter's text.
 
 > An idea would be to create a empty app on each test and add the system
 > under test, and only those systems to keep test easier to maintain.
 > Testing create app where it adds all systems will be hard to maintain,
 > especially when systems that depend on third party plugins
 
-...
+I feel here again, I am unsure what the reviewer means by 
+creating a system.
 
 > 2.4.3
 > I think it’s wasteful to add a test that just passes without any change
@@ -123,7 +122,8 @@ Blimey, the `count_n_players` function is not even mentioned!
 > It seem lazy when you say I will not repeat myself here
 > but maybe im missing something.
 
-...
+I think the reviewer misunderstood that this chapter starts
+from scratch again. I've made this more clear in the chapter's text.
 
 > 2.4.5
 > An important concept when doing TDD is to write only enough production
@@ -131,7 +131,13 @@ Blimey, the `count_n_players` function is not even mentioned!
 > more than needed to pass the test. Eg the test don’t care about sprite or
 > its transform yet in this section you are writing the code for it.
 
-...
+I agree that at the same time the world get a player added,
+that player also is directly set at the correct location.
+This correct location 'hitchhiked' with adding the player.
+The reviewer is right that it should have been done in smaller steps.
+I've added this to the FAQ.
+
+However, maybe I can simplify the setup ...
 
 > I see now that you add the test for transorm afterwards which is ok when you
 > are experienced, but for a new TDDer you need to break thibgs down in

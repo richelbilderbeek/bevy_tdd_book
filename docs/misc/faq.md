@@ -38,37 +38,67 @@ Due to this, the first chapters do not result in a playable game yet.
 
 ### What are the subgoals of this book?
 
-* Code is tested to work; it can be detected when the code is not working
+- Code is tested to work; it can be detected when the code is not working
   anymore.
-* Always achieve 100% code coverage when ignoring
+- Always achieve 100% code coverage when ignoring
   the `main` function in `src/main.rs`
-* Follow the Rust idiom as suggested by the `clippy` Rust package
-* Get the test to work as simply as possible
+- Follow the Rust idiom as suggested by the `clippy` Rust package
+- Get the test to work as simply as possible
     * No marker `Components` when tests pass without using these
-* The first chapters must be simple enough to reasonably be put in one single file
-* Only call Bevy with `use bevy::prelude::*;`, use full names beyond that (e.g.
+- The first chapters must be simple enough to reasonably be put in one single file
+- Only call Bevy with `use bevy::prelude::*;`, use full names beyond that (e.g.
   `bevy::input::InputPlugin`) over adding more `use`s
-* Have a running program in each chapter
+- Have a running program in each chapter
 
 ### What are the non-goals of this book?
 
-* Having an interesting game in the end
-* Always have the fastest solution
-* Explain Rust
-* Explain Bevy deeper than the examples require. For example,
+- Having an interesting game in the end
+- Always have the fastest solution
+- The TDD tests are as small as possible, in the most natural sequence
+
+???- question "Why is this a non-goal?"
+
+    It is more important that all code is tested to work.
+    There is a script called `check_chapters` that checks
+    if all lines of code in the book are indeed taken from the
+    lines of code of each chapter's full code.
+
+    Due to this, it is impossible to discuss all in-between steps.
+
+    For example, imagine this function signature, needed at the end
+    of the chapter:
+
+    ```rust
+    // Create a Bevy App, with a player at 'position' and size 'size'
+    fn create_app(position: Vec2, size: Vec2) -> App {
+        // ...
+    }
+    ```
+
+    In regular TDD, one would build up `create_app` to first have no
+    argument and add the arguments one at a time instead.
+    This would also mean that tests using `create_app` would
+    change. And that older versions of these tests cannot be put
+    in the book's chapters: that code would be untested...
+
+    ... where it is more important that all code is tested to work.
+
+
+- Explain Rust
+- Explain Bevy deeper than the examples require. For example,
   in chapter `add_player` a simple definition of an `Entity` is given:
   'an instance of `Component`'. This definition purposefully ignores that
   an `Entity` also has a unique identifier, as it is not help to better
   understand the code of that chapter
-* Support code of older Bevy version
-* Give tips that are of personal preference,
+- Support code of older Bevy version
+- Give tips that are of personal preference,
   unless described as such
-* Use fancy idioms that are of personal preference,
+- Use fancy idioms that are of personal preference,
   unless described as such
 
 ### Are there other sources you recommend?
 
-* [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples):
+- [The Bevy examples](https://github.com/bevyengine/bevy/tree/main/examples):
   these are the official examples supported by Bevy.
   The difference with this book is that some of these examples
   show multiple things and does not have tests.
@@ -76,11 +106,11 @@ Due to this, the first chapters do not result in a playable game yet.
   [the Bevy Text2d example](https://bevyengine.org/examples/2d-rendering/text2d/)
   with [this books 'Add text' chapter](https://github.com/richelbilderbeek/bevy_tdd_book/blob/master/docs/chapters/add_text.md)
   seem to be more focused on being pretty, over being focused.
-* [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook):
+- [The Unofficial Bevy Cheat Book](https://github.com/bevy-cheatbook/bevy-cheatbook):
   these are code snippets alongside explanations.
   The difference with this book is that these snippets
   are not stand-alone and do not have tests.
-* [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
+- [The unofficial 'Learn Bevy Book'](https://ddyy-game.github.io/learn-bevy-book/)
 
 ## General
 
@@ -106,11 +136,11 @@ the speed at which new features are added `[Vasilescu et al., 2015]`.
 
 In the context of this book, a bug can be:
 
-* the code shown in the chapters does not match the tested code
+- the code shown in the chapters does not match the tested code
   of the repository these are copy-pasted from anymore
-* spelling errors
-* markdown style errors
-* broken links
+- spelling errors
+- markdown style errors
+- broken links
 
 ### Why is using a Rust linter important?
 
@@ -164,15 +194,15 @@ bevy = { version = "0.14.0", features = ["dynamic_linking"] }
 
 These are the IDEs I tried:
 
-* RustRover
-* Visual Studio Code
+- RustRover
+- Visual Studio Code
 
 My favorite is RustRover.
 RustRover is specialized in Rust development, where Visual Studio Code is a general-purpose IDE, and this is noticeable to me:
 
-* RustRover works better out-of-of-the-box under my operating system (Linux, with Ubuntu 22.04 LTS and Ubuntu 24.04 LTS)
-* RustRover does not take all CPUs when building, so I can work on lightweight other things too
-* RustRover has the keyboard shortcuts setup for the things I need, with combinations that feel natural to me
+- RustRover works better out-of-of-the-box under my operating system (Linux, with Ubuntu 22.04 LTS and Ubuntu 24.04 LTS)
+- RustRover does not take all CPUs when building, so I can work on lightweight other things too
+- RustRover has the keyboard shortcuts setup for the things I need, with combinations that feel natural to me
 
 ## My open questions
 
@@ -240,15 +270,15 @@ I assume that also in Bevy I express my promises in Rust, so how do I query some
 
 ## References
 
-* `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
-* `[Beck, 2000]` Beck, Kent. Extreme programming explained: embrace change. addison-wesley professional, 2000.
-* `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
-* `[Fang, 2001]` Fang, Xuefen. "Using a coding standard to improve program quality." Proceedings Second Asia-Pacific Conference on Quality Software. IEEE, 2001.
-* `[Horgan et al., 1994]` Horgan, Joseph R., Saul London, and Michael R. Lyu. "Achieving software quality with testing coverage measures." Computer 27.9 (1994): 60-69.
-* `[Janzen & Saiedian, 2006]` Janzen, David S., and Hossein Saiedian. "Test-driven learning: intrinsic integration of testing into the CS/SE curriculum." Acm Sigcse Bulletin 38.1 (2006): 254-258.
-* `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
+- `[Alkaoud & Walcott, 2018]` Alkaoud, Hessah, and Kristen R. Walcott. "Quality metrics of test suites in test-driven designed applications." International Journal of Software Engineering Applications (IJSEA) 2018 (2018).
+- `[Beck, 2000]` Beck, Kent. Extreme programming explained: embrace change. addison-wesley professional, 2000.
+- `[Del Frate et al., 1995]` Del Frate, Fabio, et al. "On the correlation between code coverage and software reliability." Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95. IEEE, 1995.
+- `[Fang, 2001]` Fang, Xuefen. "Using a coding standard to improve program quality." Proceedings Second Asia-Pacific Conference on Quality Software. IEEE, 2001.
+- `[Horgan et al., 1994]` Horgan, Joseph R., Saul London, and Michael R. Lyu. "Achieving software quality with testing coverage measures." Computer 27.9 (1994): 60-69.
+- `[Janzen & Saiedian, 2006]` Janzen, David S., and Hossein Saiedian. "Test-driven learning: intrinsic integration of testing into the CS/SE curriculum." Acm Sigcse Bulletin 38.1 (2006): 254-258.
+- `[Klabnik & Nichols, 2018]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.
-* `[Klabnik & Nichols, 2023]` Klabnik, Steve, and Carol Nichols.
+- `[Klabnik & Nichols, 2023]` Klabnik, Steve, and Carol Nichols.
   The Rust programming language. No Starch Press, 2023.
-* `[Ram, 2013]` Ram, K. "rOpenSci-open tools for open science." AGU Fall Meeting Abstracts. Vol. 2013. 2013.
-* `[Vasilescu et al., 2015]` Vasilescu, Bogdan, et al. "Quality and productivity outcomes relating to continuous integration in GitHub." Proceedings of the 2015 10th joint meeting on foundations of software engineering. 2015.
+- `[Ram, 2013]` Ram, K. "rOpenSci-open tools for open science." AGU Fall Meeting Abstracts. Vol. 2013. 2013.
+- `[Vasilescu et al., 2015]` Vasilescu, Bogdan, et al. "Quality and productivity outcomes relating to continuous integration in GitHub." Proceedings of the 2015 10th joint meeting on foundations of software engineering. 2015.
