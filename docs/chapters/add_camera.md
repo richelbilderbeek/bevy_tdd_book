@@ -16,7 +16,7 @@ This chapter introduces:
 - the Bevy `Camera2d` bundle
 - a local closure
 
-## 2.7.1. First test
+## 2.7.1. :red_circle: First test
 
 Similar to earlier chapters, the test starts with
 counting the number of cameras:
@@ -29,7 +29,7 @@ fn test_empty_app_has_no_cameras() {
 }
 ```
 
-## 2.7.2. First fix
+## 2.7.2. :green_circle: First fix
 
 Similar to a `Text` component, we take a look
 at [the Bevy documentation on the Camera2d](https://docs.rs/bevy/latest/bevy/prelude/struct.Camera2d.html)
@@ -48,7 +48,7 @@ their own `Camera`s. As long as it is the case that our camera is the
 only `Camera`, this implementation is good enough and does not need
 a marker component.
 
-## 2.7.3. Second test
+## 2.7.3. :red_circle: Second test
 
 Our game will have a camera with a custom scale.
 Instead of repeating the smaller steps as in the earlier chapters,
@@ -73,7 +73,7 @@ and running the tests, as `create_app` will do so.
 Also here, when running our game normally,
 our game will work as expected.
 
-## 2.7.4. Second fix
+## 2.7.4. :green_circle: Second fix
 
 To fix all this, we need to:
 
@@ -121,7 +121,7 @@ Here, we query for the same `projection` field of a `Camera2d`
 of data type `OrthographicProjection` as we've used in the `create_app`
 function.
 
-## 2.7.5. Third tests
+## 2.7.5. :red_circle: Third tests
 
 We do want to be able to see something. Hence, we'll probably want to
 add a player with or without a texture. I've picked to add

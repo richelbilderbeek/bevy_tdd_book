@@ -26,7 +26,7 @@ This chapter introduces:
 
 ![Our application in action](add_player_sprite_with_texture.png)
 
-## 2.5.1. First tests
+## 2.5.1. :red_circle: First tests
 
 Our first tests are the same as in earlier chapters,
 forcing us to write `create_app`, `count_n_players` and
@@ -58,7 +58,7 @@ to panic in the `main` function (hence we cannot play the game).
 This will be discussed in both the `create_app` and
 the `main` function paragraph.
 
-## 2.5.2. Third test: our player has a default scale
+## 2.5.2. :red_circle: Third test: our player has a default scale
 
 In [the 'Add a player sprite' chapter](add_player_sprite.md)
 the size of the player's sprite was set to its
@@ -87,7 +87,7 @@ fn test_player_has_the_default_scale() {
 }
 ```
 
-## 2.5.3. Third fix
+## 2.5.3. :green_circle: Third fix
 
 Although the function name `get_player_scale` is new, it has
 exactly the same implementation as `get_player_size` in the previous chapter:
@@ -104,7 +104,7 @@ fn get_player_scale(app: &mut App) -> Vec2 {
 In the context of using an image, it is more natural to work with a
 scale than with a size.
 
-## 2.5.4. Fourth test: our player has a texture
+## 2.5.4. F:red_circle: ourth test: our player has a texture
 
 Now for the texture:
 
@@ -116,7 +116,7 @@ fn test_player_has_a_texture() {
 }
 ```
 
-## 2.5.5. Fourth fix
+## 2.5.5. :green_circle: Fourth fix
 
 The seemingly innocent test above, forces us into a complex fix:
 
