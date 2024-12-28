@@ -44,7 +44,7 @@ Due to this, the first chapters do not result in a playable game yet.
   the `main` function in `src/main.rs`
 - Follow the Rust idiom as suggested by the `clippy` Rust package
 - Get the test to work as simply as possible
-    * No marker `Components` when tests pass without using these
+    - No marker `Components` when tests pass without using these
 - The first chapters must be simple enough to reasonably be put in one single file
 - Only call Bevy with `use bevy::prelude::*;`, use full names beyond that (e.g.
   `bevy::input::InputPlugin`) over adding more `use`s

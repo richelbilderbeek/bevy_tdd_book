@@ -110,7 +110,7 @@ from scratch again. I've made this more clear in the chapter's text.
 > Testing create app where it adds all systems will be hard to maintain,
 > especially when systems that depend on third party plugins
 
-I feel here again, I am unsure what the reviewer means by 
+I feel here again, I am unsure what the reviewer means by
 creating a system.
 
 > 2.4.3
@@ -135,7 +135,7 @@ I agree that at the same time the world get a player added,
 that player also is directly set at the correct location.
 This correct location 'hitchhiked' with adding the player.
 The reviewer is right that it should have been done in smaller steps.
-I've added this to the FAQ. 
+I've added this to the FAQ.
 
 However, maybe I can simplify the setup ...
 
