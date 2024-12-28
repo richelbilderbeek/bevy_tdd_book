@@ -42,6 +42,7 @@ nav:
     - Feedback: feedback/README.md
     - Functions: misc/functions.md
     - License: LICENSE.md
+    - Status: misc/status.md
 
 theme:
   name: material

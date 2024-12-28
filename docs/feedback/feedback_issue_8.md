@@ -135,9 +135,12 @@ I agree that at the same time the world get a player added,
 that player also is directly set at the correct location.
 This correct location 'hitchhiked' with adding the player.
 The reviewer is right that it should have been done in smaller steps.
-I've added this to the FAQ.
+I've added this to the FAQ. 
 
 However, maybe I can simplify the setup ...
+
+Having given it some thoughts,
+I actually enjoy to go from big to small, so I keep it.
 
 > I see now that you add the test for transorm afterwards which is ok when you
 > are experienced, but for a new TDDer you need to break thibgs down in
@@ -152,3 +155,6 @@ However, maybe I can simplify the setup ...
 > I believe your audience (new to tdd) would benefit of this breaking down of
 > small steps.
 
+I agree that I should split up in more tests, will work on this now.
+
+Thanks for the feedback!
