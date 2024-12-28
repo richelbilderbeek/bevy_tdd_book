@@ -4,11 +4,11 @@ Here I keep an overview of the status of the chapters.
 
 ## Section 1: introduction
 
-- [1.1. Introduction](docs/introduction/introduction.md)
+- [1.1. Introduction](../introduction/introduction.md)
 
 ## Section 2: basics
 
-- [2.1. Introduction](docs/misc/basic_introduction.md)
+- [2.1. Introduction](../misc/basic_introduction.md)
 
 <!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
@@ -26,7 +26,7 @@ Code                                                                            
 
 ## Section 3: user input
 
-- [3.1. Introduction](docs/misc/respond_to_input_introduction.md)
+- [3.1. Introduction](.../misc/respond_to_input_introduction.md)
 
 <!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
