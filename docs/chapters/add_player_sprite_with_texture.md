@@ -104,7 +104,7 @@ fn get_player_scale(app: &mut App) -> Vec2 {
 In the context of using an image, it is more natural to work with a
 scale than with a size.
 
-## 2.5.4. F:red_circle: ourth test: our player has a texture
+## 2.5.4. :red_circle: Fourth test: our player has a texture
 
 Now for the texture:
 
