@@ -172,7 +172,7 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 Here I unpack `add_player`:
 
 - `commands.spawn((...,...))`: adds a new entity that is a tuple of two things
-- `Sprite { ... }: adds a Bevy `Sprite`
+- `Sprite { ... }: adds a Bevy`Sprite`
 
 ![Part of the Bevy Sprite documentation](sprite_documentation.png)
 
