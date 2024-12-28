@@ -179,9 +179,9 @@ Here I unpack `add_player`:
   the elements`sprite`,`transform` and `texture`,
   as shown by the Bevy Sprite documentation
 
-![Part of the Bevy Sprite documentation](spritebundle_documentation.png)
+![Part of the Bevy Sprite documentation](sprite_documentation.png)
 
-> Part of the Bevy Sprite documentation
+> Part of [the Bevy Sprite documentation](https://docs.rs/bevy/latest/bevy/sprite/struct.Sprite.html)
 
 - `transform: Transform { ... }, ..default()`: initialize the `transform` field
   of the `Sprite`, leave the rest at default values
