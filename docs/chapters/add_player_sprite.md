@@ -24,7 +24,6 @@ as this would best fit a book.
 This chapter introduces:
 
 - closures
-- Bevy bundles
 - a Bevy `Transform`
 - an in-function assertion
 
@@ -173,11 +172,7 @@ fn add_player(mut commands: Commands, initial_player_position: Vec2, initial_pla
 Here I unpack `add_player`:
 
 - `commands.spawn((...,...))`: adds a new entity that is a tuple of two things
-- `Sprite { ... }: adds a Bevy`Sprite`, which is -unsurprisingly-
-  a bundle of Components for a sprite. A Bevy bundle is a collection of
-  Bevy Components, put into a structure. That structure has, among other,
-  the elements`sprite`,`transform` and `texture`,
-  as shown by the Bevy Sprite documentation
+- `Sprite { ... }: adds a Bevy `Sprite`
 
 ![Part of the Bevy Sprite documentation](sprite_documentation.png)
 
