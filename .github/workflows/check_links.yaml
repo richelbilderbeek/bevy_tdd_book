@@ -5,7 +5,15 @@ name: Check links
 # 2nd as the first letter of this repo is the 2nd letter in the alphabet.
 on:
   push:
+    paths:
+      - 'docs/**'
+      - .github/workflows/check_links.yaml
+      - mlc_config.json
   pull_request:
+    paths:
+      - 'docs/**'
+      - .github/workflows/check_links.yaml
+      - mlc_config.json
   schedule:
   - cron: "0 0 2 * *"
 
