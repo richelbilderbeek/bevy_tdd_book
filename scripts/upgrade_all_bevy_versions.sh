@@ -22,5 +22,6 @@ fi
 
 cd ..
 (
-  
+ bevy = { version = "0.15" }
+ 
 )
