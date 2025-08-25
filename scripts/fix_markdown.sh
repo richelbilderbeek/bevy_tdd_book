@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Fix the markdown style
+# Fix the Markdown style
 #
 # Usage:
 #

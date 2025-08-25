@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Fix the markdown style of all book chapters
+# Fix the Markdown style of all book chapters
 #
 # Usage:
 #
