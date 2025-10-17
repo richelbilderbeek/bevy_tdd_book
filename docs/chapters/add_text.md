@@ -37,7 +37,7 @@ as querying requires the `App` to be so.
 
 ![The Bevy Text2d documentation](bevy_doc_text2d.png)
 
-> Part of [the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/text/struct.Text2d.html)
+> Part of [the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.Text.html)
 
 Taking a look at
 [the Bevy `Text2d` documentation](https://docs.rs/bevy/latest/bevy/prelude/struct.Text2d.html),
