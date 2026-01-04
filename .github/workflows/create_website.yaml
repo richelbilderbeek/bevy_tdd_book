@@ -20,7 +20,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install -r requirements.txt natsort
+        run: pip install -r requirements.txt
 
       - name: Render HTML
         run: mkdocs gh-deploy --force
